@@ -51,7 +51,7 @@ public class App_Bus extends DesktopApplicationProvider
 		// Populates coordinates
 		locations.add(new Location("Ardmore Blvd", 40.424654, -79.859158, "http://truetime.portauthority.org/bustime/wireless/html/eta.jsp?route=69&direction=INBOUND&id=7787&showAllBusses=on"));
 		locations.add(new Location("Forbes Ave (Near NSH)", 40.443608, -79.945573, "http://truetime.portauthority.org/bustime/wireless/html/eta.jsp?route=67&direction=OUTBOUND&id=7116&showAllBusses=on"));
-		locations.add(new Location("Forbes Ave (Near University Center)", 40.444533, -79.942550, "http://truetime.portauthority.org/bustime/wireless/html/eta.jsp?route=67&direction=OUTBOUND&id=7117&showAllBusses=on"));		
+		locations.add(new Location("Forbes Ave (Near University Center)", 40.444533, -79.942550, "http://truetime.portauthority.org/bustime/wireless/html/eta.jsp?route=67&direction=OUTBOUND&id=7117&showAllBusses=on"));
 	}
 	
 	private Location getNearestLocation(JSONContextParser parser, double threshold)

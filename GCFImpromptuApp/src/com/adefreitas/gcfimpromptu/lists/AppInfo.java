@@ -75,6 +75,11 @@ public class AppInfo implements Comparable<AppInfo>
 		this.favorite    = false;
 	}
 
+	public void hide()
+	{
+		this.dateExpires = new Date(0);
+	}
+	
 	/**
 	 * Gets the Application Identifier (Unique PER App)
 	 * @return

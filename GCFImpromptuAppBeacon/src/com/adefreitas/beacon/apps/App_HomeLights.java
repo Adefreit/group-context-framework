@@ -5,6 +5,7 @@ import java.util.Calendar;
 import com.adefreitas.gcf.ContextSubscriptionInfo;
 import com.adefreitas.gcf.GroupContextManager;
 import com.adefreitas.gcf.CommManager.CommMode;
+import com.adefreitas.gcf.android.bluewave.JSONContextParser;
 import com.adefreitas.gcf.android.impromptu.AndroidApplicationProvider;
 import com.adefreitas.gcf.android.toolkit.HttpToolkit;
 import com.adefreitas.gcf.messages.ComputeInstruction;
@@ -40,8 +41,8 @@ public class App_HomeLights extends AndroidApplicationProvider
 				"AUTOMATION",
 				new String[] { }, 
 				new String[] { }, 
-				"http://108.32.88.8/gcf/universalremote/magic/lights.png",
-				60,
+				"http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/light-bulb-icon.png",
+				90,
 				commMode, 
 				ipAddress, 
 				port);
@@ -107,7 +108,9 @@ public class App_HomeLights extends AndroidApplicationProvider
 	@Override
 	public boolean sendAppData(String bluewaveContext)
 	{
-		return true;
+		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, bluewaveContext);
+		
+		return parser.hasEmailAddress(new String[] { "adrian.defreitas@gmail.com" });
 	}
 	
 	/**

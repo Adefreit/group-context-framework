@@ -52,6 +52,9 @@ public class Sti_ProjectSlideshow extends SnapToItApplicationProvider
 	private ArrayList<ProjectInfo>  	 projects;
 	private HashMap<String, ProjectInfo> userSelectedProjects = new HashMap<String, ProjectInfo>();
 	
+	// Study Variable
+	public boolean listMode = false;
+	
 	/**
 	 * Constructor
 	 * @param groupContextManager
@@ -112,13 +115,39 @@ public class Sti_ProjectSlideshow extends SnapToItApplicationProvider
 		return new String[] { "WEBSITE=" + website };
 	}
 
+	/**
+	 * Determines Whether or Not to Send Application Data
+	 */
+	@Override
+	public boolean sendAppData(String bluewaveContext)
+	{
+		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, bluewaveContext);
+		
+		if (listMode)
+		{
+			System.out.println("LIST MODE");
+			return this.getDeviceID(parser).equals("Nexus 5-A");
+		}
+		else
+		{
+			System.out.println("Using STI");
+			return super.sendAppData(bluewaveContext);
+		}
+	}
+	
+	/**
+	 * Overrides STI's normal photo analyzing methods in order to keep track of what project the user selected
+	 */
 	public double analyzePhoto(String deviceID, String photoURL, long timestamp, double azimuth, double pitch, double roll)
 	{
 		// Use the Parent Class's Analyze Method
 		double result = super.analyzePhoto(deviceID, photoURL, timestamp, azimuth, pitch, roll);
 				
 		// Saves the Current Project in Memory
-		userSelectedProjects.put(deviceID, currentProject);
+		if (result < 1000.0)
+		{
+			userSelectedProjects.put(deviceID, currentProject);	
+		}
 		
 		// Returns the Value
 		return result;
@@ -138,14 +167,21 @@ public class Sti_ProjectSlideshow extends SnapToItApplicationProvider
 	 */
 	public String getName(String userContextJSON)
 	{
-		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, userContextJSON);
-		
-		if (userSelectedProjects.containsKey(this.getDeviceID(parser)))
+		if (listMode)
 		{
-			return userSelectedProjects.get(this.getDeviceID(parser)).name;
+			return "Project Display";
 		}
-		
-		return currentProject.name;
+		else
+		{
+			JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, userContextJSON);
+			
+			if (userSelectedProjects.containsKey(this.getDeviceID(parser)))
+			{
+				return userSelectedProjects.get(this.getDeviceID(parser)).name;
+			}
+			
+			return currentProject.name;
+		}
 	}
 	
 	/**
@@ -153,7 +189,14 @@ public class Sti_ProjectSlideshow extends SnapToItApplicationProvider
 	 */
 	public String getCategory(String userContextJSON)
 	{
-		return category;
+		if (listMode)
+		{
+			return "DEVICES";
+		}
+		else
+		{
+			return category;
+		}
 	}
 	
 	/**
@@ -183,11 +226,16 @@ public class Sti_ProjectSlideshow extends SnapToItApplicationProvider
 		public String url;
 	}
 	
+	/**
+	 * This custom class renders the interfaces for other applications
+	 * @author adefreit
+	 */
 	public class LayeredPaneDemo extends JFrame implements MouseListener
 	{
-		JPanel presentationPanel;
-		JPanel qrPanel;
-		JPanel titlePanel;
+		private static final long serialVersionUID = 1L;
+		private JPanel presentationPanel;
+		private JPanel qrPanel;
+		private JPanel titlePanel;
 		
 		int qrMode = 0;
 		
@@ -252,36 +300,41 @@ public class Sti_ProjectSlideshow extends SnapToItApplicationProvider
 				  
 				  qrPanel.removeAll();
 				  
-				  if (qrMode == 0)
+				  // List Mode is only Active
+				  listMode = (qrMode == 0);
+				  
+				  if (qrMode == 0 || qrMode == 1)
 				  {
-					  qrPanel.setBounds(0,0,0,0);  
-				  }
-				  else if (qrMode == 1)
-				  {
-					  qrPanel.setBounds(20, 50, qrImage.getWidth(null), qrImage.getHeight(null));
+					  qrPanel.setBounds(0,0,0,0);
 				  }
 				  else if (qrMode == 2)
 				  {
-					  qrPanel.setBounds(this.getWidth() - qrImage.getWidth(null) - 20, 50, qrImage.getWidth(null), qrImage.getHeight(null));
+					  qrPanel.setBounds(20, 50, qrImage.getWidth(null), qrImage.getHeight(null));
 				  }
 				  else if (qrMode == 3)
 				  {
-					  qrPanel.setBounds(this.getWidth() - qrImage.getWidth(null) - 20, this.getHeight() - qrImage.getHeight(null) - 20, qrImage.getWidth(null), qrImage.getHeight(null));
+					  qrPanel.setBounds(this.getWidth() - qrImage.getWidth(null) - 20, 50, qrImage.getWidth(null), qrImage.getHeight(null));
 				  }
 				  else if (qrMode == 4)
 				  {
+					  qrPanel.setBounds(this.getWidth() - qrImage.getWidth(null) - 20, this.getHeight() - qrImage.getHeight(null) - 20, qrImage.getWidth(null), qrImage.getHeight(null));
+				  }
+				  else if (qrMode == 5)
+				  {
 					  qrPanel.setBounds(20, this.getHeight() - qrImage.getHeight(null) - 20, qrImage.getWidth(null), qrImage.getHeight(null));
 				  }
-				  
+				  				  
 				  qrPanel.setBackground(null);
 				  qrPanel.add(lblQR);
 				  qrPanel.revalidate();
 				  qrPanel.repaint();
 				  
 				  // Update the Title
-				  JLabel lblTitle = new JLabel("Take A Picture of this Screen Using the CMU Impromptu App (Android Only) to get the Full Paper");
+				  JLabel lblTitle = (listMode) ? 
+						  new JLabel("Take A Picture of this Screen Using the CMU Impromptu App (Android Only) to get the Full Paper*") : 
+						  new JLabel("Take A Picture of this Screen Using the CMU Impromptu App (Android Only) to get the Full Paper");
 				  lblTitle.setFont(new Font("Arial", Font.PLAIN, 24));
-				  lblTitle.setForeground(Color.WHITE);
+				  lblTitle.setForeground((listMode) ? Color.YELLOW : Color.WHITE);
 				  
 				  titlePanel.removeAll();
 				  titlePanel.setBounds(0, 0, this.getWidth(), 35);
@@ -301,7 +354,7 @@ public class Sti_ProjectSlideshow extends SnapToItApplicationProvider
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			qrMode = (qrMode + 1) % 5;
+			qrMode = (qrMode + 1) % 6;
 			System.out.println("QR Mode: " + qrMode);
 			update(currentProject.image);
 		}

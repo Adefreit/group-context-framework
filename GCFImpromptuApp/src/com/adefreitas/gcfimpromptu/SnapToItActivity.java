@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,7 +43,8 @@ public class SnapToItActivity extends ActionBarActivity implements SurfaceHolder
 
 	// Constants
 	private static final String LOG_NAME		 	   = "SnapToIt";
-	public  static final String CLOUD_UPLOAD_URL 	   = "http://gcf.cmu-tbank.com/snaptoit/upload_image.php";
+	//public  static final String CLOUD_UPLOAD_URL 	   = "http://gcf.cmu-tbank.com/snaptoit/upload_image.php";
+	public  static final String CLOUD_UPLOAD_URL 	   = "http://epiwork.hcii.cs.cmu.edu/~adrian/snaptoit/upload_image.php";
 	public  static final String ACTION_PHOTO_SUBMITTED = "STI Photo Submitted";
 	public  static final int    IMAGE_WIDTH			   = 640;
 	public  static final int    IMAGE_HEIGHT		   = 480;
@@ -133,7 +135,11 @@ public class SnapToItActivity extends ActionBarActivity implements SurfaceHolder
 		// Notifies the Application that the Window is Active
 		this.application.setInForeground(true);
 		
-		application.getGroupContextManager().sendRequest("COMPASS", ContextRequest.LOCAL_ONLY, new String[0], 500, new String[0]);
+		// Only Asks for Compass if it is not already being requested
+		if (application.getGroupContextManager().getRequest("COMPASS") == null)
+		{
+			application.getGroupContextManager().sendRequest("COMPASS", ContextRequest.LOCAL_ONLY, new String[0], 500, new String[0]);
+		}
 	}
 	
 	/**
@@ -160,8 +166,14 @@ public class SnapToItActivity extends ActionBarActivity implements SurfaceHolder
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
+		
 		if (id == R.id.action_settings) {
 			return true;
+		}
+		else if (id == R.id.action_onboard)
+		{
+			LinearLayout layoutOnboard = (LinearLayout)this.findViewById(R.id.layoutOnboard);
+			layoutOnboard.setVisibility(View.VISIBLE);
 		}
 		return super.onOptionsItemSelected(item);
 	}

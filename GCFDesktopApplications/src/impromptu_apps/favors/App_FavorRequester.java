@@ -22,12 +22,12 @@ public class App_FavorRequester extends DesktopApplicationProvider
 		// Creates App with Default Settings
 		super(groupContextManager, 
 				"FAVOR_REQUEST",
-				"Favor Requester",
+				"Request a Favor",
 				"This app lets you request a favor.",
 				"FAVORS",
 				new String[] { },  // Contexts
 				new String[] { },  // Preferences
-				"http://cdn5.fedobe.com/wp-content/uploads/2012/09/service-icon-concept.png", // LOGO
+				"http://advising.unc.edu/files/2014/05/icon-help-chat.png", // LOGO
 				3600,
 				commMode,
 				ipAddress,
@@ -39,7 +39,7 @@ public class App_FavorRequester extends DesktopApplicationProvider
 	@Override
 	public String[] getInterface(ContextSubscriptionInfo subscription)
 	{
-		return new String[] { "WEBSITE=http://gcf.cmu-tbank.com/apps/favors/submitFavor.php?deviceID=" + subscription.getDeviceID()};
+		return new String[] { "WEBSITE=http://gcf.cmu-tbank.com/apps/favors/submitFavor.php?deviceID=" + subscription.getDeviceID() + "&mode=request"};
 	}
 
 	@Override

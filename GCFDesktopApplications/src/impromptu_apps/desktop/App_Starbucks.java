@@ -44,6 +44,21 @@ public class App_Starbucks extends DesktopApplicationProvider
 		coordinates.put("UPMC Shadyside", new Point2D.Double(40.455807, -79.939505));
 		coordinates.put("Copeland St", new Point2D.Double(40.451680, -79.934961));
 		coordinates.put("Squirrel Hill", new Point2D.Double(40.430686, -79.923124));
+		coordinates.put("Penn Ave (Inside Target)", new Point2D.Double(40.460810, -79.921170));
+		coordinates.put("East Side", new Point2D.Double(40.459022, -79.927600));
+		coordinates.put("Liberty Ave", new Point2D.Double(40.461134, -79.947555));
+		coordinates.put("Murray Ave", new Point2D.Double(40.430662, -79.923028));
+		coordinates.put("East Carson St", new Point2D.Double(40.428656, -79.983987));
+		coordinates.put("Park Manor", new Point2D.Double(40.452584, -80.164393));
+		coordinates.put("Robinson Mall", new Point2D.Double(40.454441, -80.157002));
+		coordinates.put("Summit Park", new Point2D.Double(40.448245, -80.179330));
+		coordinates.put("Carnot-Moon", new Point2D.Double(40.516437, -80.219894));
+		coordinates.put("McKnight Rd (Inside Target)", new Point2D.Double(40.526168, -80.008014));
+		coordinates.put("Ross Park Mall", new Point2D.Double(40.543624, -80.007592));
+		coordinates.put("Siebert Rd", new Point2D.Double(40.530281, -80.010725));
+		coordinates.put("McKnight Rd", new Point2D.Double(40.546535, -80.017905));
+		coordinates.put("Wexford (Near Sorgels)", new Point2D.Double(40.616908, -80.092646));
+		coordinates.put("Wexford (Perry Hwy)", new Point2D.Double(40.622571, -80.053383));
 	}
 	
 	private boolean nearLocation(JSONContextParser parser, double km)
@@ -104,6 +119,6 @@ public class App_Starbucks extends DesktopApplicationProvider
 	public boolean sendAppData(String json)
 	{
 		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, json);
-		return nearLocation(parser, 0.25);
+		return nearLocation(parser, 0.10) && !this.inVehicle(parser);
 	}
 }

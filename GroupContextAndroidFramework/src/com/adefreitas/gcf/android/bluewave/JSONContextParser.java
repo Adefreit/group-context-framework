@@ -24,7 +24,17 @@ public class JSONContextParser
 	
 	/**
 	 * Constructor
-	 * @param json
+	 * @param data The JSON string representing the context
+	 */
+	public JSONContextParser(String data)
+	{
+		parseJSON(data);
+	}
+	
+	/**
+	 * Constructor
+	 * @param mode Specifies if the data field contains a JSON string or file path 
+	 * @param data The JSON string, or file path
 	 */
 	public JSONContextParser(int mode, String data)
 	{
@@ -38,7 +48,7 @@ public class JSONContextParser
 		}
 	}
 	
-	public void parseJSON(String json)
+	private void parseJSON(String json)
 	{
 		try
 		{
@@ -52,7 +62,7 @@ public class JSONContextParser
 		}
 	}
 	
-	public void parseJSONFile(String filePath)
+	private void parseJSONFile(String filePath)
 	{
 		//Log.d(LOG_NAME, "Parsing File: " + filePath);
 		File downloadedFile = new File(filePath);

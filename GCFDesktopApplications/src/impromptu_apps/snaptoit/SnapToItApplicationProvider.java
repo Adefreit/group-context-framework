@@ -9,9 +9,9 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import com.adefreit.openimajtoolkit.OpenImajToolkit;
+import com.adefreitas.gcf.CommManager.CommMode;
 import com.adefreitas.gcf.ContextSubscriptionInfo;
 import com.adefreitas.gcf.GroupContextManager;
-import com.adefreitas.gcf.CommManager.CommMode;
 import com.adefreitas.gcf.desktop.toolkit.FileToolkit;
 import com.adefreitas.gcf.desktop.toolkit.HttpToolkit;
 import com.adefreitas.gcf.desktop.toolkit.JSONContextParser;
@@ -150,13 +150,13 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 								System.out.println("  RESULT: Replace Photo");
 								this.removePhoto(bestMatch.getPhotoPath());
 								FileToolkit.copyFile(photo, newFile);
-								this.addAppliancePhoto(newFile.getAbsolutePath(), System.currentTimeMillis(), false, true, false, photoAzimuth, photoPitch, photoRoll);	
+								this.addAppliancePhoto(newFile.getAbsolutePath(), System.currentTimeMillis(), false, true, false, photoAzimuth, photoPitch, photoRoll, true);	
 							}
 							else if (bestAzimuthDifference > 22.5 || bestPitchDifference > 22.5)
 							{
 								System.out.println("  RESULT: Add Photo");
 								FileToolkit.copyFile(photo, newFile);
-								this.addAppliancePhoto(newFile.getAbsolutePath(), System.currentTimeMillis(), false, true, false, photoAzimuth, photoPitch, photoRoll);	
+								this.addAppliancePhoto(newFile.getAbsolutePath(), System.currentTimeMillis(), false, true, false, photoAzimuth, photoPitch, photoRoll, true);	
 							}
 							else
 							{
@@ -233,7 +233,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 			// In debug mode, the device ALWAYS responds to any photo
 			return this.hasEmailAddress(parser, "adrian.defreitas@gmail.com");
 		}
-		else if (this.getDistance(parser, 40.443683, -79.945576) < 20.0)
+		else if (this.getDistance(parser, 40.443683, -79.945576) < 1.0)
 		{	
 			String deviceID = this.getDeviceID(parser);
 			
@@ -256,7 +256,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 					// Downloads the File
 					String localPhotoPath = this.getLocalStorageFolder() + this.getContextType() + "_" + System.currentTimeMillis() + ".jpeg";		// Local File Location
 					HttpToolkit.downloadFile(photoURL, localPhotoPath);
-					this.addAppliancePhoto(localPhotoPath, timestamp, false, true, false, azimuth, pitch, roll);
+					this.addAppliancePhoto(localPhotoPath, timestamp, false, true, false, azimuth, pitch, roll, true);
 				}
 				else
 				{
@@ -300,6 +300,10 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 				else if (!snapToItObject.has("TIMESTAMP"))
 				{
 					System.out.print("Missing Timestamp ");
+				}
+				else
+				{
+					System.out.print("UNEXPECTED CONDITION");
 				}
 			}	
 		}	
@@ -389,6 +393,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 		long totalDownloadTime  = 0;
 		ArrayList<PhotoInfo> photosToCompare = new ArrayList<PhotoInfo>(); 
 		int bestMatch = Integer.MIN_VALUE;
+		int numComparisons = 0;
 		
 		if (photoURL != null)
 		{
@@ -399,7 +404,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 			String userPhotoPath = DesktopApplicationProvider.APP_DATA_FOLDER + USER_PHOTO_FOLDER + filename;	
 			
 			// Performs Comparisons (as needed)
-			if (deviceID != null && photoURL != null && (photoURL.endsWith("jpeg") || photoURL.endsWith("jpg")))
+			if (deviceID != null && photoURL != null && (photoURL.endsWith("jpeg") || photoURL.endsWith("jpg") || photoURL.endsWith("sift")))
 			{				
 				// STEP 1:  Determines if the Device's Photograph Needs to be Downloaded Again
 				if (!photos.containsKey(userPhotoPath) || photos.get(userPhotoPath).getTimestamp() < timestamp)
@@ -459,6 +464,9 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 								bestPhoto = photo.getPhotoPath();
 								bestMatch = matches;
 							}	
+							
+							// Increments a Counter
+							numComparisons++;
 						}
 					}
 					
@@ -468,65 +476,6 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 					// Forgets User Photo Features After the Comparison Has Been Made
 					openimaj.forgetFeatures(userPhotoPath);	
 				}
-				
-//				// STEP 2:  Erases the Comparison History if we Downloaded a new Photo
-//				if (!comparisonHistory.containsKey(deviceID) || timestamp > comparisonHistory.get(deviceID).getLastModifiedTime())
-//				{	
-//					// Creates a New Empty Comparison Entry for this Photo
-//					comparisonHistory.put(deviceID, new CompareInfo(deviceID, timestamp));
-//				}
-//				
-//				// STEP 3:  Perform Comparisons (or Use Preexisting Cache)
-//				if (comparisonHistory.containsKey(deviceID) && comparisonHistory.get(deviceID).containsResults())
-//				{
-//					System.out.println("    Using Precached Result for " + cloudPhotoPath);
-//				}
-//				else
-//				{						
-//					// Looks for Likely Photo Candidates
-//					for (PhotoInfo photo : photos.values())
-//					{
-//						if (photo.isAppliance && photo.getContextType().equals(this.getContextType()))
-//						{							
-//							if (photo.isCloseEnough(azimuth, pitch, roll))
-//							{
-//								System.out.println("*");		
-//								photosToCompare.add(photo);	
-//							}
-//							else
-//							{
-//								System.out.println();
-//							}
-//						}
-//					}
-//						
-//					// Compares Device Photo to Pictures on Record
-//					System.out.println("    Comparing user photo to " + photosToCompare.size() + " library images.");
-//					
-//					int bestMatch = Integer.MIN_VALUE;
-//					
-//					for (PhotoInfo photo : photosToCompare)
-//					{
-//						// Performs the Actual Comparison
-//						Date startCompare = new Date();
-//						int matches = openimaj.compareImages(photo.getPhotoPath(), userPhotoPath);
-//						totalCompareTime += new Date().getTime() - startCompare.getTime();
-//						
-//						// Displays the Results
-//						System.out.println("     Comparing " + cloudPhotoPath + " vs " + photo.getPhotoPath() + ":  "+ matches);
-//						
-//						if (matches > bestMatch)
-//						{
-//							bestMatch = matches;
-//							
-//							// Stores the Results
-//							comparisonHistory.get(deviceID).addComparisonResult(photo.getPhotoPath(), matches);
-//						}
-//					}
-//					
-//					// Forgets User Photo Features After the Comparison Has Been Made
-//					openimaj.forgetFeatures(userPhotoPath);
-//				}
 			}
 			
 			// DEBUG:  Reports Timing Data
@@ -534,7 +483,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 			System.out.println("    Total Time Elapsed:   " + (new Date().getTime() - startTime) + "ms");
 			System.out.println("    Image Download Time:  " + (totalDownloadTime) + "ms");
 			System.out.println("    Feature Compute Time: " + (featureComputeTime) + "ms");
-			System.out.println("    Avg Comparison Time:  " + ((double)totalCompareTime / (double)Math.max(1, photosToCompare.size())) + "ms");
+			System.out.println("    Avg Comparison Time:  " + ((double)totalCompareTime / (double)Math.max(1, numComparisons)) + "ms");
 			System.out.println("    Best # Match:         " + comparisonHistory.get(deviceID).getBestMatch());
 			System.out.println("    Best File:            " + comparisonHistory.get(deviceID).getBestMatchFilename());
 			System.out.println("    -----------------------------");
@@ -625,7 +574,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 					
 					if (photosDownloaded.contains(name))
 					{
-						addAppliancePhoto(this.getLocalStorageFolder() + name, System.currentTimeMillis(), false, true, false, azimuth, pitch, roll);
+						addAppliancePhoto(this.getLocalStorageFolder() + name, System.currentTimeMillis(), false, true, false, azimuth, pitch, roll, true);
 					}	
 				}
 			}
@@ -638,20 +587,48 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 	 * Associates a Photograph with this Application Service
 	 * @param photoPath
 	 */
-	public void addAppliancePhoto(String photoPath, long timestamp, boolean isUserPhoto, boolean isAppliance, boolean isScreenshot, double azimuth, double pitch, double roll)
+	public void addAppliancePhoto(String photoPath, long timestamp, boolean isUserPhoto, boolean isAppliance, boolean isScreenshot, double azimuth, double pitch, double roll, boolean processLocal)
 	{
 		System.out.printf("Adding %s [isAppliance=%s, screenshot=%s, azimuth=%1.1f, pitch=%1.1f, roll=%1.1f] . . . ", photoPath, isAppliance, isScreenshot, azimuth, pitch, roll);
+		
+		long startTime = System.currentTimeMillis();
 		
 		if (!photos.containsKey(photoPath))
 		{
 			photos.put(photoPath, new PhotoInfo(photoPath, timestamp, this.getContextType(), isUserPhoto, isAppliance, isScreenshot, azimuth, pitch, roll));
-			openimaj.computeFeatures(photoPath);
-			System.out.println("ADDED");
+			
+			if (processLocal)
+			{
+				openimaj.computeFeatures(photoPath);
+				System.out.println("  PROCESSED LOCALLY");
+			}
+			else
+			{	
+				try
+				{
+					// Posts the File, and Obtains the URL
+					String url = HttpToolkit.post(
+							"http://epiwork.hcii.cs.cmu.edu/~adrian/snaptoit/upload_image.php?deviceID=" + this.getGroupContextManager().getDeviceID(), 
+							"jpeg=" + Base64.encodeFromFile(photoPath));
+					
+					String filename = url.substring(url.lastIndexOf("/"));
+					HttpToolkit.downloadFile(url, this.getLocalStorageFolder() + filename);
+					openimaj.computeFeatures(this.getLocalStorageFolder() + filename);
+					
+					System.out.println("  PROCESSED via SERVER: " + url);
+				}
+				catch (Exception ex)
+				{
+					System.out.println("  Problem Occurred During Server Processing: " + ex.getMessage());
+				}
+			}
 		}
 		else
 		{
 			System.out.println("ALREADY ADDED");
 		}
+		
+		System.out.println("  Time Elapsed: " + (System.currentTimeMillis() - startTime) + " ms");
 	}
 	
 	/**
@@ -660,7 +637,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 	 */
 	public void addPhoto(String photoPath)
 	{
-		addAppliancePhoto(photoPath, 0, false, true, false, 0.0, 0.0, 0.0);
+		addAppliancePhoto(photoPath, 0, false, true, false, 0.0, 0.0, 0.0, true);
 	}
 	
 	/**
@@ -757,7 +734,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 		
 		// Computes New Features
 		photos.remove(screenshot.getPath());
-		addAppliancePhoto(screenshot.getPath(), System.currentTimeMillis(), false, true, true, azimuth, pitch, roll);
+		addAppliancePhoto(screenshot.getPath(), System.currentTimeMillis(), false, true, true, azimuth, pitch, roll, false);
 		
 		// Updates Screenshot
 		currentScreenshot = (currentScreenshot + 1) % maxScreenshots;
@@ -795,6 +772,18 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 		}
 	}
 		
+	public boolean isHostDeviceMac()
+	{
+		String OS = System.getProperty("os.name").toLowerCase();
+		return OS.indexOf("mac") >= 0;
+	}
+	
+	public boolean isHostDeviceWindows()
+	{
+		String OS = System.getProperty("os.name").toLowerCase();
+		return OS.indexOf("win") >= 0;
+	}
+	
 	// RESEARCH EXPERIMENT METHODS ---------------------------------------------------------------------
 	public String getDebugDescription()
 	{
@@ -945,7 +934,7 @@ public abstract class SnapToItApplicationProvider extends DesktopApplicationProv
 		
 		return Integer.parseInt(printer);
 	}
-	
+		
     public static double standardDeviation(Double[] values) {
         double mean = mean(values);
         double n = values.length;

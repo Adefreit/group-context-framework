@@ -16,7 +16,6 @@ import com.adefreitas.gcf.messages.ComputeInstruction;
 
 public class App_LocationWebsite extends DesktopApplicationProvider
 {
-	private String				    name;
 	private String					websiteURL;
 	private double					minDistanceInKm;
 	private ArrayList<LocationInfo> locations;
@@ -47,8 +46,7 @@ public class App_LocationWebsite extends DesktopApplicationProvider
 				commMode,
 				ipAddress,
 				port);
-		
-		this.name 		 	 = name;
+
 		this.websiteURL  	 = websiteURL;
 		this.description 	 = description;
 		this.minDistanceInKm = minDistanceInKm;
@@ -72,24 +70,7 @@ public class App_LocationWebsite extends DesktopApplicationProvider
 	{
 		locations.add(new LocationInfo(locationName, url, description, category, logoPath, latitude, longitude));
 	}
-	
-	private boolean nearLocation(JSONContextParser parser, double km)
-	{
-		double bestDistance = Double.MAX_VALUE;
 		
-		for (LocationInfo location : locations)
-		{
-			double distance = this.getDistance(parser, location.latitude, location.longitude);
-			
-			if (distance < bestDistance)
-			{
-				bestDistance = distance;
-			}
-		}
-		
-		return bestDistance <= km;
-	}
-	
 	private LocationInfo getNearestLocation(JSONContextParser parser)
 	{
 		LocationInfo bestLocation = null;
@@ -129,7 +110,18 @@ public class App_LocationWebsite extends DesktopApplicationProvider
 	public boolean sendAppData(String json)
 	{
 		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, json);
-		return nearLocation(parser, minDistanceInKm);
+	
+		for (LocationInfo location : locations)
+		{
+			double distance = this.getDistance(parser, location.latitude, location.longitude);
+			
+			if (distance < minDistanceInKm)
+			{
+				return !this.inVehicle(parser);
+			}
+		}
+		
+		return false;
 	}
 
 	/**

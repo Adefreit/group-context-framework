@@ -15,10 +15,11 @@ import com.adefreitas.gcf.messages.ContextCapability;
 import com.adefreitas.gcf.messages.ContextData;
 import com.adefreitas.gcf.messages.ContextRequest;
 import com.adefreitas.gcf.messages.ContextSubscription;
+import com.adefreitas.messages.ContextSubscription.SubscriptionUpdateType;
 
 public abstract class GroupContextManager
 {
-	public static final double FRAMEWORK_VERSION = 0.91;
+	public static final double FRAMEWORK_VERSION = 0.95;
 	public static enum DeviceType { Desktop, Laptop, Mobile, Sensor, Other };
 
 	// Log Types
@@ -66,7 +67,7 @@ public abstract class GroupContextManager
 	private ArrayList<ContextRequest> 	  internalRequests;
 	private HashMap<ContextRequest, Date> lastHeartbeat;
 	
-	// Stores Unprocessed Capability Advertisements Sent to this Device
+	// Unprocessed Capability Advertisements (Clears Every Time Scheduled Tasks Runs)
 	private ArrayList<ContextCapability> receivedCapabilities;
 	
 	// Keeps Track of Capabilities that this Device has Subscribed to
@@ -506,19 +507,42 @@ public abstract class GroupContextManager
 			deviceIDs = new String[] { this.getDeviceID() };
 		}
 		
-		// Creates the Context Request
-		ContextRequest request = new ContextRequest(deviceID, contextType, requestType, deviceIDs, refreshRate, w_battery, w_sensorFitness, w_foreign, w_providing, w_reliability, parameters);
+		ContextRequest request = this.getRequest(contextType);
 		
-		// Looks for an Identical Request
-		ContextRequest existingRequest = this.getRequest(contextType);
-		
-		if (existingRequest == null)
+		if (request == null)
 		{			
-			// Adds the Request to the System if it Does Not Already Exist
+			// Creates the Context Request
+			request = new ContextRequest(deviceID, contextType, requestType, deviceIDs, refreshRate, w_battery, w_sensorFitness, w_foreign, w_providing, w_reliability, parameters);
+			
+			// Adds the Request to the System
 			internalRequests.add(request);
 		}
+		else
+		{
+			// TODO:  Update the Request
+			request.setDestination(deviceIDs);
+		}
 		
-		// Checks to make sure the comm thread exists before sending it
+		// Removes Devices that are Currently Subscribed, but Not in the Devices List
+		if (subscribedCapabilities.containsKey(contextType))
+		{
+			ArrayList<ContextCapability> unsubscribeList = new ArrayList<ContextCapability>();
+			
+			for (ContextCapability capability : subscribedCapabilities.get(contextType))
+			{
+				if (!request.isDestination(capability.getDeviceID()))
+				{
+					unsubscribeList.add(capability);
+				}
+			}
+			
+			if (unsubscribeList.size() > 0)
+			{
+				this.sendSubscriptions(ContextSubscription.SubscriptionUpdateType.Unsubscribe, request, unsubscribeList.toArray(new ContextCapability[0]));
+			}
+		}
+		
+		// Checks to make sure the comm manager exists before trying to send it
 		if (commManager != null)
 		{			
 			// Sends Request
@@ -569,35 +593,6 @@ public abstract class GroupContextManager
 			if (r.getContextType().equals(type))
 			{
 				cancelRequest(r, false);
-				break;
-			}
-		}
-	}
-	
-	/**
-	 * Unsubscribes from a Single Context Provider
-	 * @param type
-	 * @param deviceID
-	 */
-	public void cancelRequest(String type, String deviceID)
-	{
-		// Looks for the Context Type Amongst all Requests
-		for (ContextRequest r : internalRequests)
-		{
-			if (r.getContextType().equals(type))
-			{
-				if (subscribedCapabilities.containsKey(r))
-				{
-					for (ContextCapability capability : new ArrayList<ContextCapability>(subscribedCapabilities.get(r)))
-					{
-						if (capability.getDeviceID().equals(deviceID))
-						{
-							cancelRequest(r, capability, false);
-							break;
-						}
-					}
-				}
-				
 				break;
 			}
 		}
@@ -753,30 +748,7 @@ public abstract class GroupContextManager
 			log(LOG_ERROR, "Provider " + requestType + " could not be removed:  No Request Type Found");
 		}
 	}
-	
-	// (ABSTRACT) SYSTEM EVENTS -----------------------------------------------------------------------------------------------------
-	public abstract void log(String category, String message);
-	
-	protected abstract void onContextDataReceived(ContextData data, ContextRequest request);
-	
-	protected abstract void onCapabilityReceived(ContextCapability capability);
-	
-	protected abstract void onCapabilitySubscribe(ContextCapability capability);
-	
-	protected abstract void onCapabilityUnsubscribe(ContextCapability capability);
-	
-	protected abstract void onRequestReceived(ContextRequest request);
-	
-	protected abstract void onRequestTimeout(ContextRequest request, ContextCapability capability);
-	
-	protected abstract void onSubscriptionTimeout(ContextSubscriptionInfo subscription);
-	
-	protected abstract void onProviderSubscribe(ContextProvider provider);
-	
-	protected abstract void onProviderUnsubscribe(ContextProvider provider);
-	
-	protected abstract void onSendingData(ContextData data);
-	
+		
 	// COMMUNICATIONS METHODS -----------------------------------------------------------------------------
 	/**
 	 * Creates a Communications Object for a Single Socket.  Will not create duplicate sockets.
@@ -1504,4 +1476,27 @@ public abstract class GroupContextManager
 		// Returns the Minimum Refresh Rate of all Context Providers
 		return refreshRate;
 	}
+
+	// (ABSTRACT) SYSTEM EVENTS -----------------------------------------------------------------------------------------------------
+	public abstract void log(String category, String message);
+	
+	protected abstract void onContextDataReceived(ContextData data, ContextRequest request);
+	
+	protected abstract void onCapabilityReceived(ContextCapability capability);
+	
+	protected abstract void onCapabilitySubscribe(ContextCapability capability);
+	
+	protected abstract void onCapabilityUnsubscribe(ContextCapability capability);
+	
+	protected abstract void onRequestReceived(ContextRequest request);
+	
+	protected abstract void onRequestTimeout(ContextRequest request, ContextCapability capability);
+	
+	protected abstract void onSubscriptionTimeout(ContextSubscriptionInfo subscription);
+	
+	protected abstract void onProviderSubscribe(ContextProvider provider);
+	
+	protected abstract void onProviderUnsubscribe(ContextProvider provider);
+	
+	protected abstract void onSendingData(ContextData data);
 }

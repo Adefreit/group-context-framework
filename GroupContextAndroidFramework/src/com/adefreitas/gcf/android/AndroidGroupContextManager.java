@@ -113,17 +113,7 @@ public class AndroidGroupContextManager extends GroupContextManager
 			scheduledTaskHandler.start(0);			
 		}
 	}
-	
-	public void cancelRequest(String type, String deviceID)
-	{
-		super.cancelRequest(type, deviceID);
 		
-		if (scheduledTaskHandler != null)
-		{
-			scheduledTaskHandler.start(0);			
-		}
-	}
-	
 	public void setDebug(boolean newDebug)
 	{
 		DEBUG = newDebug;

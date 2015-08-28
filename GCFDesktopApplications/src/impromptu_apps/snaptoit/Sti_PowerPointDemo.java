@@ -115,7 +115,7 @@ public class Sti_PowerPointDemo extends SnapToItApplicationProvider
 			}
 		}
 		
-		this.getGroupContextManager().cancelRequest("ACC", subscription.getDeviceID());
+		//this.getGroupContextManager().cancelRequest("ACC", subscription.getDeviceID());
 		
 		sendContext();
 	}

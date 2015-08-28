@@ -104,7 +104,7 @@ public class App_Porch extends DesktopApplicationProvider
 	{
 		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, bluewaveContext);
 		
-		if (this.getDistance(parser, 40.442730, -79.953100) < 0.5)
+		if (this.getDistance(parser, 40.442730, -79.953100) < 0.1)
 		{
 			return true;	
 		}

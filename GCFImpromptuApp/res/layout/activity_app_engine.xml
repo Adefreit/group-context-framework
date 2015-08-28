@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:keepScreenOn="false"
     android:background="#FFFFFF"
-    tools:context=".AppEngine" xmlns:app="http://schemas.android.com/apk/res/com.adefreitas.gcfmagicapp">
+    tools:context=".AppEngine" 
+    xmlns:app="http://schemas.android.com/apk/res/com.adefreitas.gcfmagicapp">
   	
     <LinearLayout
         android:layout_width="fill_parent"

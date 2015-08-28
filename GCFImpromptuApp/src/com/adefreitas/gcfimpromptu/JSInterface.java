@@ -248,10 +248,16 @@ public class JSInterface
 	@JavascriptInterface
 	public void sms(String phoneNumber)
 	{
+		sms(phoneNumber, "");
+	}
+	
+	@JavascriptInterface
+	public void sms(String phoneNumber, String body)
+	{
 		String uri= "smsto:"+phoneNumber;
         Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(uri));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.putExtra("sms_body", "");
+        intent.putExtra("sms_body", body);
         intent.putExtra("compose_mode", true);
         application.startActivity(intent);
 	}

@@ -93,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 		this.layoutInstructions 	   = (LinearLayout)this.findViewById(R.id.layoutInstructions);
 		this.imgCameraSmall 		   = (ImageView)this.findViewById(R.id.imgCameraSmall);
 		this.imgQRSmall		 		   = (ImageView)this.findViewById(R.id.imgQRSmall);
-		this.imgTextSmall	 		   = (ImageView)this.findViewById(R.id.imgTextSmall);
+		//this.imgTextSmall	 		   = (ImageView)this.findViewById(R.id.imgTextSmall);
 		this.imgIconBig   		       = (ImageView)this.findViewById(R.id.imgCameraBig);
 		this.txtInstructionTitle 	   = (TextView)this.findViewById(R.id.txtInstructionTitle);
 		this.txtInstructionDescription = (TextView)this.findViewById(R.id.txtInstructionDescription);
@@ -114,7 +114,7 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 		// Creates Event Handlers
 		this.imgCameraSmall.setOnClickListener(onSnapToItClickListener);
 		this.imgQRSmall.setOnClickListener(onQRClickListener);
-		this.imgTextSmall.setOnClickListener(onTextClickListener);
+		//this.imgTextSmall.setOnClickListener(onTextClickListener);
 		
 		// Generates the Execution Alert for an App
 		if (this.getIntent() != null && this.getIntent().hasExtra(APP_ID))
@@ -182,6 +182,11 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 	    	Intent intent = new Intent(this, SettingsActivity.class);
 	    	this.startActivity(intent);
 	    }
+		else if (item.toString().equalsIgnoreCase(this.getString(R.string.title_permissions)))
+	    {
+	    	Intent intent = new Intent(this, PermissionActivity.class);
+	    	this.startActivity(intent);
+	    }
 		else if (item.toString().equalsIgnoreCase(this.getString(R.string.title_activity_quit)))
 		{
 			// Kills the Timer Thread
@@ -216,9 +221,6 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 		
 		application.setInForeground(true);
 		
-		// Makes Sure that All Services are Working as Intended
-		application.verifyServices();
-						
 		// Sets Up the Intent Listener
 		this.registerReceiver(intentReceiver, filter);
 		
@@ -310,17 +312,17 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 	public void promptToConnect(final AppInfo app, final boolean forceConfirmation)
 	{	
 		// CHEATER CHEATER!!!
-		if (app.getAppContextType().equals("CF_REPORT"))
-		{
-		  	// Immediately Connects if No Context/Preferences are Needed
-			Intent i = new Intent(application, ProblemReport.class);
-    		startActivity(i); 
-    		application.addActiveApplication(app);
-    		selectedApp = null;
-			return;
-		}
+//		if (app.getAppContextType().equals("CF_REPORT"))
+//		{
+//		  	// Immediately Connects if No Context/Preferences are Needed
+//			Intent i = new Intent(application, ProblemReport.class);
+//    		startActivity(i); 
+//    		application.addActiveApplication(app);
+//    		selectedApp = null;
+//			return;
+//		}
 
-		if (app.getPreferences().size() == 0 && app.getContextsRequired().size() == 0 && !forceConfirmation)
+		if (false)
 		{
 			selectedApp = null;
 			
@@ -347,6 +349,7 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 			TextView 	 txtAppContexts    = (TextView)dialoglayout.findViewById(R.id.txtAppContexts);
 			TextView 	 txtAppPreferences = (TextView)dialoglayout.findViewById(R.id.txtAppPreferences);
 			LinearLayout btnRun			   = (LinearLayout)dialoglayout.findViewById(R.id.btnRun);
+			LinearLayout btnReport		   = (LinearLayout)dialoglayout.findViewById(R.id.btnReport);
 			
 			txtAppName.setText(app.getName());
 			txtAppDescription.setText(app.getDescription());
@@ -384,6 +387,25 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 		        }
 		    };
 		    
+		    final OnClickListener onButtonReportPressed = new OnClickListener() 
+			{
+				@Override
+		        public void onClick(final View v)
+		        {
+		    		alertDialog.dismiss();
+		    		
+		    		selectedApp = null;
+		    		
+		    		// Hides the App
+					app.hide();
+ 
+					// TODO:  Reports it to the Service
+					Intent updateIntent = new Intent(GCFApplication.ACTION_APP_UPDATE);
+					v.getContext().sendBroadcast(updateIntent);
+					Toast.makeText(v.getContext(), "Application Reported", Toast.LENGTH_SHORT).show();
+		        }
+		    };
+		    
 		    final OnDismissListener onDialogDismissed = new OnDismissListener()
 		    {
 				@Override
@@ -392,9 +414,10 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 					selectedApp = null;
 				}
 		    };
-		    
+		    		    
 		    // Sets Events
 		    btnRun.setOnClickListener(onButtonRunPressed);
+		    btnReport.setOnClickListener(onButtonReportPressed);
 		    alertDialog.setOnDismissListener(onDialogDismissed);
 			
 		    // Shows the Finished Dialog
@@ -423,7 +446,7 @@ public class MainActivity extends ActionBarActivity implements ContextReceiver
 		else
 		{			
 			// Displays the Snap-To-It Control (Assuming that the Feature is Enabled in Settings)
-			if (PreferenceManager.getDefaultSharedPreferences(this.getBaseContext()).getBoolean("sti_enabled", false))
+			if (PreferenceManager.getDefaultSharedPreferences(this.getBaseContext()).getBoolean("sti_enabled", true))
 			{
 				layoutSnapToIt.setVisibility(View.VISIBLE);
 			}

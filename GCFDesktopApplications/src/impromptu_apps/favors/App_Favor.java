@@ -30,6 +30,7 @@ public class App_Favor extends DesktopApplicationProvider
 	private String 	   		  desc_turnin;
 	private double	   		  latitude;
 	private double	   		  longitude;
+	private String			  submissionType;
 	private ArrayList<String> tags;
 	private ArrayList<String> sensors;
 	private ArrayList<String> matches;
@@ -54,7 +55,7 @@ public class App_Favor extends DesktopApplicationProvider
 	/**
 	 * Constructor
 	 */
-	public App_Favor(String id, FavorDispatcher dispatcher, int timestamp, String deviceID, String userName, String description, String desc_performance, 
+	public App_Favor(String id, FavorDispatcher dispatcher, int timestamp, String deviceID, String userName, String submissionType, String description, String desc_performance, 
 			String desc_turnin, double latitude, double longitude, String[] tags, String[] sensors, String status, String[] matches, 
 			GroupContextManager groupContextManager, CommMode commMode, String ipAddress, int port, SQLToolkit sqlToolkit)
 	{
@@ -81,6 +82,7 @@ public class App_Favor extends DesktopApplicationProvider
 		this.matches		  = new ArrayList<String>();
 		this.dateCreated 	  = new Date();
 		this.devicesOffered   = new ArrayList<String>();
+		this.submissionType   = submissionType;
 		
 		update(deviceID, userName, description, desc_performance, desc_turnin, latitude, longitude, tags, sensors, status, matches);
 	}
@@ -152,8 +154,8 @@ public class App_Favor extends DesktopApplicationProvider
 			if (viewerInfo.next())
 			{
 				String sensor   = viewerInfo.getString("last_sensor") != null ? viewerInfo.getString("last_sensor") : "";	
-				String contents = String.format("favorID=%s,timestamp=%d,submissionType=request,viewerDeviceID=%s,viewerLat=%f,viewerLon=%f,viewerSensor=%s,sensorTimestamp=%d",
-						this.getAppID(), this.timestamp, newSubscription.getDeviceID(), viewerInfo.getDouble("latitude"), viewerInfo.getDouble("longitude"), sensor, viewerInfo.getInt("last_sensor_date"));
+				String contents = String.format("favorID=%s,creatorDeviceID=%s,timestamp=%d,submissionType=request,viewerDeviceID=%s,viewerLat=%f,viewerLon=%f,viewerSensor=%s,sensorTimestamp=%d",
+						this.getAppID(), this.deviceID, System.currentTimeMillis(), newSubscription.getDeviceID(), viewerInfo.getDouble("latitude"), viewerInfo.getDouble("longitude"), sensor, viewerInfo.getInt("last_sensor_date"));
 				this.log("FAVOR_VIEWED", contents);
 				
 				views++;
@@ -188,7 +190,7 @@ public class App_Favor extends DesktopApplicationProvider
 		// This will make the text output pretty.  Trust me.
 		System.out.print("\n    Matches: " + matches + ": ");
 		
-		boolean result = !completed && (this.deviceID.equals(deviceID) || canViewAll(parser) || (isMatch(parser)) || deviceID.equals(acceptedDeviceID));
+		boolean result = !completed && (this.deviceID.equals(deviceID) || canViewAll(parser) || isMatch(parser) || deviceID.equals(acceptedDeviceID) || (isMatch(parser) && submissionType.equalsIgnoreCase("offer")));
 		
 		// Creates a Log Entry
 		if (result && !this.deviceID.equals(deviceID) && !devicesOffered.contains(deviceID))
@@ -197,8 +199,8 @@ public class App_Favor extends DesktopApplicationProvider
 			double latitude  = parser.getJSONObject("location").has("LATITUDE")  ?  parser.getJSONObject("location").get("LATITUDE").getAsDouble() : 0.0;
 			double longitude = parser.getJSONObject("location").has("LONGITUDE") ? parser.getJSONObject("location").get("LONGITUDE").getAsDouble() : 0.0;
 			String sensors   = parser.getJSONObject("location").has("SENSOR")    ? parser.getJSONObject("location").get("SENSOR").getAsString()    : "";
-			String contents  = String.format("favorID=%s,timestamp=%d,submissionType=request,matchedDeviceID=%s,matchedLatitude=%f,matchedLongitude=%f,matchedSensor=%s",
-					this.getAppID(), this.timestamp, deviceID, latitude, longitude, sensors);
+			String contents  = String.format("favorID=%s,creatorDeviceID=%s,timestamp=%d,submissionType=request,matchedDeviceID=%s,matchedLatitude=%f,matchedLongitude=%f,matchedSensor=%s",
+					this.getAppID(), this.deviceID, System.currentTimeMillis(), deviceID, latitude, longitude, sensors);
 			this.log("FAVOR_SENT", contents);
 		}
 		
@@ -225,7 +227,8 @@ public class App_Favor extends DesktopApplicationProvider
 			if (instruction.getPayload("completed").equalsIgnoreCase("false"))
 			{
 				String logEntry = "favorID=" + this.getAppID() + ",";
-				logEntry	   += "timestamp=" + this.timestamp + ",";
+				logEntry	   += "deviceID=" + deviceID + ",";
+				logEntry	   += "timestamp=" + System.currentTimeMillis() + ",";
 				logEntry       += "submissionType=" + "requested" + ",";
 				
 				dispatcher.markComplete(timestamp, false);
@@ -234,7 +237,8 @@ public class App_Favor extends DesktopApplicationProvider
 			else if (acceptedDeviceID.length() > 0)
 			{
 				String logEntry = "favorID=" + this.getAppID() + ",";
-				logEntry	   += "timestamp=" + this.timestamp + ",";
+				logEntry	   += "creatorDeviceID=" + deviceID + ",";
+				logEntry	   += "timestamp=" + System.currentTimeMillis()+ ",";
 				logEntry       += "submissionType=" + "requested" + ",";
 				logEntry       += "completedByDeviceID=" + acceptedDeviceID + "";
 				
@@ -244,9 +248,9 @@ public class App_Favor extends DesktopApplicationProvider
 		}
 		else if (instruction.getCommand().equalsIgnoreCase("ACCEPT_FAVOR"))
 		{
-			hasBeenAccepted = true;
+			hasBeenAccepted  = true;
 			acceptedDeviceID = instruction.getDeviceID();
-			acceptedDate = new Date();
+			acceptedDate     = new Date();
 			
 			// Generates the Log Entry
 			ResultSet viewerInfo = sqlToolkit.runQuery("SELECT * FROM favors_profile WHERE device_id='" + instruction.getDeviceID() + "'");
@@ -256,8 +260,8 @@ public class App_Favor extends DesktopApplicationProvider
 				if (viewerInfo.next())
 				{
 					String sensor   = viewerInfo.getString("last_sensor") != null ? viewerInfo.getString("last_sensor") : "";	
-					String contents = String.format("favorID=%s,timestamp=%d,submissionType=request,viewerDeviceID=%s,viewerLat=%f,viewerLon=%f,viewerSensor=%s,sensorTimestamp=%d",
-							this.getAppID(), this.timestamp, instruction.getDeviceID(), viewerInfo.getDouble("latitude"), viewerInfo.getDouble("longitude"), sensor, viewerInfo.getInt("last_sensor_date"));
+					String contents = String.format("favorID=%s,creatorDeviceID=%s,timestamp=%d,submissionType=request,viewerDeviceID=%s,viewerLat=%f,viewerLon=%f,viewerSensor=%s,sensorTimestamp=%d",
+							this.getAppID(), this.deviceID, System.currentTimeMillis(), instruction.getDeviceID(), viewerInfo.getDouble("latitude"), viewerInfo.getDouble("longitude"), sensor, viewerInfo.getInt("last_sensor_date"));
 					this.log("FAVOR_ACCEPTED", contents);
 				}
 			}
@@ -292,7 +296,8 @@ public class App_Favor extends DesktopApplicationProvider
 		}
 		else if (instruction.getCommand().equalsIgnoreCase("SEND_MESSAGE"))
 		{
-			String contents = String.format("favorID=%s,timestamp=%d,deviceID=%s", this.getAppID(), this.timestamp, instruction.getDeviceID());
+			String contents = String.format("favorID=%s,creatorDeviceID=%s,timestamp=%d,messengerDeviceID=%s", 
+					this.getAppID(), this.deviceID, System.currentTimeMillis(), instruction.getDeviceID());
 			this.log("MESSAGE_EXCHANGE", contents);
 		}
 		
@@ -311,11 +316,11 @@ public class App_Favor extends DesktopApplicationProvider
 		
 		if (deviceID.equals(this.deviceID))
 		{
-			result = "Your Favor";
+			result = (submissionType.equalsIgnoreCase("request")) ? "Your Request" : "Your Offer";
 		}
 		else
 		{
-			result = "Favor for " + userName;	
+			result = (submissionType.equalsIgnoreCase("request")) ? "Favor for " + userName : "Offer from " + userName;
 		}
 		
 		long timeInMinutes = (System.currentTimeMillis() - this.dateCreated.getTime()) / 1000 / 60;
@@ -396,6 +401,24 @@ public class App_Favor extends DesktopApplicationProvider
 	}
 	
 	/**
+	 * This method returns TRUE if the favor was reported (by the requester) to be completed
+	 * @return
+	 */
+	public boolean isCompleted()
+	{
+		return completed;
+	}
+	
+	/**
+	 * Returns the Device ID that Requested/Offered the Favor
+	 * @return
+	 */
+	public String getDeviceID()
+	{
+		return deviceID;
+	}
+	
+	/**
 	 * This method updates the contents
 	 * @param description
 	 * @param desc_performance
@@ -466,7 +489,7 @@ public class App_Favor extends DesktopApplicationProvider
 			parser, 
 			new String[] 
 			{
-
+				"adoryab@gmail.com"
 			}
 		);
 		return result;

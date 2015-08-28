@@ -1,12 +1,21 @@
 package com.adefreit.openimajtoolkit;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
 
 import org.openimaj.feature.local.list.LocalFeatureList;
+import org.openimaj.feature.local.list.MemoryLocalFeatureList;
 import org.openimaj.feature.local.matcher.FastBasicKeypointMatcher;
 import org.openimaj.feature.local.matcher.LocalFeatureMatcher;
 import org.openimaj.feature.local.matcher.MatchingUtilities;
@@ -68,8 +77,20 @@ public class OpenImajToolkit
 		{
 			if (!keypointDB.containsKey(path))
 			{
-				keypointDB.put(path, engine.findFeatures(ImageUtilities.readMBF(file).flatten()));
-				println("  [Computed Features for " + path + " in " + (new Date().getTime() - startDate.getTime()) + " ms]");
+				if (path.endsWith("jpeg") || path.endsWith("jpg"))
+				{
+					keypointDB.put(path, engine.findFeatures(ImageUtilities.readMBF(file).flatten()));
+					println("  [Computed Features for " + path + " in " + (new Date().getTime() - startDate.getTime()) + " ms]");
+				}
+				else if (path.endsWith("sift"))
+				{
+					keypointDB.put(path, deserializeFeatures(path));
+					println("  [Imported Features for " + path + " in " + (new Date().getTime() - startDate.getTime()) + " ms]");
+				}
+				else
+				{
+					println("UNKNOWN FILE TYPE: " + path);
+				}
 			}
 			else
 			{
@@ -83,34 +104,54 @@ public class OpenImajToolkit
 		}
 	}
 	
-	public String serializeFeatures(String imagePath)
+	public void serializeFeatures(String imagePath, String filePath)
 	{
 		Gson   gson     = new Gson();
 		File   image    = new File(imagePath);
-		String features = "";
 		
 		try
 		{
-			features = gson.toJson(engine.findFeatures(ImageUtilities.readMBF(image).flatten()));
+			LocalFeatureList<Keypoint> list = engine.findFeatures(ImageUtilities.readMBF(image).flatten());
+			System.out.println("List has: " + list.size() + " elements.");
+			System.out.println(list.get(0).ori + ", " + list.get(0).x);
+			
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			org.openimaj.io.IOUtils.writeBinary(baos, list);
+			byte[] bytes = baos.toByteArray();
+			
+			FileOutputStream fos = new FileOutputStream(filePath);
+			fos.write(bytes);
+			fos.close();
 		}
 		catch (Exception ex)
 		{
-			println("Problem occurred while computing features for: " + imagePath);
+			println("Problem occurred while serializing " + imagePath + ": " + ex.getMessage());
+			ex.printStackTrace();
+		}
+	}
+	
+	public synchronized LocalFeatureList<Keypoint> deserializeFeatures(String path)
+	{
+		Type keypointType = new TypeToken<LocalFeatureList<Keypoint>>(){}.getType();
+		
+		try
+		{
+			Path p = Paths.get(path);
+			byte[] bytes = Files.readAllBytes(p);
+			
+			ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+			LocalFeatureList<Keypoint> list = MemoryLocalFeatureList.read(bais, Keypoint.class);
+			System.out.println("List has: " + list.size() + " elements.");
+			
+			return list;
+		}
+		catch (Exception ex)
+		{
+			println("Problem occurred while deserializing features: " + ex.getMessage());
 			ex.printStackTrace();
 		}
 		
-		return features;
-	}
-	
-	public synchronized void deserializeFeatures(String path, String json)
-	{
-		Gson   gson 		= new Gson();
-		Type   keypointType = new TypeToken<LocalFeatureList<Keypoint>>(){}.getType();
-		LocalFeatureList<Keypoint> o = (LocalFeatureList<Keypoint>)gson.fromJson(json, keypointType);
-		
-		System.out.println(o.getClass().toString());
-				
-		//keypointDB.put(path, );
+		return null;
 	}
 	
 	public void forgetFeatures(String path)

@@ -37,8 +37,12 @@ public class App_BestBuy extends DesktopApplicationProvider
 		// NOTE:  I am using X, Y for Longitude, Latitude (the reverse of what you normally think)
 		coordinates.put("Monroeville", new Point2D.Double(40.431253,-79.799495));
 		coordinates.put("Waterfront", new Point2D.Double(40.412222, -79.903049));
-//		coordinates.put("Home", new Point2D.Double(40.434090, -79.853565));
-//		coordinates.put("NSH", new Point2D.Double(40.443608, -79.945573));
+		coordinates.put("McKnight Blvd", new Point2D.Double(40.523400, -80.006757));
+		coordinates.put("Airport", new Point2D.Double(40.452583, -80.181461));
+		coordinates.put("Bethel Park", new Point2D.Double(40.346436, -80.044705));
+		coordinates.put("West Mifflin", new Point2D.Double(40.334817, -79.944843));
+		coordinates.put("Bethel Park", new Point2D.Double(40.346436, -80.044705));
+		coordinates.put("Tarentum", new Point2D.Double(40.567497, -79.800877));
 	}
 	
 	private boolean nearLocation(JSONContextParser parser, double km)
@@ -99,6 +103,7 @@ public class App_BestBuy extends DesktopApplicationProvider
 	public boolean sendAppData(String json)
 	{
 		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, json);
-		return nearLocation(parser, 0.25);
+		return nearLocation(parser, 0.10) && !this.inVehicle(parser);
 	}
 }
+

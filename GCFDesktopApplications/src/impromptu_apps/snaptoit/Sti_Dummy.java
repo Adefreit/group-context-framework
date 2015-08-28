@@ -92,7 +92,7 @@ public class Sti_Dummy extends DesktopApplicationProvider
 		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, bluewaveContext);
 		
 		// TODO:  Specify the EXACT conditions when this app should appear
-		return this.getDeviceID(parser).equals("Device 1");
+		return this.getDeviceID(parser).equals("Nexus 5-A");
 	}
 
 	/**

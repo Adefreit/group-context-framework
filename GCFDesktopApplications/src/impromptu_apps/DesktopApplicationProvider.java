@@ -164,7 +164,7 @@ public abstract class DesktopApplicationProvider extends ApplicationProvider
 			
 			Process p = null;
 			p = Runtime.getRuntime().exec(command);
-			p.waitFor();
+			//p.waitFor();
 			
 			System.out.println("Done!");
         }
@@ -425,15 +425,18 @@ public abstract class DesktopApplicationProvider extends ApplicationProvider
 	 * @param emailDomain
 	 * @return
 	 */
-	protected boolean hasEmailDomain(JSONContextParser parser, String emailDomain)
+	protected boolean hasEmailDomain(JSONContextParser parser, String[] domains)
 	{
 		JsonArray emailDomains = parser.getJSONObject("identity").get("emailDomains").getAsJsonArray();
 		
 		for (int i=0; i<emailDomains.size(); i++)
 		{
-			if (emailDomains.get(i).getAsString().equalsIgnoreCase(emailDomain))
+			for (String domain : domains)
 			{
-				return true;
+				if (emailDomains.get(i).getAsString().equalsIgnoreCase(domain))
+				{
+					return true;
+				}	
 			}
 		}
 		

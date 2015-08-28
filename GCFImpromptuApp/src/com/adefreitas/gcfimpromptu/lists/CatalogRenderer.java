@@ -2,6 +2,7 @@ package com.adefreitas.gcfimpromptu.lists;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -33,6 +34,10 @@ public class CatalogRenderer
 	private static HashMap<String, Bitmap>		  logoDirectory     = new HashMap<String, Bitmap>();
 	private static HashMap<View, AppCategoryInfo> categoryDirectory = new HashMap<View, AppCategoryInfo>(); 
 	private static HashMap<View, AppInfo> 		  appDirectory 	    = new HashMap<View, AppInfo>();
+
+	
+	// DEBUG:  Only Used for Screenshot Purposes to Hide App Categories
+	static String[] blacklist = {  };
 	
 	/**
 	 * Generates the Views for the Application Catalog
@@ -60,15 +65,18 @@ public class CatalogRenderer
 		
 		for (AppCategoryInfo category : categories)
 		{
-			View categoryView = renderCategory(context, category);
-						
-			if (categoryView != null)
+			if (!Arrays.asList(blacklist).contains(category.getName().toUpperCase()))
 			{
-				// Stores the View with the Category for Later Reference
-				categoryDirectory.put(categoryView, category);
-				categoryView.setOnClickListener(onCategoryClickListener);
+				View categoryView = renderCategory(context, category);
 				
-				layout.addView(categoryView);
+				if (categoryView != null)
+				{
+					// Stores the View with the Category for Later Reference
+					categoryDirectory.put(categoryView, category);
+					categoryView.setOnClickListener(onCategoryClickListener);
+					
+					layout.addView(categoryView);
+				}
 			}
 		}
 		
@@ -144,7 +152,7 @@ public class CatalogRenderer
 		
 		// Determines How Many Apps to Render
 		int numAppsToRender = category.shouldRenderAll() ? availableApps.size() : 0;
-		numAppsToRender = (category.getName().equalsIgnoreCase("snap-to-it")) ? Math.max(numAppsToRender, 5) : numAppsToRender;
+		numAppsToRender = (category.getName().equalsIgnoreCase("snap-to-it")) ? Math.min(numAppsToRender, 5) : numAppsToRender;
 				
 		// Renders Apps
 		for (int i=0; i<numAppsToRender; i++)
@@ -179,6 +187,7 @@ public class CatalogRenderer
 		TextView  txtDescription = (TextView)appView.findViewById(R.id.txtDescription);
 		TextView  txtRunMessage  = (TextView)appView.findViewById(R.id.txtRunMessage);
 		ImageView imgAppLogo     = (ImageView)appView.findViewById(R.id.imgAppLogo); 
+		ImageView imgClose       = (ImageView)appView.findViewById(R.id.imgClose); 
 					
 		// Sets Contents
 		txtTitle.setText(app.getName());
@@ -216,6 +225,7 @@ public class CatalogRenderer
 		
 		// Sets Event Handler
 		appView.setOnClickListener(onAppClickListener);
+		imgClose.setOnClickListener(onCloseClickListener);
 		
 		// Returns the View
 		return appView;
@@ -260,5 +270,21 @@ public class CatalogRenderer
 				v.getContext().sendBroadcast(updateIntent);
 			}
 		}
+	};
+
+	public static final OnClickListener onCloseClickListener = new OnClickListener()
+	{
+		@Override
+		public void onClick(View v) 
+		{
+			AppInfo app = appDirectory.get(v.getParent());
+			
+			if (app != null)
+			{
+				app.hide();
+				Intent updateIntent = new Intent(GCFApplication.ACTION_APP_UPDATE);
+				v.getContext().sendBroadcast(updateIntent);
+			}
+		}	
 	};
 }

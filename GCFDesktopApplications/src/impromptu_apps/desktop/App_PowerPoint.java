@@ -195,7 +195,7 @@ public class App_PowerPoint extends DesktopApplicationProvider
 			}
 		}
 		
-		this.getGroupContextManager().cancelRequest("ACC", subscription.getDeviceID());
+		//this.getGroupContextManager().cancelRequest("ACC", subscription.getDeviceID());
 		
 		sendContext();
 	}

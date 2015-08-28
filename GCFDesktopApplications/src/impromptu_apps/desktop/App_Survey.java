@@ -1,5 +1,7 @@
 package impromptu_apps.desktop;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -9,18 +11,22 @@ import com.adefreitas.gcf.ContextSubscriptionInfo;
 import com.adefreitas.gcf.GroupContextManager;
 import com.adefreitas.gcf.CommManager.CommMode;
 import com.adefreitas.gcf.desktop.toolkit.JSONContextParser;
+import com.adefreitas.gcf.desktop.toolkit.SQLToolkit;
 import com.adefreitas.gcf.messages.ComputeInstruction;
 
 public class App_Survey extends DesktopApplicationProvider
 {	
 	public static final String   CONTEXT_TYPE  	      = "IMP_SURVEY";
 	public static final String   DEFAULT_TITLE 	      = "Impromptu Survey";
-	public static final String   DEFAULT_DESCRIPTION  = "Please take the time to fill out our Google IOT survey for Impromptu.  If you got another survey, my bad.";
+	public static final String   DEFAULT_DESCRIPTION  = "This survey asks questions about your experience with Impromptu. It only takes 5 minutes to complete!";
 	public static final String   DEFAULT_CATEGORY     = "SURVEY";
 	public static final String[] CONTEXTS_REQUIRED    = new String[] { };
 	public static final String[] PREFERENCES_REQUIRED = new String[] { };
 	public static final String   DEFAULT_LOGO_PATH    = "https://panorama-www.s3.amazonaws.com/sites/53d29249e511304c2f000002/theme/images/icon-admin.png";
-	public static final int      DEFAULT_LIFETIME	  = 3600;
+	public static final int      DEFAULT_LIFETIME	  = 300;
+	
+	private String	   surveyID	   = "";
+	private SQLToolkit sqlToolkit;
 	
 	/**
 	 * Constructor
@@ -36,7 +42,7 @@ public class App_Survey extends DesktopApplicationProvider
 	 * @param ipAddress
 	 * @param port
 	 */
-	public App_Survey(GroupContextManager groupContextManager, CommMode commMode, String ipAddress, int port)
+	public App_Survey(String surveyID, GroupContextManager groupContextManager, CommMode commMode, String ipAddress, int port, SQLToolkit sqlToolkit)
 	{
 		super(groupContextManager, 
 				CONTEXT_TYPE, 
@@ -48,6 +54,9 @@ public class App_Survey extends DesktopApplicationProvider
 				DEFAULT_LOGO_PATH, 
 				DEFAULT_LIFETIME,				
 				commMode, ipAddress, port);
+		
+		this.surveyID   = surveyID;
+		this.sqlToolkit = sqlToolkit;
 	}
 		
 	/**
@@ -67,7 +76,14 @@ public class App_Survey extends DesktopApplicationProvider
 	{
 		super.onSubscription(newSubscription);
 		
-		//Toast.makeText(this.getApplication(), newSubscription.getDeviceID() + " has subscribed.", Toast.LENGTH_LONG).show();
+		try
+		{
+			sqlToolkit.runUpdateQuery(String.format("INSERT INTO impromptu_survey (deviceID, surveyID, date) VALUES ('%s', '%s', CURRENT_TIMESTAMP)",newSubscription.getDeviceID(), surveyID));	
+		}
+		catch (Exception ex)
+		{
+			ex.printStackTrace();
+		}
 	}
 	
 	/**
@@ -87,32 +103,26 @@ public class App_Survey extends DesktopApplicationProvider
 	@Override
 	public boolean sendAppData(String bluewaveContext)
 	{
-		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, bluewaveContext);
-		return (this.hasEmailAddress(parser, new String[] { 
-				"adrian.defreitas@gmail.com", 
-				"anind@cs.cmu.edu",
-				"roywant@google.com",
-				"maxsenges@google.com",
-				"ptone@google.com",
-				"ninataft@google.com",
-				"walz@google.com",
-				"rhk@illinois.edu",
-				"shmatikov@cornell.edu",
-				"lujo.bauer@gmail.com",
-				"lorrie@cs.cmu.edu",
-				"sadeh@cs.cmu.edu",
-				"yuvraj.agarwal@gmail.com",
-				"jasonhong666@gmail.com",
-				"cmusatya@gmail.com",
-				"anthony.rowe2@gmail.com",
-				"harrisonhci@gmail.com",
-				"aninddey@gmail.com",
-				"gdarakos@cs.cmu.edu",
-				"edge.hayashi@gmail.com",
-				"awmcmu@gmail.com",
-				"lyou@google.com",
-				"youngjoo@google.com"
-				}));
+		JSONContextParser parser   = new JSONContextParser(JSONContextParser.JSON_TEXT, bluewaveContext);
+		String 			  deviceID = this.getDeviceID(parser);
+		
+		try
+		{
+			String    query  = "SELECT COUNT(*) FROM impromptu_survey WHERE deviceID='" + deviceID + "' AND surveyID = '" + surveyID + "';";
+			ResultSet result = sqlToolkit.runQuery(query);
+			
+			if (result != null && result.next())
+			{
+				int count = result.getInt(1);
+				return count == 0;
+			}
+		}
+		catch (Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		
+		return false;
 	}
 
 	/**

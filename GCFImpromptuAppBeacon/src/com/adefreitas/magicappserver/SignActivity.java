@@ -2,6 +2,7 @@ package com.adefreitas.magicappserver;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -55,7 +56,7 @@ public class SignActivity extends ActionBarActivity implements ContextReceiver
 		
 		// Sets Up Context Listening
 		application.setContextReceiver(this);
-		
+
 		signContentHandler.start(60000);
 		signContentHandler.setWebViewContent("http://gcf.cmu-tbank.com/apps/signs/default.php?deviceID=" + application.getGroupContextManager().getDeviceID().replace(" ", "%20"));
 	}
@@ -129,6 +130,7 @@ public class SignActivity extends ActionBarActivity implements ContextReceiver
 
 	// CUSTOM VARIABLES
 	private Date lastGooglerSeen = new Date(0);
+	
 	
 	// Custom Sign Behaviors --------------------------------------------------------------------
 	private void adjustSignContents(JSONContextParser parser)

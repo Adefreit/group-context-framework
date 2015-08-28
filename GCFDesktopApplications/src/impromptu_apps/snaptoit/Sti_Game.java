@@ -27,14 +27,14 @@ public class Sti_Game extends SnapToItApplicationProvider
 	{
 		super(groupContextManager, 
 				"STI_GAME_CONTROLLER",
-				"Macbook Air",
-				"Lets you control the application on this computer.",
+				"Software:  Video Game",
+				"Currently running on Macbook Air.",
 				"SNAP-TO-IT",
 				new String[] { },  // Contexts
 				new String[] { },  // Preferences
 				"http://www.gedtestingservice.com/uploads/images/medium/0a54c4f41f9bb1a1b74fe0cdaedbc0a7.jpeg",
 				//"http://inwallspeakers1.com/wp-content/uploads/2014/06/gaming-controller-icon.png",				   // LOGO
-				30,
+				60,
 				commMode,
 				ipAddress,
 				port);
@@ -72,7 +72,7 @@ public class Sti_Game extends SnapToItApplicationProvider
 		
 		if (listMode)
 		{
-			return this.getDeviceID(parser).equals("Device 1");
+			return this.getDeviceID(parser).equals("Nexus 5-A");
 		}
 		else
 		{

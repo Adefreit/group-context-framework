@@ -1740,14 +1740,14 @@ containing a value of this type.
         public static int zOrderOnTop=0x7f010014;
     }
     public static final class bool {
-        public static int abc_action_bar_embed_tabs=0x7f0c0000;
-        public static int abc_action_bar_embed_tabs_pre_jb=0x7f0c0001;
-        public static int abc_action_bar_expanded_action_views_exclusive=0x7f0c0002;
+        public static int abc_action_bar_embed_tabs=0x7f0b0000;
+        public static int abc_action_bar_embed_tabs_pre_jb=0x7f0b0001;
+        public static int abc_action_bar_expanded_action_views_exclusive=0x7f0b0002;
         /**  Whether action menu items should be displayed in ALLCAPS or not.
          Defaults to true. If this is not appropriate for specific locales
          it should be disabled in that locale's resources. 
          */
-        public static int abc_config_actionMenuItemAllCaps=0x7f0c0005;
+        public static int abc_config_actionMenuItemAllCaps=0x7f0b0005;
         /**  Whether action menu items should obey the "withText" showAsAction
     flag. This may be set to false for situations where space is
     extremely limited. 
@@ -1755,206 +1755,206 @@ containing a value of this type.
          This may be set to false for situations where space is
          extremely limited. 
          */
-        public static int abc_config_allowActionMenuItemTextWithIcon=0x7f0c0004;
-        public static int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f0c0003;
-        public static int is_jelly_bean=0x7f0c0006;
-        public static int is_not_jelly_bean=0x7f0c0007;
+        public static int abc_config_allowActionMenuItemTextWithIcon=0x7f0b0004;
+        public static int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f0b0003;
+        public static int is_jelly_bean=0x7f0b0006;
+        public static int is_not_jelly_bean=0x7f0b0007;
     }
     public static final class color {
-        public static int abc_background_cache_hint_selector_material_dark=0x7f0a0048;
-        public static int abc_background_cache_hint_selector_material_light=0x7f0a0049;
-        public static int abc_input_method_navigation_guard=0x7f0a001a;
-        public static int abc_primary_text_disable_only_material_dark=0x7f0a004a;
-        public static int abc_primary_text_disable_only_material_light=0x7f0a004b;
-        public static int abc_primary_text_material_dark=0x7f0a004c;
-        public static int abc_primary_text_material_light=0x7f0a004d;
-        public static int abc_search_url_text=0x7f0a004e;
-        public static int abc_search_url_text_normal=0x7f0a0017;
-        public static int abc_search_url_text_pressed=0x7f0a0019;
-        public static int abc_search_url_text_selected=0x7f0a0018;
-        public static int abc_secondary_text_material_dark=0x7f0a004f;
-        public static int abc_secondary_text_material_light=0x7f0a0050;
-        public static int accent_material_dark=0x7f0a0026;
-        public static int accent_material_light=0x7f0a0025;
-        public static int background_floating_material_dark=0x7f0a001d;
-        public static int background_floating_material_light=0x7f0a001e;
-        public static int background_material_dark=0x7f0a001b;
-        public static int background_material_light=0x7f0a001c;
+        public static int abc_background_cache_hint_selector_material_dark=0x7f090048;
+        public static int abc_background_cache_hint_selector_material_light=0x7f090049;
+        public static int abc_input_method_navigation_guard=0x7f09001a;
+        public static int abc_primary_text_disable_only_material_dark=0x7f09004a;
+        public static int abc_primary_text_disable_only_material_light=0x7f09004b;
+        public static int abc_primary_text_material_dark=0x7f09004c;
+        public static int abc_primary_text_material_light=0x7f09004d;
+        public static int abc_search_url_text=0x7f09004e;
+        public static int abc_search_url_text_normal=0x7f090017;
+        public static int abc_search_url_text_pressed=0x7f090019;
+        public static int abc_search_url_text_selected=0x7f090018;
+        public static int abc_secondary_text_material_dark=0x7f09004f;
+        public static int abc_secondary_text_material_light=0x7f090050;
+        public static int accent_material_dark=0x7f090026;
+        public static int accent_material_light=0x7f090025;
+        public static int background_floating_material_dark=0x7f09001d;
+        public static int background_floating_material_light=0x7f09001e;
+        public static int background_material_dark=0x7f09001b;
+        public static int background_material_light=0x7f09001c;
         /**  White 50% 
          */
-        public static int bright_foreground_disabled_material_dark=0x7f0a002d;
+        public static int bright_foreground_disabled_material_dark=0x7f09002d;
         /**  Black 50% 
          */
-        public static int bright_foreground_disabled_material_light=0x7f0a002e;
-        public static int bright_foreground_inverse_material_dark=0x7f0a002f;
-        public static int bright_foreground_inverse_material_light=0x7f0a0030;
-        public static int bright_foreground_material_dark=0x7f0a002b;
-        public static int bright_foreground_material_light=0x7f0a002c;
-        public static int button_material_dark=0x7f0a0027;
-        public static int button_material_light=0x7f0a0028;
-        public static int common_action_bar_splitter=0x7f0a0009;
+        public static int bright_foreground_disabled_material_light=0x7f09002e;
+        public static int bright_foreground_inverse_material_dark=0x7f09002f;
+        public static int bright_foreground_inverse_material_light=0x7f090030;
+        public static int bright_foreground_material_dark=0x7f09002b;
+        public static int bright_foreground_material_light=0x7f09002c;
+        public static int button_material_dark=0x7f090027;
+        public static int button_material_light=0x7f090028;
+        public static int common_action_bar_splitter=0x7f090009;
         /**  Sign-in Button Colors 
          */
-        public static int common_signin_btn_dark_text_default=0x7f0a0000;
-        public static int common_signin_btn_dark_text_disabled=0x7f0a0002;
-        public static int common_signin_btn_dark_text_focused=0x7f0a0003;
-        public static int common_signin_btn_dark_text_pressed=0x7f0a0001;
-        public static int common_signin_btn_default_background=0x7f0a0008;
-        public static int common_signin_btn_light_text_default=0x7f0a0004;
-        public static int common_signin_btn_light_text_disabled=0x7f0a0006;
-        public static int common_signin_btn_light_text_focused=0x7f0a0007;
-        public static int common_signin_btn_light_text_pressed=0x7f0a0005;
-        public static int common_signin_btn_text_dark=0x7f0a0051;
-        public static int common_signin_btn_text_light=0x7f0a0052;
-        public static int dim_foreground_disabled_material_dark=0x7f0a0033;
-        public static int dim_foreground_disabled_material_light=0x7f0a0034;
-        public static int dim_foreground_material_dark=0x7f0a0031;
-        public static int dim_foreground_material_light=0x7f0a0032;
+        public static int common_signin_btn_dark_text_default=0x7f090000;
+        public static int common_signin_btn_dark_text_disabled=0x7f090002;
+        public static int common_signin_btn_dark_text_focused=0x7f090003;
+        public static int common_signin_btn_dark_text_pressed=0x7f090001;
+        public static int common_signin_btn_default_background=0x7f090008;
+        public static int common_signin_btn_light_text_default=0x7f090004;
+        public static int common_signin_btn_light_text_disabled=0x7f090006;
+        public static int common_signin_btn_light_text_focused=0x7f090007;
+        public static int common_signin_btn_light_text_pressed=0x7f090005;
+        public static int common_signin_btn_text_dark=0x7f090051;
+        public static int common_signin_btn_text_light=0x7f090052;
+        public static int dim_foreground_disabled_material_dark=0x7f090033;
+        public static int dim_foreground_disabled_material_light=0x7f090034;
+        public static int dim_foreground_material_dark=0x7f090031;
+        public static int dim_foreground_material_light=0x7f090032;
         /**  TODO: This is 40% alpha on the default accent color. 
          */
-        public static int highlighted_text_material_dark=0x7f0a0037;
+        public static int highlighted_text_material_dark=0x7f090037;
         /**  TODO: This is 40% alpha on the default accent color. 
          */
-        public static int highlighted_text_material_light=0x7f0a0038;
-        public static int hint_foreground_material_dark=0x7f0a0035;
-        public static int hint_foreground_material_light=0x7f0a0036;
-        public static int link_text_material_dark=0x7f0a0039;
-        public static int link_text_material_light=0x7f0a003a;
-        public static int material_blue_grey_800=0x7f0a0045;
-        public static int material_blue_grey_900=0x7f0a0046;
-        public static int material_blue_grey_950=0x7f0a0047;
-        public static int material_deep_teal_200=0x7f0a0043;
-        public static int material_deep_teal_500=0x7f0a0044;
-        public static int primary_dark_material_dark=0x7f0a0021;
-        public static int primary_dark_material_light=0x7f0a0022;
-        public static int primary_material_dark=0x7f0a001f;
-        public static int primary_material_light=0x7f0a0020;
-        public static int primary_text_default_material_dark=0x7f0a003d;
-        public static int primary_text_default_material_light=0x7f0a003b;
+        public static int highlighted_text_material_light=0x7f090038;
+        public static int hint_foreground_material_dark=0x7f090035;
+        public static int hint_foreground_material_light=0x7f090036;
+        public static int link_text_material_dark=0x7f090039;
+        public static int link_text_material_light=0x7f09003a;
+        public static int material_blue_grey_800=0x7f090045;
+        public static int material_blue_grey_900=0x7f090046;
+        public static int material_blue_grey_950=0x7f090047;
+        public static int material_deep_teal_200=0x7f090043;
+        public static int material_deep_teal_500=0x7f090044;
+        public static int primary_dark_material_dark=0x7f090021;
+        public static int primary_dark_material_light=0x7f090022;
+        public static int primary_material_dark=0x7f09001f;
+        public static int primary_material_light=0x7f090020;
+        public static int primary_text_default_material_dark=0x7f09003d;
+        public static int primary_text_default_material_light=0x7f09003b;
         /**  30% of default values 
          */
-        public static int primary_text_disabled_material_dark=0x7f0a0041;
+        public static int primary_text_disabled_material_dark=0x7f090041;
         /**  26% of default values 
          */
-        public static int primary_text_disabled_material_light=0x7f0a003f;
-        public static int ripple_material_dark=0x7f0a0023;
-        public static int ripple_material_light=0x7f0a0024;
-        public static int secondary_text_default_material_dark=0x7f0a003e;
-        public static int secondary_text_default_material_light=0x7f0a003c;
-        public static int secondary_text_disabled_material_dark=0x7f0a0042;
-        public static int secondary_text_disabled_material_light=0x7f0a0040;
-        public static int switch_thumb_normal_material_dark=0x7f0a0029;
-        public static int switch_thumb_normal_material_light=0x7f0a002a;
-        public static int wallet_bright_foreground_disabled_holo_light=0x7f0a000f;
+        public static int primary_text_disabled_material_light=0x7f09003f;
+        public static int ripple_material_dark=0x7f090023;
+        public static int ripple_material_light=0x7f090024;
+        public static int secondary_text_default_material_dark=0x7f09003e;
+        public static int secondary_text_default_material_light=0x7f09003c;
+        public static int secondary_text_disabled_material_dark=0x7f090042;
+        public static int secondary_text_disabled_material_light=0x7f090040;
+        public static int switch_thumb_normal_material_dark=0x7f090029;
+        public static int switch_thumb_normal_material_light=0x7f09002a;
+        public static int wallet_bright_foreground_disabled_holo_light=0x7f09000f;
         /** 
          Wallet colors to support consistent Wallet fragment holo dark UI in client application
          regardless of the theme and device type
     
          */
-        public static int wallet_bright_foreground_holo_dark=0x7f0a000a;
-        public static int wallet_bright_foreground_holo_light=0x7f0a0010;
-        public static int wallet_dim_foreground_disabled_holo_dark=0x7f0a000c;
-        public static int wallet_dim_foreground_holo_dark=0x7f0a000b;
-        public static int wallet_dim_foreground_inverse_disabled_holo_dark=0x7f0a000e;
-        public static int wallet_dim_foreground_inverse_holo_dark=0x7f0a000d;
-        public static int wallet_highlighted_text_holo_dark=0x7f0a0014;
-        public static int wallet_highlighted_text_holo_light=0x7f0a0013;
-        public static int wallet_hint_foreground_holo_dark=0x7f0a0012;
-        public static int wallet_hint_foreground_holo_light=0x7f0a0011;
-        public static int wallet_holo_blue_light=0x7f0a0015;
-        public static int wallet_link_text_light=0x7f0a0016;
-        public static int wallet_primary_text_holo_light=0x7f0a0053;
-        public static int wallet_secondary_text_holo_dark=0x7f0a0054;
+        public static int wallet_bright_foreground_holo_dark=0x7f09000a;
+        public static int wallet_bright_foreground_holo_light=0x7f090010;
+        public static int wallet_dim_foreground_disabled_holo_dark=0x7f09000c;
+        public static int wallet_dim_foreground_holo_dark=0x7f09000b;
+        public static int wallet_dim_foreground_inverse_disabled_holo_dark=0x7f09000e;
+        public static int wallet_dim_foreground_inverse_holo_dark=0x7f09000d;
+        public static int wallet_highlighted_text_holo_dark=0x7f090014;
+        public static int wallet_highlighted_text_holo_light=0x7f090013;
+        public static int wallet_hint_foreground_holo_dark=0x7f090012;
+        public static int wallet_hint_foreground_holo_light=0x7f090011;
+        public static int wallet_holo_blue_light=0x7f090015;
+        public static int wallet_link_text_light=0x7f090016;
+        public static int wallet_primary_text_holo_light=0x7f090053;
+        public static int wallet_secondary_text_holo_dark=0x7f090054;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
  Default height of an action bar. 
  Default height of an action bar. 
          */
-        public static int abc_action_bar_default_height_material=0x7f0d0014;
+        public static int abc_action_bar_default_height_material=0x7f0c0014;
         /**  Default padding of an action bar. 
  Default padding of an action bar. 
  Default padding of an action bar. 
          */
-        public static int abc_action_bar_default_padding_material=0x7f0d0015;
+        public static int abc_action_bar_default_padding_material=0x7f0c0015;
         /**  Vertical padding around action bar icons. 
          */
-        public static int abc_action_bar_icon_vertical_padding_material=0x7f0d0016;
+        public static int abc_action_bar_icon_vertical_padding_material=0x7f0c0016;
         /**  Size of the indeterminate Progress Bar 
  Size of the indeterminate Progress Bar 
          */
-        public static int abc_action_bar_progress_bar_size=0x7f0d0005;
+        public static int abc_action_bar_progress_bar_size=0x7f0c0005;
         /**  Maximum height for a stacked tab bar as part of an action bar 
          */
-        public static int abc_action_bar_stacked_max_height=0x7f0d0004;
+        public static int abc_action_bar_stacked_max_height=0x7f0c0004;
         /**  Maximum width for a stacked action bar tab. This prevents
          action bar tabs from becoming too wide on a wide screen when only
          a few are present. 
          */
-        public static int abc_action_bar_stacked_tab_max_width=0x7f0d0003;
+        public static int abc_action_bar_stacked_tab_max_width=0x7f0c0003;
         /**  Bottom margin for action bar subtitles 
          */
-        public static int abc_action_bar_subtitle_bottom_margin_material=0x7f0d0018;
+        public static int abc_action_bar_subtitle_bottom_margin_material=0x7f0c0018;
         /**  Top margin for action bar subtitles 
          */
-        public static int abc_action_bar_subtitle_top_margin_material=0x7f0d0017;
-        public static int abc_action_button_min_height_material=0x7f0d001b;
-        public static int abc_action_button_min_width_material=0x7f0d001a;
-        public static int abc_action_button_min_width_overflow_material=0x7f0d0019;
+        public static int abc_action_bar_subtitle_top_margin_material=0x7f0c0017;
+        public static int abc_action_button_min_height_material=0x7f0c001b;
+        public static int abc_action_button_min_width_material=0x7f0c001a;
+        public static int abc_action_button_min_width_overflow_material=0x7f0c0019;
         /**  The maximum width we would prefer dialogs to be.  0 if there is no
     maximum (let them grow as large as the screen).  Actual values are
     specified for -large and -xlarge configurations. 
  see comment in values/config.xml 
  see comment in values/config.xml 
          */
-        public static int abc_config_prefDialogWidth=0x7f0d0002;
+        public static int abc_config_prefDialogWidth=0x7f0c0002;
         /**  Default insets (outer padding) around controls 
          */
-        public static int abc_control_inset_material=0x7f0d0010;
+        public static int abc_control_inset_material=0x7f0c0010;
         /**  Default inner padding within controls 
          */
-        public static int abc_control_padding_material=0x7f0d0011;
+        public static int abc_control_padding_material=0x7f0c0011;
         /**  Width of the icon in a dropdown list 
          */
-        public static int abc_dropdownitem_icon_width=0x7f0d000b;
+        public static int abc_dropdownitem_icon_width=0x7f0c000b;
         /**  Text padding for dropdown items 
          */
-        public static int abc_dropdownitem_text_padding_left=0x7f0d0009;
-        public static int abc_dropdownitem_text_padding_right=0x7f0d000a;
-        public static int abc_panel_menu_list_width=0x7f0d0006;
+        public static int abc_dropdownitem_text_padding_left=0x7f0c0009;
+        public static int abc_dropdownitem_text_padding_right=0x7f0c000a;
+        public static int abc_panel_menu_list_width=0x7f0c0006;
         /**  Preferred width of the search view. 
          */
-        public static int abc_search_view_preferred_width=0x7f0d0008;
+        public static int abc_search_view_preferred_width=0x7f0c0008;
         /**  Minimum width of the search view text entry area. 
  Minimum width of the search view text entry area. 
  Minimum width of the search view text entry area. 
  Minimum width of the search view text entry area. 
  Minimum width of the search view text entry area. 
          */
-        public static int abc_search_view_text_min_width=0x7f0d0007;
-        public static int abc_text_size_body_1_material=0x7f0d0025;
-        public static int abc_text_size_body_2_material=0x7f0d0024;
-        public static int abc_text_size_button_material=0x7f0d0027;
-        public static int abc_text_size_caption_material=0x7f0d0026;
-        public static int abc_text_size_display_1_material=0x7f0d001f;
-        public static int abc_text_size_display_2_material=0x7f0d001e;
-        public static int abc_text_size_display_3_material=0x7f0d001d;
-        public static int abc_text_size_display_4_material=0x7f0d001c;
-        public static int abc_text_size_headline_material=0x7f0d0020;
-        public static int abc_text_size_large_material=0x7f0d0028;
-        public static int abc_text_size_medium_material=0x7f0d0029;
-        public static int abc_text_size_menu_material=0x7f0d0023;
-        public static int abc_text_size_small_material=0x7f0d002a;
-        public static int abc_text_size_subhead_material=0x7f0d0022;
+        public static int abc_search_view_text_min_width=0x7f0c0007;
+        public static int abc_text_size_body_1_material=0x7f0c0025;
+        public static int abc_text_size_body_2_material=0x7f0c0024;
+        public static int abc_text_size_button_material=0x7f0c0027;
+        public static int abc_text_size_caption_material=0x7f0c0026;
+        public static int abc_text_size_display_1_material=0x7f0c001f;
+        public static int abc_text_size_display_2_material=0x7f0c001e;
+        public static int abc_text_size_display_3_material=0x7f0c001d;
+        public static int abc_text_size_display_4_material=0x7f0c001c;
+        public static int abc_text_size_headline_material=0x7f0c0020;
+        public static int abc_text_size_large_material=0x7f0c0028;
+        public static int abc_text_size_medium_material=0x7f0c0029;
+        public static int abc_text_size_menu_material=0x7f0c0023;
+        public static int abc_text_size_small_material=0x7f0c002a;
+        public static int abc_text_size_subhead_material=0x7f0c0022;
         /**  Use the default subtitle sizes on tablets. 
  Default text size for action bar subtitle.
          */
-        public static int abc_text_size_subtitle_material_toolbar=0x7f0d0013;
-        public static int abc_text_size_title_material=0x7f0d0021;
+        public static int abc_text_size_subtitle_material_toolbar=0x7f0c0013;
+        public static int abc_text_size_title_material=0x7f0c0021;
         /**  Use the default title sizes on tablets. 
  Default text size for action bar title.
          */
-        public static int abc_text_size_title_material_toolbar=0x7f0d0012;
+        public static int abc_text_size_title_material_toolbar=0x7f0c0012;
         /**  The platform's desired fixed height for a dialog along the major axis
          (the screen is in portrait). This may be either a fraction or a dimension.
  The platform's desired fixed height for a dialog along the major axis
@@ -1962,7 +1962,7 @@ containing a value of this type.
  The platform's desired fixed height for a dialog along the major axis
          (the screen is in portrait). This may be either a fraction or a dimension.
          */
-        public static int dialog_fixed_height_major=0x7f0d000e;
+        public static int dialog_fixed_height_major=0x7f0c000e;
         /**  The platform's desired fixed height for a dialog along the minor axis
          (the screen is in landscape). This may be either a fraction or a dimension.
  The platform's desired fixed height for a dialog along the minor axis
@@ -1970,7 +1970,7 @@ containing a value of this type.
  The platform's desired fixed height for a dialog along the minor axis
          (the screen is in landscape). This may be either a fraction or a dimension.
          */
-        public static int dialog_fixed_height_minor=0x7f0d000f;
+        public static int dialog_fixed_height_minor=0x7f0c000f;
         /**  The platform's desired fixed width for a dialog along the major axis
          (the screen is in landscape). This may be either a fraction or a dimension.
  The platform's desired fixed width for a dialog along the major axis
@@ -1978,7 +1978,7 @@ containing a value of this type.
  The platform's desired fixed width for a dialog along the major axis
          (the screen is in landscape). This may be either a fraction or a dimension.
          */
-        public static int dialog_fixed_width_major=0x7f0d000c;
+        public static int dialog_fixed_width_major=0x7f0c000c;
         /**  The platform's desired fixed width for a dialog along the minor axis
          (the screen is in portrait). This may be either a fraction or a dimension.
  The platform's desired fixed width for a dialog along the minor axis
@@ -1986,9 +1986,9 @@ containing a value of this type.
  The platform's desired fixed width for a dialog along the minor axis
          (the screen is in portrait). This may be either a fraction or a dimension.
          */
-        public static int dialog_fixed_width_minor=0x7f0d000d;
-        public static int disabled_alpha_material_dark=0x7f0d0001;
-        public static int disabled_alpha_material_light=0x7f0d0000;
+        public static int dialog_fixed_width_minor=0x7f0c000d;
+        public static int disabled_alpha_material_dark=0x7f0c0001;
+        public static int disabled_alpha_material_light=0x7f0c0000;
     }
     public static final class drawable {
         public static int abc_ab_share_pack_holo_dark=0x7f020000;
@@ -2083,108 +2083,108 @@ containing a value of this type.
         public static int powered_by_google_light=0x7f020059;
     }
     public static final class id {
-        public static int action_bar=0x7f090046;
-        public static int action_bar_activity_content=0x7f09002d;
-        public static int action_bar_container=0x7f090045;
-        public static int action_bar_root=0x7f090041;
-        public static int action_bar_spinner=0x7f09002c;
-        public static int action_bar_subtitle=0x7f090034;
-        public static int action_bar_title=0x7f090033;
-        public static int action_context_bar=0x7f090047;
-        public static int action_menu_divider=0x7f09002f;
-        public static int action_menu_presenter=0x7f090030;
-        public static int action_mode_bar=0x7f090043;
-        public static int action_mode_bar_stub=0x7f090042;
-        public static int action_mode_close_button=0x7f090035;
-        public static int activity_chooser_view_content=0x7f090036;
-        public static int adjust_height=0x7f090002;
-        public static int adjust_width=0x7f090001;
-        public static int always=0x7f090022;
-        public static int beginning=0x7f090027;
-        public static int book_now=0x7f090012;
-        public static int buyButton=0x7f09000c;
-        public static int buy_now=0x7f090011;
-        public static int buy_with_google=0x7f090010;
-        public static int checkbox=0x7f09003e;
-        public static int classic=0x7f090014;
-        public static int collapseActionView=0x7f090024;
-        public static int decor_content_parent=0x7f090044;
-        public static int default_activity_button=0x7f090039;
-        public static int dialog=0x7f090025;
-        public static int disableHome=0x7f09001f;
-        public static int donate_with_google=0x7f090013;
-        public static int dropdown=0x7f090026;
-        public static int edit_query=0x7f090048;
-        public static int end=0x7f090029;
-        public static int esm_answers=0x7f09005b;
-        public static int esm_cancel=0x7f090056;
-        public static int esm_checkboxes=0x7f090055;
-        public static int esm_feedback=0x7f09005d;
-        public static int esm_instructions=0x7f090054;
-        public static int esm_likert=0x7f090058;
-        public static int esm_max=0x7f09005a;
-        public static int esm_min=0x7f090059;
-        public static int esm_radio=0x7f09005c;
-        public static int esm_submit=0x7f090057;
-        public static int expand_activities_button=0x7f090037;
-        public static int expanded_menu=0x7f09003d;
-        public static int grayscale=0x7f090015;
-        public static int holo_dark=0x7f090007;
-        public static int holo_light=0x7f090008;
-        public static int home=0x7f09002a;
-        public static int homeAsUp=0x7f09001c;
-        public static int hybrid=0x7f090006;
-        public static int icon=0x7f09003b;
-        public static int ifRoom=0x7f090021;
-        public static int image=0x7f090038;
-        public static int listMode=0x7f090018;
-        public static int list_item=0x7f09003a;
-        public static int loading_addons=0x7f090064;
-        public static int match_parent=0x7f09000e;
-        public static int middle=0x7f090028;
-        public static int monochrome=0x7f090016;
-        public static int never=0x7f090020;
-        public static int none=0x7f090000;
-        public static int normal=0x7f090003;
-        public static int plugin_author=0x7f090060;
-        public static int plugin_list=0x7f090065;
-        public static int plugin_name=0x7f09005e;
-        public static int plugin_settings=0x7f090061;
-        public static int plugin_toggle=0x7f090062;
-        public static int plugin_update_download=0x7f090063;
-        public static int plugin_version=0x7f09005f;
-        public static int production=0x7f090009;
-        public static int progress_circular=0x7f090031;
-        public static int progress_horizontal=0x7f090032;
-        public static int radio=0x7f090040;
-        public static int sandbox=0x7f09000a;
-        public static int satellite=0x7f090004;
-        public static int search_badge=0x7f09004a;
-        public static int search_bar=0x7f090049;
-        public static int search_button=0x7f09004b;
-        public static int search_close_btn=0x7f090050;
-        public static int search_edit_frame=0x7f09004c;
-        public static int search_go_btn=0x7f090052;
-        public static int search_mag_icon=0x7f09004d;
-        public static int search_plate=0x7f09004e;
-        public static int search_src_text=0x7f09004f;
-        public static int search_voice_btn=0x7f090053;
-        public static int selectionDetails=0x7f09000d;
-        public static int shortcut=0x7f09003f;
-        public static int showCustom=0x7f09001e;
-        public static int showHome=0x7f09001b;
-        public static int showTitle=0x7f09001d;
-        public static int slide=0x7f090017;
-        public static int split_action_bar=0x7f09002e;
-        public static int strict_sandbox=0x7f09000b;
-        public static int submit_area=0x7f090051;
-        public static int tabMode=0x7f090019;
-        public static int terrain=0x7f090005;
-        public static int title=0x7f09003c;
-        public static int up=0x7f09002b;
-        public static int useLogo=0x7f09001a;
-        public static int withText=0x7f090023;
-        public static int wrap_content=0x7f09000f;
+        public static int action_bar=0x7f0d0046;
+        public static int action_bar_activity_content=0x7f0d0003;
+        public static int action_bar_container=0x7f0d0045;
+        public static int action_bar_root=0x7f0d0041;
+        public static int action_bar_spinner=0x7f0d0002;
+        public static int action_bar_subtitle=0x7f0d0034;
+        public static int action_bar_title=0x7f0d0033;
+        public static int action_context_bar=0x7f0d0047;
+        public static int action_menu_divider=0x7f0d0005;
+        public static int action_menu_presenter=0x7f0d0006;
+        public static int action_mode_bar=0x7f0d0043;
+        public static int action_mode_bar_stub=0x7f0d0042;
+        public static int action_mode_close_button=0x7f0d0035;
+        public static int activity_chooser_view_content=0x7f0d0036;
+        public static int adjust_height=0x7f0d0009;
+        public static int adjust_width=0x7f0d000a;
+        public static int always=0x7f0d0029;
+        public static int beginning=0x7f0d0030;
+        public static int book_now=0x7f0d0019;
+        public static int buyButton=0x7f0d0015;
+        public static int buy_now=0x7f0d001a;
+        public static int buy_with_google=0x7f0d001b;
+        public static int checkbox=0x7f0d003e;
+        public static int classic=0x7f0d001d;
+        public static int collapseActionView=0x7f0d002a;
+        public static int decor_content_parent=0x7f0d0044;
+        public static int default_activity_button=0x7f0d0039;
+        public static int dialog=0x7f0d002e;
+        public static int disableHome=0x7f0d0023;
+        public static int donate_with_google=0x7f0d001c;
+        public static int dropdown=0x7f0d002f;
+        public static int edit_query=0x7f0d0048;
+        public static int end=0x7f0d0031;
+        public static int esm_answers=0x7f0d005b;
+        public static int esm_cancel=0x7f0d0056;
+        public static int esm_checkboxes=0x7f0d0055;
+        public static int esm_feedback=0x7f0d005d;
+        public static int esm_instructions=0x7f0d0054;
+        public static int esm_likert=0x7f0d0058;
+        public static int esm_max=0x7f0d005a;
+        public static int esm_min=0x7f0d0059;
+        public static int esm_radio=0x7f0d005c;
+        public static int esm_submit=0x7f0d0057;
+        public static int expand_activities_button=0x7f0d0037;
+        public static int expanded_menu=0x7f0d003d;
+        public static int grayscale=0x7f0d001e;
+        public static int holo_dark=0x7f0d0010;
+        public static int holo_light=0x7f0d0011;
+        public static int home=0x7f0d0000;
+        public static int homeAsUp=0x7f0d0024;
+        public static int hybrid=0x7f0d000c;
+        public static int icon=0x7f0d003b;
+        public static int ifRoom=0x7f0d002b;
+        public static int image=0x7f0d0038;
+        public static int listMode=0x7f0d0021;
+        public static int list_item=0x7f0d003a;
+        public static int loading_addons=0x7f0d0064;
+        public static int match_parent=0x7f0d0017;
+        public static int middle=0x7f0d0032;
+        public static int monochrome=0x7f0d001f;
+        public static int never=0x7f0d002c;
+        public static int none=0x7f0d000b;
+        public static int normal=0x7f0d000d;
+        public static int plugin_author=0x7f0d0060;
+        public static int plugin_list=0x7f0d0065;
+        public static int plugin_name=0x7f0d005e;
+        public static int plugin_settings=0x7f0d0061;
+        public static int plugin_toggle=0x7f0d0062;
+        public static int plugin_update_download=0x7f0d0063;
+        public static int plugin_version=0x7f0d005f;
+        public static int production=0x7f0d0012;
+        public static int progress_circular=0x7f0d0007;
+        public static int progress_horizontal=0x7f0d0008;
+        public static int radio=0x7f0d0040;
+        public static int sandbox=0x7f0d0013;
+        public static int satellite=0x7f0d000e;
+        public static int search_badge=0x7f0d004a;
+        public static int search_bar=0x7f0d0049;
+        public static int search_button=0x7f0d004b;
+        public static int search_close_btn=0x7f0d0050;
+        public static int search_edit_frame=0x7f0d004c;
+        public static int search_go_btn=0x7f0d0052;
+        public static int search_mag_icon=0x7f0d004d;
+        public static int search_plate=0x7f0d004e;
+        public static int search_src_text=0x7f0d004f;
+        public static int search_voice_btn=0x7f0d0053;
+        public static int selectionDetails=0x7f0d0016;
+        public static int shortcut=0x7f0d003f;
+        public static int showCustom=0x7f0d0025;
+        public static int showHome=0x7f0d0026;
+        public static int showTitle=0x7f0d0027;
+        public static int slide=0x7f0d0020;
+        public static int split_action_bar=0x7f0d0004;
+        public static int strict_sandbox=0x7f0d0014;
+        public static int submit_area=0x7f0d0051;
+        public static int tabMode=0x7f0d0022;
+        public static int terrain=0x7f0d000f;
+        public static int title=0x7f0d003c;
+        public static int up=0x7f0d0001;
+        public static int useLogo=0x7f0d0028;
+        public static int withText=0x7f0d002d;
+        public static int wrap_content=0x7f0d0018;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -2209,8 +2209,8 @@ containing a value of this type.
          an action bar/action mode. This will be used to determine how many
          showAsAction="ifRoom" items can fit. "always" items can override this. 
          */
-        public static int abc_max_action_buttons=0x7f0b0001;
-        public static int google_play_services_version=0x7f0b0000;
+        public static int abc_max_action_buttons=0x7f0a0001;
+        public static int google_play_services_version=0x7f0a0000;
     }
     public static final class layout {
         public static int abc_action_bar_title_item=0x7f030000;
@@ -2880,7 +2880,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:background
         */
-        public static final int ActionBar_background = 11;
+        public static int ActionBar_background = 11;
         /**
           <p>
           @attr description
@@ -2894,7 +2894,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:backgroundSplit
         */
-        public static final int ActionBar_backgroundSplit = 13;
+        public static int ActionBar_backgroundSplit = 13;
         /**
           <p>
           @attr description
@@ -2908,7 +2908,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:backgroundStacked
         */
-        public static final int ActionBar_backgroundStacked = 12;
+        public static int ActionBar_backgroundStacked = 12;
         /**
           <p>
           @attr description
@@ -2927,7 +2927,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:contentInsetEnd
         */
-        public static final int ActionBar_contentInsetEnd = 22;
+        public static int ActionBar_contentInsetEnd = 22;
         /**
           <p>
           @attr description
@@ -2946,7 +2946,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:contentInsetLeft
         */
-        public static final int ActionBar_contentInsetLeft = 23;
+        public static int ActionBar_contentInsetLeft = 23;
         /**
           <p>
           @attr description
@@ -2965,7 +2965,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:contentInsetRight
         */
-        public static final int ActionBar_contentInsetRight = 24;
+        public static int ActionBar_contentInsetRight = 24;
         /**
           <p>
           @attr description
@@ -2984,7 +2984,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:contentInsetStart
         */
-        public static final int ActionBar_contentInsetStart = 21;
+        public static int ActionBar_contentInsetStart = 21;
         /**
           <p>
           @attr description
@@ -2996,7 +2996,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:customNavigationLayout
         */
-        public static final int ActionBar_customNavigationLayout = 14;
+        public static int ActionBar_customNavigationLayout = 14;
         /**
           <p>
           @attr description
@@ -3020,7 +3020,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:displayOptions
         */
-        public static final int ActionBar_displayOptions = 4;
+        public static int ActionBar_displayOptions = 4;
         /**
           <p>
           @attr description
@@ -3032,7 +3032,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:divider
         */
-        public static final int ActionBar_divider = 10;
+        public static int ActionBar_divider = 10;
         /**
           <p>
           @attr description
@@ -3050,7 +3050,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:elevation
         */
-        public static final int ActionBar_elevation = 25;
+        public static int ActionBar_elevation = 25;
         /**
           <p>
           @attr description
@@ -3068,7 +3068,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:height
         */
-        public static final int ActionBar_height = 1;
+        public static int ActionBar_height = 1;
         /**
           <p>
           @attr description
@@ -3084,7 +3084,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:hideOnContentScroll
         */
-        public static final int ActionBar_hideOnContentScroll = 20;
+        public static int ActionBar_hideOnContentScroll = 20;
         /**
           <p>
           @attr description
@@ -3096,7 +3096,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:homeAsUpIndicator
         */
-        public static final int ActionBar_homeAsUpIndicator = 2;
+        public static int ActionBar_homeAsUpIndicator = 2;
         /**
           <p>
           @attr description
@@ -3108,7 +3108,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:homeLayout
         */
-        public static final int ActionBar_homeLayout = 15;
+        public static int ActionBar_homeLayout = 15;
         /**
           <p>
           @attr description
@@ -3120,7 +3120,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:icon
         */
-        public static final int ActionBar_icon = 8;
+        public static int ActionBar_icon = 8;
         /**
           <p>
           @attr description
@@ -3132,7 +3132,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:indeterminateProgressStyle
         */
-        public static final int ActionBar_indeterminateProgressStyle = 17;
+        public static int ActionBar_indeterminateProgressStyle = 17;
         /**
           <p>
           @attr description
@@ -3151,7 +3151,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:itemPadding
         */
-        public static final int ActionBar_itemPadding = 19;
+        public static int ActionBar_itemPadding = 19;
         /**
           <p>
           @attr description
@@ -3163,7 +3163,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:logo
         */
-        public static final int ActionBar_logo = 9;
+        public static int ActionBar_logo = 9;
         /**
           <p>
           @attr description
@@ -3183,7 +3183,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:navigationMode
         */
-        public static final int ActionBar_navigationMode = 3;
+        public static int ActionBar_navigationMode = 3;
         /**
           <p>
           @attr description
@@ -3196,7 +3196,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:popupTheme
         */
-        public static final int ActionBar_popupTheme = 26;
+        public static int ActionBar_popupTheme = 26;
         /**
           <p>
           @attr description
@@ -3214,7 +3214,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:progressBarPadding
         */
-        public static final int ActionBar_progressBarPadding = 18;
+        public static int ActionBar_progressBarPadding = 18;
         /**
           <p>
           @attr description
@@ -3226,7 +3226,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:progressBarStyle
         */
-        public static final int ActionBar_progressBarStyle = 16;
+        public static int ActionBar_progressBarStyle = 16;
         /**
           <p>
           @attr description
@@ -3242,7 +3242,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:subtitle
         */
-        public static final int ActionBar_subtitle = 5;
+        public static int ActionBar_subtitle = 5;
         /**
           <p>
           @attr description
@@ -3254,7 +3254,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:subtitleTextStyle
         */
-        public static final int ActionBar_subtitleTextStyle = 7;
+        public static int ActionBar_subtitleTextStyle = 7;
         /**
           <p>
           @attr description
@@ -3270,7 +3270,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:title
         */
-        public static final int ActionBar_title = 0;
+        public static int ActionBar_title = 0;
         /**
           <p>
           @attr description
@@ -3282,7 +3282,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:titleTextStyle
         */
-        public static final int ActionBar_titleTextStyle = 6;
+        public static int ActionBar_titleTextStyle = 6;
         /**  Valid LayoutParams for views placed in the action bar as custom views. 
            <p>Includes the following attributes:</p>
            <table>
@@ -3301,7 +3301,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           attribute's value can be found in the {@link #ActionBarLayout} array.
           @attr name android:layout_gravity
         */
-        public static final int ActionBarLayout_android_layout_gravity = 0;
+        public static int ActionBarLayout_android_layout_gravity = 0;
         /** Attributes that can be used with a ActionMenuItemView.
            <p>Includes the following attributes:</p>
            <table>
@@ -3320,7 +3320,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           attribute's value can be found in the {@link #ActionMenuItemView} array.
           @attr name android:minWidth
         */
-        public static final int ActionMenuItemView_android_minWidth = 0;
+        public static int ActionMenuItemView_android_minWidth = 0;
         /**  Size of padding on either end of a divider. 
          */
         public static final int[] ActionMenuView = {
@@ -3361,7 +3361,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:background
         */
-        public static final int ActionMode_background = 3;
+        public static int ActionMode_background = 3;
         /**
           <p>
           @attr description
@@ -3375,7 +3375,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:backgroundSplit
         */
-        public static final int ActionMode_backgroundSplit = 4;
+        public static int ActionMode_backgroundSplit = 4;
         /**
           <p>
           @attr description
@@ -3387,7 +3387,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:closeItemLayout
         */
-        public static final int ActionMode_closeItemLayout = 5;
+        public static int ActionMode_closeItemLayout = 5;
         /**
           <p>
           @attr description
@@ -3405,7 +3405,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:height
         */
-        public static final int ActionMode_height = 0;
+        public static int ActionMode_height = 0;
         /**
           <p>
           @attr description
@@ -3417,7 +3417,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:subtitleTextStyle
         */
-        public static final int ActionMode_subtitleTextStyle = 2;
+        public static int ActionMode_subtitleTextStyle = 2;
         /**
           <p>
           @attr description
@@ -3429,7 +3429,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:titleTextStyle
         */
-        public static final int ActionMode_titleTextStyle = 1;
+        public static int ActionMode_titleTextStyle = 1;
         /**  Attrbitutes for a ActivityChooserView. 
            <p>Includes the following attributes:</p>
            <table>
@@ -3461,7 +3461,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:expandActivityOverflowButtonDrawable
         */
-        public static final int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
+        public static int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
         /**
           <p>
           @attr description
@@ -3477,7 +3477,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:initialActivityCount
         */
-        public static final int ActivityChooserView_initialActivityCount = 0;
+        public static int ActivityChooserView_initialActivityCount = 0;
         /** Attributes that can be used with a AdsAttrs.
            <p>Includes the following attributes:</p>
            <table>
@@ -3516,7 +3516,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:adSize
         */
-        public static final int AdsAttrs_adSize = 0;
+        public static int AdsAttrs_adSize = 0;
         /**
           <p>
           @attr description
@@ -3536,7 +3536,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:adSizes
         */
-        public static final int AdsAttrs_adSizes = 1;
+        public static int AdsAttrs_adSizes = 1;
         /**
           <p>
           @attr description
@@ -3552,7 +3552,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:adUnitId
         */
-        public static final int AdsAttrs_adUnitId = 2;
+        public static int AdsAttrs_adUnitId = 2;
         /** Attributes that can be used with a CompatTextView.
            <p>Includes the following attributes:</p>
            <table>
@@ -3578,7 +3578,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:textAllCaps
         */
-        public static final int CompatTextView_textAllCaps = 0;
+        public static int CompatTextView_textAllCaps = 0;
         /**  Attributes that can be specified to define a custom theme 
            <p>Includes the following attributes:</p>
            <table>
@@ -3610,7 +3610,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:windowTransitionStyle
         */
-        public static final int CustomWalletTheme_windowTransitionStyle = 0;
+        public static int CustomWalletTheme_windowTransitionStyle = 0;
         /** Attributes that can be used with a DrawerArrowToggle.
            <p>Includes the following attributes:</p>
            <table>
@@ -3656,7 +3656,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:barSize
         */
-        public static final int DrawerArrowToggle_barSize = 6;
+        public static int DrawerArrowToggle_barSize = 6;
         /**
           <p>
           @attr description
@@ -3673,7 +3673,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:color
         */
-        public static final int DrawerArrowToggle_color = 0;
+        public static int DrawerArrowToggle_color = 0;
         /**
           <p>
           @attr description
@@ -3691,7 +3691,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:drawableSize
         */
-        public static final int DrawerArrowToggle_drawableSize = 2;
+        public static int DrawerArrowToggle_drawableSize = 2;
         /**
           <p>
           @attr description
@@ -3709,7 +3709,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:gapBetweenBars
         */
-        public static final int DrawerArrowToggle_gapBetweenBars = 3;
+        public static int DrawerArrowToggle_gapBetweenBars = 3;
         /**
           <p>
           @attr description
@@ -3727,7 +3727,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:middleBarArrowSize
         */
-        public static final int DrawerArrowToggle_middleBarArrowSize = 5;
+        public static int DrawerArrowToggle_middleBarArrowSize = 5;
         /**
           <p>
           @attr description
@@ -3743,7 +3743,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:spinBars
         */
-        public static final int DrawerArrowToggle_spinBars = 1;
+        public static int DrawerArrowToggle_spinBars = 1;
         /**
           <p>
           @attr description
@@ -3761,7 +3761,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:thickness
         */
-        public static final int DrawerArrowToggle_thickness = 7;
+        public static int DrawerArrowToggle_thickness = 7;
         /**
           <p>
           @attr description
@@ -3779,7 +3779,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:topBottomBarArrowSize
         */
-        public static final int DrawerArrowToggle_topBottomBarArrowSize = 4;
+        public static int DrawerArrowToggle_topBottomBarArrowSize = 4;
         /** Attributes that can be used with a LinearLayoutCompat.
            <p>Includes the following attributes:</p>
            <table>
@@ -3826,7 +3826,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#baselineAligned}.
           @attr name android:baselineAligned
         */
-        public static final int LinearLayoutCompat_android_baselineAligned = 2;
+        public static int LinearLayoutCompat_android_baselineAligned = 2;
         /**
           <p>
           @attr description
@@ -3837,13 +3837,13 @@ containing a value of this type.
           resource symbol {@link android.R.attr#baselineAlignedChildIndex}.
           @attr name android:baselineAlignedChildIndex
         */
-        public static final int LinearLayoutCompat_android_baselineAlignedChildIndex = 3;
+        public static int LinearLayoutCompat_android_baselineAlignedChildIndex = 3;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#gravity}
           attribute's value can be found in the {@link #LinearLayoutCompat} array.
           @attr name android:gravity
         */
-        public static final int LinearLayoutCompat_android_gravity = 0;
+        public static int LinearLayoutCompat_android_gravity = 0;
         /**
           <p>
           @attr description
@@ -3854,7 +3854,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#orientation}.
           @attr name android:orientation
         */
-        public static final int LinearLayoutCompat_android_orientation = 1;
+        public static int LinearLayoutCompat_android_orientation = 1;
         /**
           <p>
           @attr description
@@ -3867,7 +3867,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#weightSum}.
           @attr name android:weightSum
         */
-        public static final int LinearLayoutCompat_android_weightSum = 4;
+        public static int LinearLayoutCompat_android_weightSum = 4;
         /**
           <p>
           @attr description
@@ -3879,7 +3879,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:divider
         */
-        public static final int LinearLayoutCompat_divider = 5;
+        public static int LinearLayoutCompat_divider = 5;
         /**
           <p>
           @attr description
@@ -3897,7 +3897,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:dividerPadding
         */
-        public static final int LinearLayoutCompat_dividerPadding = 8;
+        public static int LinearLayoutCompat_dividerPadding = 8;
         /**
           <p>
           @attr description
@@ -3915,7 +3915,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:measureWithLargestChild
         */
-        public static final int LinearLayoutCompat_measureWithLargestChild = 6;
+        public static int LinearLayoutCompat_measureWithLargestChild = 6;
         /**
           <p>
           @attr description
@@ -3936,7 +3936,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:showDividers
         */
-        public static final int LinearLayoutCompat_showDividers = 7;
+        public static int LinearLayoutCompat_showDividers = 7;
         /** Attributes that can be used with a LinearLayoutCompat_Layout.
            <p>Includes the following attributes:</p>
            <table>
@@ -3961,25 +3961,25 @@ containing a value of this type.
           attribute's value can be found in the {@link #LinearLayoutCompat_Layout} array.
           @attr name android:layout_gravity
         */
-        public static final int LinearLayoutCompat_Layout_android_layout_gravity = 0;
+        public static int LinearLayoutCompat_Layout_android_layout_gravity = 0;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#layout_height}
           attribute's value can be found in the {@link #LinearLayoutCompat_Layout} array.
           @attr name android:layout_height
         */
-        public static final int LinearLayoutCompat_Layout_android_layout_height = 2;
+        public static int LinearLayoutCompat_Layout_android_layout_height = 2;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#layout_weight}
           attribute's value can be found in the {@link #LinearLayoutCompat_Layout} array.
           @attr name android:layout_weight
         */
-        public static final int LinearLayoutCompat_Layout_android_layout_weight = 3;
+        public static int LinearLayoutCompat_Layout_android_layout_weight = 3;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#layout_width}
           attribute's value can be found in the {@link #LinearLayoutCompat_Layout} array.
           @attr name android:layout_width
         */
-        public static final int LinearLayoutCompat_Layout_android_layout_width = 1;
+        public static int LinearLayoutCompat_Layout_android_layout_width = 1;
         /** Attributes that can be used with a ListPopupWindow.
            <p>Includes the following attributes:</p>
            <table>
@@ -4003,7 +4003,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#dropDownHorizontalOffset}.
           @attr name android:dropDownHorizontalOffset
         */
-        public static final int ListPopupWindow_android_dropDownHorizontalOffset = 0;
+        public static int ListPopupWindow_android_dropDownHorizontalOffset = 0;
         /**
           <p>
           @attr description
@@ -4012,7 +4012,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#dropDownVerticalOffset}.
           @attr name android:dropDownVerticalOffset
         */
-        public static final int ListPopupWindow_android_dropDownVerticalOffset = 1;
+        public static int ListPopupWindow_android_dropDownVerticalOffset = 1;
         /**  Attributes for LoadingImageView 
            <p>Includes the following attributes:</p>
            <table>
@@ -4051,7 +4051,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:circleCrop
         */
-        public static final int LoadingImageView_circleCrop = 2;
+        public static int LoadingImageView_circleCrop = 2;
         /**
           <p>
           @attr description
@@ -4069,7 +4069,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:imageAspectRatio
         */
-        public static final int LoadingImageView_imageAspectRatio = 1;
+        public static int LoadingImageView_imageAspectRatio = 1;
         /**
           <p>
           @attr description
@@ -4092,7 +4092,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:imageAspectRatioAdjust
         */
-        public static final int LoadingImageView_imageAspectRatioAdjust = 0;
+        public static int LoadingImageView_imageAspectRatioAdjust = 0;
         /** Attributes that can be used with a MapAttrs.
            <p>Includes the following attributes:</p>
            <table>
@@ -4152,7 +4152,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:cameraBearing
         */
-        public static final int MapAttrs_cameraBearing = 1;
+        public static int MapAttrs_cameraBearing = 1;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#cameraTargetLat}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4166,7 +4166,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:cameraTargetLat
         */
-        public static final int MapAttrs_cameraTargetLat = 2;
+        public static int MapAttrs_cameraTargetLat = 2;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#cameraTargetLng}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4180,7 +4180,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:cameraTargetLng
         */
-        public static final int MapAttrs_cameraTargetLng = 3;
+        public static int MapAttrs_cameraTargetLng = 3;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#cameraTilt}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4194,7 +4194,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:cameraTilt
         */
-        public static final int MapAttrs_cameraTilt = 4;
+        public static int MapAttrs_cameraTilt = 4;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#cameraZoom}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4208,7 +4208,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:cameraZoom
         */
-        public static final int MapAttrs_cameraZoom = 5;
+        public static int MapAttrs_cameraZoom = 5;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#liteMode}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4222,7 +4222,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:liteMode
         */
-        public static final int MapAttrs_liteMode = 6;
+        public static int MapAttrs_liteMode = 6;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#mapType}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4242,7 +4242,7 @@ containing a value of this type.
 </table>
           @attr name com.adefreitas.groupcontextandroidframework:mapType
         */
-        public static final int MapAttrs_mapType = 0;
+        public static int MapAttrs_mapType = 0;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#uiCompass}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4256,7 +4256,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:uiCompass
         */
-        public static final int MapAttrs_uiCompass = 7;
+        public static int MapAttrs_uiCompass = 7;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#uiMapToolbar}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4270,7 +4270,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:uiMapToolbar
         */
-        public static final int MapAttrs_uiMapToolbar = 15;
+        public static int MapAttrs_uiMapToolbar = 15;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#uiRotateGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4284,7 +4284,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:uiRotateGestures
         */
-        public static final int MapAttrs_uiRotateGestures = 8;
+        public static int MapAttrs_uiRotateGestures = 8;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#uiScrollGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4298,7 +4298,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:uiScrollGestures
         */
-        public static final int MapAttrs_uiScrollGestures = 9;
+        public static int MapAttrs_uiScrollGestures = 9;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#uiTiltGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4312,7 +4312,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:uiTiltGestures
         */
-        public static final int MapAttrs_uiTiltGestures = 10;
+        public static int MapAttrs_uiTiltGestures = 10;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#uiZoomControls}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4326,7 +4326,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:uiZoomControls
         */
-        public static final int MapAttrs_uiZoomControls = 11;
+        public static int MapAttrs_uiZoomControls = 11;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#uiZoomGestures}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4340,7 +4340,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:uiZoomGestures
         */
-        public static final int MapAttrs_uiZoomGestures = 12;
+        public static int MapAttrs_uiZoomGestures = 12;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#useViewLifecycle}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4354,7 +4354,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:useViewLifecycle
         */
-        public static final int MapAttrs_useViewLifecycle = 13;
+        public static int MapAttrs_useViewLifecycle = 13;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#zOrderOnTop}
           attribute's value can be found in the {@link #MapAttrs} array.
@@ -4368,7 +4368,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:zOrderOnTop
         */
-        public static final int MapAttrs_zOrderOnTop = 14;
+        public static int MapAttrs_zOrderOnTop = 14;
         /**  Base attributes that are available to all groups. 
            <p>Includes the following attributes:</p>
            <table>
@@ -4401,7 +4401,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#checkableBehavior}.
           @attr name android:checkableBehavior
         */
-        public static final int MenuGroup_android_checkableBehavior = 5;
+        public static int MenuGroup_android_checkableBehavior = 5;
         /**
           <p>
           @attr description
@@ -4410,7 +4410,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#enabled}.
           @attr name android:enabled
         */
-        public static final int MenuGroup_android_enabled = 0;
+        public static int MenuGroup_android_enabled = 0;
         /**
           <p>
           @attr description
@@ -4419,7 +4419,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#id}.
           @attr name android:id
         */
-        public static final int MenuGroup_android_id = 1;
+        public static int MenuGroup_android_id = 1;
         /**
           <p>
           @attr description
@@ -4429,7 +4429,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#menuCategory}.
           @attr name android:menuCategory
         */
-        public static final int MenuGroup_android_menuCategory = 3;
+        public static int MenuGroup_android_menuCategory = 3;
         /**
           <p>
           @attr description
@@ -4439,7 +4439,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#orderInCategory}.
           @attr name android:orderInCategory
         */
-        public static final int MenuGroup_android_orderInCategory = 4;
+        public static int MenuGroup_android_orderInCategory = 4;
         /**
           <p>
           @attr description
@@ -4448,7 +4448,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#visible}.
           @attr name android:visible
         */
-        public static final int MenuGroup_android_visible = 2;
+        public static int MenuGroup_android_visible = 2;
         /**  Base attributes that are available to all Item objects. 
            <p>Includes the following attributes:</p>
            <table>
@@ -4514,7 +4514,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionLayout
         */
-        public static final int MenuItem_actionLayout = 14;
+        public static int MenuItem_actionLayout = 14;
         /**
           <p>
           @attr description
@@ -4533,7 +4533,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionProviderClass
         */
-        public static final int MenuItem_actionProviderClass = 16;
+        public static int MenuItem_actionProviderClass = 16;
         /**
           <p>
           @attr description
@@ -4551,7 +4551,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionViewClass
         */
-        public static final int MenuItem_actionViewClass = 15;
+        public static int MenuItem_actionViewClass = 15;
         /**
           <p>
           @attr description
@@ -4561,7 +4561,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#alphabeticShortcut}.
           @attr name android:alphabeticShortcut
         */
-        public static final int MenuItem_android_alphabeticShortcut = 9;
+        public static int MenuItem_android_alphabeticShortcut = 9;
         /**
           <p>
           @attr description
@@ -4570,7 +4570,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#checkable}.
           @attr name android:checkable
         */
-        public static final int MenuItem_android_checkable = 11;
+        public static int MenuItem_android_checkable = 11;
         /**
           <p>
           @attr description
@@ -4580,7 +4580,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#checked}.
           @attr name android:checked
         */
-        public static final int MenuItem_android_checked = 3;
+        public static int MenuItem_android_checked = 3;
         /**
           <p>
           @attr description
@@ -4589,7 +4589,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#enabled}.
           @attr name android:enabled
         */
-        public static final int MenuItem_android_enabled = 1;
+        public static int MenuItem_android_enabled = 1;
         /**
           <p>
           @attr description
@@ -4599,7 +4599,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#icon}.
           @attr name android:icon
         */
-        public static final int MenuItem_android_icon = 0;
+        public static int MenuItem_android_icon = 0;
         /**
           <p>
           @attr description
@@ -4608,7 +4608,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#id}.
           @attr name android:id
         */
-        public static final int MenuItem_android_id = 2;
+        public static int MenuItem_android_id = 2;
         /**
           <p>
           @attr description
@@ -4618,7 +4618,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#menuCategory}.
           @attr name android:menuCategory
         */
-        public static final int MenuItem_android_menuCategory = 5;
+        public static int MenuItem_android_menuCategory = 5;
         /**
           <p>
           @attr description
@@ -4628,7 +4628,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#numericShortcut}.
           @attr name android:numericShortcut
         */
-        public static final int MenuItem_android_numericShortcut = 10;
+        public static int MenuItem_android_numericShortcut = 10;
         /**
           <p>
           @attr description
@@ -4638,7 +4638,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#onClick}.
           @attr name android:onClick
         */
-        public static final int MenuItem_android_onClick = 12;
+        public static int MenuItem_android_onClick = 12;
         /**
           <p>
           @attr description
@@ -4648,7 +4648,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#orderInCategory}.
           @attr name android:orderInCategory
         */
-        public static final int MenuItem_android_orderInCategory = 6;
+        public static int MenuItem_android_orderInCategory = 6;
         /**
           <p>
           @attr description
@@ -4657,7 +4657,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#title}.
           @attr name android:title
         */
-        public static final int MenuItem_android_title = 7;
+        public static int MenuItem_android_title = 7;
         /**
           <p>
           @attr description
@@ -4667,7 +4667,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#titleCondensed}.
           @attr name android:titleCondensed
         */
-        public static final int MenuItem_android_titleCondensed = 8;
+        public static int MenuItem_android_titleCondensed = 8;
         /**
           <p>
           @attr description
@@ -4676,7 +4676,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#visible}.
           @attr name android:visible
         */
-        public static final int MenuItem_android_visible = 4;
+        public static int MenuItem_android_visible = 4;
         /**
           <p>
           @attr description
@@ -4707,7 +4707,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:showAsAction
         */
-        public static final int MenuItem_showAsAction = 13;
+        public static int MenuItem_showAsAction = 13;
         /** Attributes that can be used with a MenuView.
            <p>Includes the following attributes:</p>
            <table>
@@ -4744,7 +4744,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#headerBackground}.
           @attr name android:headerBackground
         */
-        public static final int MenuView_android_headerBackground = 4;
+        public static int MenuView_android_headerBackground = 4;
         /**
           <p>
           @attr description
@@ -4753,7 +4753,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#horizontalDivider}.
           @attr name android:horizontalDivider
         */
-        public static final int MenuView_android_horizontalDivider = 2;
+        public static int MenuView_android_horizontalDivider = 2;
         /**
           <p>
           @attr description
@@ -4762,7 +4762,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#itemBackground}.
           @attr name android:itemBackground
         */
-        public static final int MenuView_android_itemBackground = 5;
+        public static int MenuView_android_itemBackground = 5;
         /**
           <p>
           @attr description
@@ -4771,7 +4771,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#itemIconDisabledAlpha}.
           @attr name android:itemIconDisabledAlpha
         */
-        public static final int MenuView_android_itemIconDisabledAlpha = 6;
+        public static int MenuView_android_itemIconDisabledAlpha = 6;
         /**
           <p>
           @attr description
@@ -4780,7 +4780,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#itemTextAppearance}.
           @attr name android:itemTextAppearance
         */
-        public static final int MenuView_android_itemTextAppearance = 1;
+        public static int MenuView_android_itemTextAppearance = 1;
         /**
           <p>
           @attr description
@@ -4789,7 +4789,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#verticalDivider}.
           @attr name android:verticalDivider
         */
-        public static final int MenuView_android_verticalDivider = 3;
+        public static int MenuView_android_verticalDivider = 3;
         /**
           <p>
           @attr description
@@ -4798,7 +4798,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#windowAnimationStyle}.
           @attr name android:windowAnimationStyle
         */
-        public static final int MenuView_android_windowAnimationStyle = 0;
+        public static int MenuView_android_windowAnimationStyle = 0;
         /**
           <p>
           @attr description
@@ -4814,7 +4814,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:preserveIconSpacing
         */
-        public static final int MenuView_preserveIconSpacing = 7;
+        public static int MenuView_preserveIconSpacing = 7;
         /** Attributes that can be used with a PopupWindow.
            <p>Includes the following attributes:</p>
            <table>
@@ -4835,7 +4835,7 @@ containing a value of this type.
           attribute's value can be found in the {@link #PopupWindow} array.
           @attr name android:popupBackground
         */
-        public static final int PopupWindow_android_popupBackground = 0;
+        public static int PopupWindow_android_popupBackground = 0;
         /**
           <p>
           @attr description
@@ -4851,7 +4851,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:overlapAnchor
         */
-        public static final int PopupWindow_overlapAnchor = 1;
+        public static int PopupWindow_overlapAnchor = 1;
         /** Attributes that can be used with a PopupWindowBackgroundState.
            <p>Includes the following attributes:</p>
            <table>
@@ -4880,7 +4880,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:state_above_anchor
         */
-        public static final int PopupWindowBackgroundState_state_above_anchor = 0;
+        public static int PopupWindowBackgroundState_state_above_anchor = 0;
         /** Attributes that can be used with a SearchView.
            <p>Includes the following attributes:</p>
            <table>
@@ -4930,7 +4930,7 @@ containing a value of this type.
           attribute's value can be found in the {@link #SearchView} array.
           @attr name android:focusable
         */
-        public static final int SearchView_android_focusable = 0;
+        public static int SearchView_android_focusable = 0;
         /**
           <p>
           @attr description
@@ -4939,7 +4939,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#imeOptions}.
           @attr name android:imeOptions
         */
-        public static final int SearchView_android_imeOptions = 3;
+        public static int SearchView_android_imeOptions = 3;
         /**
           <p>
           @attr description
@@ -4948,7 +4948,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#inputType}.
           @attr name android:inputType
         */
-        public static final int SearchView_android_inputType = 2;
+        public static int SearchView_android_inputType = 2;
         /**
           <p>
           @attr description
@@ -4957,7 +4957,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#maxWidth}.
           @attr name android:maxWidth
         */
-        public static final int SearchView_android_maxWidth = 1;
+        public static int SearchView_android_maxWidth = 1;
         /**
           <p>
           @attr description
@@ -4969,7 +4969,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:closeIcon
         */
-        public static final int SearchView_closeIcon = 7;
+        public static int SearchView_closeIcon = 7;
         /**
           <p>
           @attr description
@@ -4981,7 +4981,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:commitIcon
         */
-        public static final int SearchView_commitIcon = 11;
+        public static int SearchView_commitIcon = 11;
         /**
           <p>
           @attr description
@@ -4993,7 +4993,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:goIcon
         */
-        public static final int SearchView_goIcon = 8;
+        public static int SearchView_goIcon = 8;
         /**
           <p>
           @attr description
@@ -5010,7 +5010,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:iconifiedByDefault
         */
-        public static final int SearchView_iconifiedByDefault = 5;
+        public static int SearchView_iconifiedByDefault = 5;
         /**
           <p>
           @attr description
@@ -5022,7 +5022,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:layout
         */
-        public static final int SearchView_layout = 4;
+        public static int SearchView_layout = 4;
         /**
           <p>
           @attr description
@@ -5034,7 +5034,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:queryBackground
         */
-        public static final int SearchView_queryBackground = 13;
+        public static int SearchView_queryBackground = 13;
         /**
           <p>
           @attr description
@@ -5050,7 +5050,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:queryHint
         */
-        public static final int SearchView_queryHint = 6;
+        public static int SearchView_queryHint = 6;
         /**
           <p>
           @attr description
@@ -5062,7 +5062,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:searchIcon
         */
-        public static final int SearchView_searchIcon = 9;
+        public static int SearchView_searchIcon = 9;
         /**
           <p>
           @attr description
@@ -5074,7 +5074,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:submitBackground
         */
-        public static final int SearchView_submitBackground = 14;
+        public static int SearchView_submitBackground = 14;
         /**
           <p>
           @attr description
@@ -5086,7 +5086,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:suggestionRowLayout
         */
-        public static final int SearchView_suggestionRowLayout = 12;
+        public static int SearchView_suggestionRowLayout = 12;
         /**
           <p>
           @attr description
@@ -5098,7 +5098,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:voiceIcon
         */
-        public static final int SearchView_voiceIcon = 10;
+        public static int SearchView_voiceIcon = 10;
         /** Attributes that can be used with a Spinner.
            <p>Includes the following attributes:</p>
            <table>
@@ -5143,7 +5143,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           attribute's value can be found in the {@link #Spinner} array.
           @attr name android:background
         */
-        public static final int Spinner_android_background = 1;
+        public static int Spinner_android_background = 1;
         /**
           <p>
           @attr description
@@ -5153,7 +5153,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#dropDownHorizontalOffset}.
           @attr name android:dropDownHorizontalOffset
         */
-        public static final int Spinner_android_dropDownHorizontalOffset = 5;
+        public static int Spinner_android_dropDownHorizontalOffset = 5;
         /**
           <p>
           @attr description
@@ -5162,7 +5162,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#dropDownSelector}.
           @attr name android:dropDownSelector
         */
-        public static final int Spinner_android_dropDownSelector = 2;
+        public static int Spinner_android_dropDownSelector = 2;
         /**
           <p>
           @attr description
@@ -5172,7 +5172,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#dropDownVerticalOffset}.
           @attr name android:dropDownVerticalOffset
         */
-        public static final int Spinner_android_dropDownVerticalOffset = 6;
+        public static int Spinner_android_dropDownVerticalOffset = 6;
         /**
           <p>
           @attr description
@@ -5181,7 +5181,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#dropDownWidth}.
           @attr name android:dropDownWidth
         */
-        public static final int Spinner_android_dropDownWidth = 4;
+        public static int Spinner_android_dropDownWidth = 4;
         /**
           <p>
           @attr description
@@ -5190,7 +5190,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#gravity}.
           @attr name android:gravity
         */
-        public static final int Spinner_android_gravity = 0;
+        public static int Spinner_android_gravity = 0;
         /**
           <p>
           @attr description
@@ -5199,7 +5199,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#popupBackground}.
           @attr name android:popupBackground
         */
-        public static final int Spinner_android_popupBackground = 3;
+        public static int Spinner_android_popupBackground = 3;
         /**
           <p>
           @attr description
@@ -5216,7 +5216,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:disableChildrenWhenDisabled
         */
-        public static final int Spinner_disableChildrenWhenDisabled = 10;
+        public static int Spinner_disableChildrenWhenDisabled = 10;
         /**
           <p>
           @attr description
@@ -5230,7 +5230,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:popupPromptView
         */
-        public static final int Spinner_popupPromptView = 9;
+        public static int Spinner_popupPromptView = 9;
         /**
           <p>
           @attr description
@@ -5242,7 +5242,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:prompt
         */
-        public static final int Spinner_prompt = 7;
+        public static int Spinner_prompt = 7;
         /**
           <p>
           @attr description
@@ -5262,7 +5262,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:spinnerMode
         */
-        public static final int Spinner_spinnerMode = 8;
+        public static int Spinner_spinnerMode = 8;
         /** Attributes that can be used with a SwitchCompat.
            <p>Includes the following attributes:</p>
            <table>
@@ -5304,7 +5304,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#textOff}.
           @attr name android:textOff
         */
-        public static final int SwitchCompat_android_textOff = 1;
+        public static int SwitchCompat_android_textOff = 1;
         /**
           <p>
           @attr description
@@ -5313,7 +5313,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#textOn}.
           @attr name android:textOn
         */
-        public static final int SwitchCompat_android_textOn = 0;
+        public static int SwitchCompat_android_textOn = 0;
         /**
           <p>
           @attr description
@@ -5322,7 +5322,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#thumb}.
           @attr name android:thumb
         */
-        public static final int SwitchCompat_android_thumb = 2;
+        public static int SwitchCompat_android_thumb = 2;
         /**
           <p>
           @attr description
@@ -5338,7 +5338,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:showText
         */
-        public static final int SwitchCompat_showText = 9;
+        public static int SwitchCompat_showText = 9;
         /**
           <p>
           @attr description
@@ -5354,7 +5354,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:splitTrack
         */
-        public static final int SwitchCompat_splitTrack = 8;
+        public static int SwitchCompat_splitTrack = 8;
         /**
           <p>
           @attr description
@@ -5372,7 +5372,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:switchMinWidth
         */
-        public static final int SwitchCompat_switchMinWidth = 6;
+        public static int SwitchCompat_switchMinWidth = 6;
         /**
           <p>
           @attr description
@@ -5390,7 +5390,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:switchPadding
         */
-        public static final int SwitchCompat_switchPadding = 7;
+        public static int SwitchCompat_switchPadding = 7;
         /**
           <p>
           @attr description
@@ -5402,7 +5402,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:switchTextAppearance
         */
-        public static final int SwitchCompat_switchTextAppearance = 5;
+        public static int SwitchCompat_switchTextAppearance = 5;
         /**
           <p>
           @attr description
@@ -5420,7 +5420,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:thumbTextPadding
         */
-        public static final int SwitchCompat_thumbTextPadding = 4;
+        public static int SwitchCompat_thumbTextPadding = 4;
         /**
           <p>
           @attr description
@@ -5432,7 +5432,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:track
         */
-        public static final int SwitchCompat_track = 3;
+        public static int SwitchCompat_track = 3;
         /**  These are the standard attributes that make up a complete theme. 
            <p>Includes the following attributes:</p>
            <table>
@@ -5657,7 +5657,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarDivider
         */
-        public static final int Theme_actionBarDivider = 19;
+        public static int Theme_actionBarDivider = 19;
         /**
           <p>
           @attr description
@@ -5669,7 +5669,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarItemBackground
         */
-        public static final int Theme_actionBarItemBackground = 20;
+        public static int Theme_actionBarItemBackground = 20;
         /**
           <p>
           @attr description
@@ -5682,7 +5682,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarPopupTheme
         */
-        public static final int Theme_actionBarPopupTheme = 13;
+        public static int Theme_actionBarPopupTheme = 13;
         /**
           <p>
           @attr description
@@ -5709,7 +5709,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarSize
         */
-        public static final int Theme_actionBarSize = 18;
+        public static int Theme_actionBarSize = 18;
         /**
           <p>
           @attr description
@@ -5724,7 +5724,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarSplitStyle
         */
-        public static final int Theme_actionBarSplitStyle = 15;
+        public static int Theme_actionBarSplitStyle = 15;
         /**
           <p>
           @attr description
@@ -5736,7 +5736,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarStyle
         */
-        public static final int Theme_actionBarStyle = 14;
+        public static int Theme_actionBarStyle = 14;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#actionBarTabBarStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5746,7 +5746,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:actionBarTabBarStyle
         */
-        public static final int Theme_actionBarTabBarStyle = 9;
+        public static int Theme_actionBarTabBarStyle = 9;
         /**
           <p>
           @attr description
@@ -5758,7 +5758,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarTabStyle
         */
-        public static final int Theme_actionBarTabStyle = 8;
+        public static int Theme_actionBarTabStyle = 8;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#actionBarTabTextStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5768,7 +5768,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:actionBarTabTextStyle
         */
-        public static final int Theme_actionBarTabTextStyle = 10;
+        public static int Theme_actionBarTabTextStyle = 10;
         /**
           <p>
           @attr description
@@ -5782,7 +5782,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarTheme
         */
-        public static final int Theme_actionBarTheme = 16;
+        public static int Theme_actionBarTheme = 16;
         /**
           <p>
           @attr description
@@ -5800,7 +5800,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionBarWidgetTheme
         */
-        public static final int Theme_actionBarWidgetTheme = 17;
+        public static int Theme_actionBarWidgetTheme = 17;
         /**
           <p>
           @attr description
@@ -5812,7 +5812,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionButtonStyle
         */
-        public static final int Theme_actionButtonStyle = 43;
+        public static int Theme_actionButtonStyle = 43;
         /**
           <p>
           @attr description
@@ -5824,7 +5824,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionDropDownStyle
         */
-        public static final int Theme_actionDropDownStyle = 38;
+        public static int Theme_actionDropDownStyle = 38;
         /**
           <p>
           @attr description
@@ -5837,7 +5837,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionMenuTextAppearance
         */
-        public static final int Theme_actionMenuTextAppearance = 21;
+        public static int Theme_actionMenuTextAppearance = 21;
         /**
           <p>
           @attr description
@@ -5852,7 +5852,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionMenuTextColor
         */
-        public static final int Theme_actionMenuTextColor = 22;
+        public static int Theme_actionMenuTextColor = 22;
         /**
           <p>
           @attr description
@@ -5864,7 +5864,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeBackground
         */
-        public static final int Theme_actionModeBackground = 25;
+        public static int Theme_actionModeBackground = 25;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#actionModeCloseButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5874,7 +5874,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:actionModeCloseButtonStyle
         */
-        public static final int Theme_actionModeCloseButtonStyle = 24;
+        public static int Theme_actionModeCloseButtonStyle = 24;
         /**
           <p>
           @attr description
@@ -5886,7 +5886,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeCloseDrawable
         */
-        public static final int Theme_actionModeCloseDrawable = 27;
+        public static int Theme_actionModeCloseDrawable = 27;
         /**
           <p>
           @attr description
@@ -5898,7 +5898,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeCopyDrawable
         */
-        public static final int Theme_actionModeCopyDrawable = 29;
+        public static int Theme_actionModeCopyDrawable = 29;
         /**
           <p>
           @attr description
@@ -5910,7 +5910,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeCutDrawable
         */
-        public static final int Theme_actionModeCutDrawable = 28;
+        public static int Theme_actionModeCutDrawable = 28;
         /**
           <p>
           @attr description
@@ -5922,7 +5922,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeFindDrawable
         */
-        public static final int Theme_actionModeFindDrawable = 33;
+        public static int Theme_actionModeFindDrawable = 33;
         /**
           <p>
           @attr description
@@ -5934,7 +5934,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModePasteDrawable
         */
-        public static final int Theme_actionModePasteDrawable = 30;
+        public static int Theme_actionModePasteDrawable = 30;
         /**
           <p>
           @attr description
@@ -5946,7 +5946,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModePopupWindowStyle
         */
-        public static final int Theme_actionModePopupWindowStyle = 35;
+        public static int Theme_actionModePopupWindowStyle = 35;
         /**
           <p>
           @attr description
@@ -5958,7 +5958,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeSelectAllDrawable
         */
-        public static final int Theme_actionModeSelectAllDrawable = 31;
+        public static int Theme_actionModeSelectAllDrawable = 31;
         /**
           <p>
           @attr description
@@ -5970,7 +5970,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeShareDrawable
         */
-        public static final int Theme_actionModeShareDrawable = 32;
+        public static int Theme_actionModeShareDrawable = 32;
         /**
           <p>
           @attr description
@@ -5982,7 +5982,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeSplitBackground
         */
-        public static final int Theme_actionModeSplitBackground = 26;
+        public static int Theme_actionModeSplitBackground = 26;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#actionModeStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -5992,7 +5992,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:actionModeStyle
         */
-        public static final int Theme_actionModeStyle = 23;
+        public static int Theme_actionModeStyle = 23;
         /**
           <p>
           @attr description
@@ -6004,7 +6004,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:actionModeWebSearchDrawable
         */
-        public static final int Theme_actionModeWebSearchDrawable = 34;
+        public static int Theme_actionModeWebSearchDrawable = 34;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#actionOverflowButtonStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6014,7 +6014,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:actionOverflowButtonStyle
         */
-        public static final int Theme_actionOverflowButtonStyle = 11;
+        public static int Theme_actionOverflowButtonStyle = 11;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#actionOverflowMenuStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6024,7 +6024,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:actionOverflowMenuStyle
         */
-        public static final int Theme_actionOverflowMenuStyle = 12;
+        public static int Theme_actionOverflowMenuStyle = 12;
         /**
           <p>
           @attr description
@@ -6036,13 +6036,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:activityChooserViewStyle
         */
-        public static final int Theme_activityChooserViewStyle = 50;
+        public static int Theme_activityChooserViewStyle = 50;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#windowIsFloating}
           attribute's value can be found in the {@link #Theme} array.
           @attr name android:windowIsFloating
         */
-        public static final int Theme_android_windowIsFloating = 0;
+        public static int Theme_android_windowIsFloating = 0;
         /**
           <p>
           @attr description
@@ -6055,7 +6055,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:buttonBarButtonStyle
         */
-        public static final int Theme_buttonBarButtonStyle = 45;
+        public static int Theme_buttonBarButtonStyle = 45;
         /**
           <p>
           @attr description
@@ -6068,7 +6068,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:buttonBarStyle
         */
-        public static final int Theme_buttonBarStyle = 44;
+        public static int Theme_buttonBarStyle = 44;
         /**
           <p>
           @attr description
@@ -6086,7 +6086,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:colorAccent
         */
-        public static final int Theme_colorAccent = 77;
+        public static int Theme_colorAccent = 77;
         /**
           <p>
           @attr description
@@ -6103,7 +6103,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:colorButtonNormal
         */
-        public static final int Theme_colorButtonNormal = 81;
+        public static int Theme_colorButtonNormal = 81;
         /**
           <p>
           @attr description
@@ -6120,7 +6120,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:colorControlActivated
         */
-        public static final int Theme_colorControlActivated = 79;
+        public static int Theme_colorControlActivated = 79;
         /**
           <p>
           @attr description
@@ -6137,7 +6137,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:colorControlHighlight
         */
-        public static final int Theme_colorControlHighlight = 80;
+        public static int Theme_colorControlHighlight = 80;
         /**
           <p>
           @attr description
@@ -6154,7 +6154,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:colorControlNormal
         */
-        public static final int Theme_colorControlNormal = 78;
+        public static int Theme_colorControlNormal = 78;
         /**
           <p>
           @attr description
@@ -6172,7 +6172,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:colorPrimary
         */
-        public static final int Theme_colorPrimary = 75;
+        public static int Theme_colorPrimary = 75;
         /**
           <p>
           @attr description
@@ -6190,7 +6190,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:colorPrimaryDark
         */
-        public static final int Theme_colorPrimaryDark = 76;
+        public static int Theme_colorPrimaryDark = 76;
         /**
           <p>
           @attr description
@@ -6207,7 +6207,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:colorSwitchThumbNormal
         */
-        public static final int Theme_colorSwitchThumbNormal = 82;
+        public static int Theme_colorSwitchThumbNormal = 82;
         /**
           <p>
           @attr description
@@ -6219,7 +6219,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:dividerHorizontal
         */
-        public static final int Theme_dividerHorizontal = 49;
+        public static int Theme_dividerHorizontal = 49;
         /**
           <p>
           @attr description
@@ -6231,7 +6231,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:dividerVertical
         */
-        public static final int Theme_dividerVertical = 48;
+        public static int Theme_dividerVertical = 48;
         /**
           <p>
           @attr description
@@ -6243,7 +6243,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:dropDownListViewStyle
         */
-        public static final int Theme_dropDownListViewStyle = 67;
+        public static int Theme_dropDownListViewStyle = 67;
         /**
           <p>
           @attr description
@@ -6261,7 +6261,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:dropdownListPreferredItemHeight
         */
-        public static final int Theme_dropdownListPreferredItemHeight = 39;
+        public static int Theme_dropdownListPreferredItemHeight = 39;
         /**
           <p>
           @attr description
@@ -6273,7 +6273,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:editTextBackground
         */
-        public static final int Theme_editTextBackground = 56;
+        public static int Theme_editTextBackground = 56;
         /**
           <p>
           @attr description
@@ -6287,7 +6287,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:editTextColor
         */
-        public static final int Theme_editTextColor = 55;
+        public static int Theme_editTextColor = 55;
         /**
           <p>
           @attr description
@@ -6299,7 +6299,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:homeAsUpIndicator
         */
-        public static final int Theme_homeAsUpIndicator = 42;
+        public static int Theme_homeAsUpIndicator = 42;
         /**
           <p>
           @attr description
@@ -6311,7 +6311,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:listChoiceBackgroundIndicator
         */
-        public static final int Theme_listChoiceBackgroundIndicator = 74;
+        public static int Theme_listChoiceBackgroundIndicator = 74;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#listPopupWindowStyle}
           attribute's value can be found in the {@link #Theme} array.
@@ -6321,7 +6321,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:listPopupWindowStyle
         */
-        public static final int Theme_listPopupWindowStyle = 68;
+        public static int Theme_listPopupWindowStyle = 68;
         /**
           <p>
           @attr description
@@ -6339,7 +6339,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:listPreferredItemHeight
         */
-        public static final int Theme_listPreferredItemHeight = 62;
+        public static int Theme_listPreferredItemHeight = 62;
         /**
           <p>
           @attr description
@@ -6357,7 +6357,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:listPreferredItemHeightLarge
         */
-        public static final int Theme_listPreferredItemHeightLarge = 64;
+        public static int Theme_listPreferredItemHeightLarge = 64;
         /**
           <p>
           @attr description
@@ -6375,7 +6375,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:listPreferredItemHeightSmall
         */
-        public static final int Theme_listPreferredItemHeightSmall = 63;
+        public static int Theme_listPreferredItemHeightSmall = 63;
         /**
           <p>
           @attr description
@@ -6393,7 +6393,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:listPreferredItemPaddingLeft
         */
-        public static final int Theme_listPreferredItemPaddingLeft = 65;
+        public static int Theme_listPreferredItemPaddingLeft = 65;
         /**
           <p>
           @attr description
@@ -6411,7 +6411,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:listPreferredItemPaddingRight
         */
-        public static final int Theme_listPreferredItemPaddingRight = 66;
+        public static int Theme_listPreferredItemPaddingRight = 66;
         /**
           <p>
           @attr description
@@ -6423,7 +6423,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:panelBackground
         */
-        public static final int Theme_panelBackground = 71;
+        public static int Theme_panelBackground = 71;
         /**
           <p>
           @attr description
@@ -6435,7 +6435,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:panelMenuListTheme
         */
-        public static final int Theme_panelMenuListTheme = 73;
+        public static int Theme_panelMenuListTheme = 73;
         /**
           <p>
           @attr description
@@ -6453,7 +6453,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:panelMenuListWidth
         */
-        public static final int Theme_panelMenuListWidth = 72;
+        public static int Theme_panelMenuListWidth = 72;
         /**
           <p>
           @attr description
@@ -6465,7 +6465,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:popupMenuStyle
         */
-        public static final int Theme_popupMenuStyle = 53;
+        public static int Theme_popupMenuStyle = 53;
         /**
           <p>
           @attr description
@@ -6477,7 +6477,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:popupWindowStyle
         */
-        public static final int Theme_popupWindowStyle = 54;
+        public static int Theme_popupWindowStyle = 54;
         /**
           <p>
           @attr description
@@ -6489,7 +6489,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:searchViewStyle
         */
-        public static final int Theme_searchViewStyle = 61;
+        public static int Theme_searchViewStyle = 61;
         /**
           <p>
           @attr description
@@ -6503,7 +6503,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:selectableItemBackground
         */
-        public static final int Theme_selectableItemBackground = 46;
+        public static int Theme_selectableItemBackground = 46;
         /**
           <p>
           @attr description
@@ -6515,7 +6515,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:selectableItemBackgroundBorderless
         */
-        public static final int Theme_selectableItemBackgroundBorderless = 47;
+        public static int Theme_selectableItemBackgroundBorderless = 47;
         /**
           <p>
           @attr description
@@ -6527,7 +6527,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:spinnerDropDownItemStyle
         */
-        public static final int Theme_spinnerDropDownItemStyle = 41;
+        public static int Theme_spinnerDropDownItemStyle = 41;
         /**
           <p>
           @attr description
@@ -6539,7 +6539,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:spinnerStyle
         */
-        public static final int Theme_spinnerStyle = 40;
+        public static int Theme_spinnerStyle = 40;
         /**
           <p>
           @attr description
@@ -6551,7 +6551,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:switchStyle
         */
-        public static final int Theme_switchStyle = 57;
+        public static int Theme_switchStyle = 57;
         /**
           <p>
           @attr description
@@ -6563,7 +6563,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:textAppearanceLargePopupMenu
         */
-        public static final int Theme_textAppearanceLargePopupMenu = 36;
+        public static int Theme_textAppearanceLargePopupMenu = 36;
         /**
           <p>
           @attr description
@@ -6575,7 +6575,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:textAppearanceListItem
         */
-        public static final int Theme_textAppearanceListItem = 69;
+        public static int Theme_textAppearanceListItem = 69;
         /**
           <p>
           @attr description
@@ -6587,7 +6587,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:textAppearanceListItemSmall
         */
-        public static final int Theme_textAppearanceListItemSmall = 70;
+        public static int Theme_textAppearanceListItemSmall = 70;
         /**
           <p>
           @attr description
@@ -6599,7 +6599,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:textAppearanceSearchResultSubtitle
         */
-        public static final int Theme_textAppearanceSearchResultSubtitle = 59;
+        public static int Theme_textAppearanceSearchResultSubtitle = 59;
         /**
           <p>
           @attr description
@@ -6611,7 +6611,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:textAppearanceSearchResultTitle
         */
-        public static final int Theme_textAppearanceSearchResultTitle = 58;
+        public static int Theme_textAppearanceSearchResultTitle = 58;
         /**
           <p>
           @attr description
@@ -6623,7 +6623,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:textAppearanceSmallPopupMenu
         */
-        public static final int Theme_textAppearanceSmallPopupMenu = 37;
+        public static int Theme_textAppearanceSmallPopupMenu = 37;
         /**
           <p>
           @attr description
@@ -6637,7 +6637,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:textColorSearchUrl
         */
-        public static final int Theme_textColorSearchUrl = 60;
+        public static int Theme_textColorSearchUrl = 60;
         /**
           <p>
           @attr description
@@ -6649,7 +6649,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:toolbarNavigationButtonStyle
         */
-        public static final int Theme_toolbarNavigationButtonStyle = 52;
+        public static int Theme_toolbarNavigationButtonStyle = 52;
         /**
           <p>
           @attr description
@@ -6661,7 +6661,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:toolbarStyle
         */
-        public static final int Theme_toolbarStyle = 51;
+        public static int Theme_toolbarStyle = 51;
         /**
           <p>
           @attr description
@@ -6678,7 +6678,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:windowActionBar
         */
-        public static final int Theme_windowActionBar = 1;
+        public static int Theme_windowActionBar = 1;
         /**
           <p>
           @attr description
@@ -6696,7 +6696,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:windowActionBarOverlay
         */
-        public static final int Theme_windowActionBarOverlay = 2;
+        public static int Theme_windowActionBarOverlay = 2;
         /**
           <p>
           @attr description
@@ -6713,7 +6713,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:windowActionModeOverlay
         */
-        public static final int Theme_windowActionModeOverlay = 3;
+        public static int Theme_windowActionModeOverlay = 3;
         /**
           <p>
           @attr description
@@ -6736,7 +6736,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:windowFixedHeightMajor
         */
-        public static final int Theme_windowFixedHeightMajor = 7;
+        public static int Theme_windowFixedHeightMajor = 7;
         /**
           <p>
           @attr description
@@ -6759,7 +6759,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:windowFixedHeightMinor
         */
-        public static final int Theme_windowFixedHeightMinor = 5;
+        public static int Theme_windowFixedHeightMinor = 5;
         /**
           <p>
           @attr description
@@ -6782,7 +6782,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:windowFixedWidthMajor
         */
-        public static final int Theme_windowFixedWidthMajor = 4;
+        public static int Theme_windowFixedWidthMajor = 4;
         /**
           <p>
           @attr description
@@ -6805,7 +6805,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:windowFixedWidthMinor
         */
-        public static final int Theme_windowFixedWidthMinor = 6;
+        public static int Theme_windowFixedWidthMinor = 6;
         /** Attributes that can be used with a Toolbar.
            <p>Includes the following attributes:</p>
            <table>
@@ -6874,7 +6874,7 @@ containing a value of this type.
           attribute's value can be found in the {@link #Toolbar} array.
           @attr name android:gravity
         */
-        public static final int Toolbar_android_gravity = 0;
+        public static int Toolbar_android_gravity = 0;
         /**
           <p>
           @attr description
@@ -6883,7 +6883,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#minHeight}.
           @attr name android:minHeight
         */
-        public static final int Toolbar_android_minHeight = 1;
+        public static int Toolbar_android_minHeight = 1;
         /**
           <p>
           @attr description
@@ -6899,7 +6899,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:collapseContentDescription
         */
-        public static final int Toolbar_collapseContentDescription = 19;
+        public static int Toolbar_collapseContentDescription = 19;
         /**
           <p>
           @attr description
@@ -6911,7 +6911,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:collapseIcon
         */
-        public static final int Toolbar_collapseIcon = 18;
+        public static int Toolbar_collapseIcon = 18;
         /**
           <p>
           @attr description
@@ -6930,7 +6930,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:contentInsetEnd
         */
-        public static final int Toolbar_contentInsetEnd = 5;
+        public static int Toolbar_contentInsetEnd = 5;
         /**
           <p>
           @attr description
@@ -6949,7 +6949,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:contentInsetLeft
         */
-        public static final int Toolbar_contentInsetLeft = 6;
+        public static int Toolbar_contentInsetLeft = 6;
         /**
           <p>
           @attr description
@@ -6968,7 +6968,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:contentInsetRight
         */
-        public static final int Toolbar_contentInsetRight = 7;
+        public static int Toolbar_contentInsetRight = 7;
         /**
           <p>
           @attr description
@@ -6987,7 +6987,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:contentInsetStart
         */
-        public static final int Toolbar_contentInsetStart = 4;
+        public static int Toolbar_contentInsetStart = 4;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#maxButtonHeight}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7003,7 +7003,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:maxButtonHeight
         */
-        public static final int Toolbar_maxButtonHeight = 16;
+        public static int Toolbar_maxButtonHeight = 16;
         /**
           <p>
           @attr description
@@ -7020,7 +7020,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:navigationContentDescription
         */
-        public static final int Toolbar_navigationContentDescription = 21;
+        public static int Toolbar_navigationContentDescription = 21;
         /**
           <p>
           @attr description
@@ -7033,7 +7033,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:navigationIcon
         */
-        public static final int Toolbar_navigationIcon = 20;
+        public static int Toolbar_navigationIcon = 20;
         /**
           <p>
           @attr description
@@ -7046,7 +7046,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:popupTheme
         */
-        public static final int Toolbar_popupTheme = 8;
+        public static int Toolbar_popupTheme = 8;
         /**
           <p>
           @attr description
@@ -7062,7 +7062,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:subtitle
         */
-        public static final int Toolbar_subtitle = 3;
+        public static int Toolbar_subtitle = 3;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#subtitleTextAppearance}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7072,7 +7072,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:subtitleTextAppearance
         */
-        public static final int Toolbar_subtitleTextAppearance = 10;
+        public static int Toolbar_subtitleTextAppearance = 10;
         /**
           <p>
           @attr description
@@ -7087,7 +7087,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:theme
         */
-        public static final int Toolbar_theme = 17;
+        public static int Toolbar_theme = 17;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#title}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7101,7 +7101,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:title
         */
-        public static final int Toolbar_title = 2;
+        public static int Toolbar_title = 2;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#titleMarginBottom}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7117,7 +7117,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:titleMarginBottom
         */
-        public static final int Toolbar_titleMarginBottom = 15;
+        public static int Toolbar_titleMarginBottom = 15;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#titleMarginEnd}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7133,7 +7133,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:titleMarginEnd
         */
-        public static final int Toolbar_titleMarginEnd = 13;
+        public static int Toolbar_titleMarginEnd = 13;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#titleMarginStart}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7149,7 +7149,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:titleMarginStart
         */
-        public static final int Toolbar_titleMarginStart = 12;
+        public static int Toolbar_titleMarginStart = 12;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#titleMarginTop}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7165,7 +7165,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:titleMarginTop
         */
-        public static final int Toolbar_titleMarginTop = 14;
+        public static int Toolbar_titleMarginTop = 14;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#titleMargins}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7181,7 +7181,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.adefreitas.groupcontextandroidframework:titleMargins
         */
-        public static final int Toolbar_titleMargins = 11;
+        public static int Toolbar_titleMargins = 11;
         /**
           <p>This symbol is the offset where the {@link com.adefreitas.groupcontextandroidframework.R.attr#titleTextAppearance}
           attribute's value can be found in the {@link #Toolbar} array.
@@ -7191,7 +7191,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.adefreitas.groupcontextandroidframework:titleTextAppearance
         */
-        public static final int Toolbar_titleTextAppearance = 9;
+        public static int Toolbar_titleTextAppearance = 9;
         /** Attributes that can be used with a View.
            <p>Includes the following attributes:</p>
            <table>
@@ -7222,7 +7222,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#focusable}.
           @attr name android:focusable
         */
-        public static final int View_android_focusable = 0;
+        public static int View_android_focusable = 0;
         /**
           <p>
           @attr description
@@ -7240,7 +7240,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:paddingEnd
         */
-        public static final int View_paddingEnd = 2;
+        public static int View_paddingEnd = 2;
         /**
           <p>
           @attr description
@@ -7258,7 +7258,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:paddingStart
         */
-        public static final int View_paddingStart = 1;
+        public static int View_paddingStart = 1;
         /** Attributes that can be used with a ViewStubCompat.
            <p>Includes the following attributes:</p>
            <table>
@@ -7282,7 +7282,7 @@ containing a value of this type.
           attribute's value can be found in the {@link #ViewStubCompat} array.
           @attr name android:id
         */
-        public static final int ViewStubCompat_android_id = 0;
+        public static int ViewStubCompat_android_id = 0;
         /**
           <p>
           @attr description
@@ -7291,7 +7291,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#inflatedId}.
           @attr name android:inflatedId
         */
-        public static final int ViewStubCompat_android_inflatedId = 2;
+        public static int ViewStubCompat_android_inflatedId = 2;
         /**
           <p>
           @attr description
@@ -7302,7 +7302,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#layout}.
           @attr name android:layout
         */
-        public static final int ViewStubCompat_android_layout = 1;
+        public static int ViewStubCompat_android_layout = 1;
         /**  Attributes for the WalletFragment &lt;fragment&gt; tag 
            <p>Includes the following attributes:</p>
            <table>
@@ -7340,7 +7340,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:appTheme
         */
-        public static final int WalletFragmentOptions_appTheme = 0;
+        public static int WalletFragmentOptions_appTheme = 0;
         /**
           <p>
           @attr description
@@ -7360,7 +7360,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:environment
         */
-        public static final int WalletFragmentOptions_environment = 1;
+        public static int WalletFragmentOptions_environment = 1;
         /**
           <p>
           @attr description
@@ -7379,7 +7379,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:fragmentMode
         */
-        public static final int WalletFragmentOptions_fragmentMode = 3;
+        public static int WalletFragmentOptions_fragmentMode = 3;
         /**
           <p>
           @attr description
@@ -7391,7 +7391,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:fragmentStyle
         */
-        public static final int WalletFragmentOptions_fragmentStyle = 2;
+        public static int WalletFragmentOptions_fragmentStyle = 2;
         /**  Attributes that may be specified in a style resource to customize the look and feel of
          WalletFragment 
            <p>Includes the following attributes:</p>
@@ -7447,7 +7447,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:buyButtonAppearance
         */
-        public static final int WalletFragmentStyle_buyButtonAppearance = 3;
+        public static int WalletFragmentStyle_buyButtonAppearance = 3;
         /**
           <p>
           @attr description
@@ -7476,7 +7476,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:buyButtonHeight
         */
-        public static final int WalletFragmentStyle_buyButtonHeight = 0;
+        public static int WalletFragmentStyle_buyButtonHeight = 0;
         /**
           <p>
           @attr description
@@ -7497,7 +7497,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:buyButtonText
         */
-        public static final int WalletFragmentStyle_buyButtonText = 2;
+        public static int WalletFragmentStyle_buyButtonText = 2;
         /**
           <p>
           @attr description
@@ -7526,7 +7526,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:buyButtonWidth
         */
-        public static final int WalletFragmentStyle_buyButtonWidth = 1;
+        public static int WalletFragmentStyle_buyButtonWidth = 1;
         /**
           <p>
           @attr description
@@ -7540,7 +7540,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:maskedWalletDetailsBackground
         */
-        public static final int WalletFragmentStyle_maskedWalletDetailsBackground = 6;
+        public static int WalletFragmentStyle_maskedWalletDetailsBackground = 6;
         /**
           <p>
           @attr description
@@ -7554,7 +7554,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:maskedWalletDetailsButtonBackground
         */
-        public static final int WalletFragmentStyle_maskedWalletDetailsButtonBackground = 8;
+        public static int WalletFragmentStyle_maskedWalletDetailsButtonBackground = 8;
         /**
           <p>
           @attr description
@@ -7566,7 +7566,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:maskedWalletDetailsButtonTextAppearance
         */
-        public static final int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance = 7;
+        public static int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance = 7;
         /**
           <p>
           @attr description
@@ -7578,7 +7578,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:maskedWalletDetailsHeaderTextAppearance
         */
-        public static final int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance = 5;
+        public static int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance = 5;
         /**
           <p>
           @attr description
@@ -7597,7 +7597,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:maskedWalletDetailsLogoImageType
         */
-        public static final int WalletFragmentStyle_maskedWalletDetailsLogoImageType = 10;
+        public static int WalletFragmentStyle_maskedWalletDetailsLogoImageType = 10;
         /**
           <p>
           @attr description
@@ -7614,7 +7614,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:maskedWalletDetailsLogoTextColor
         */
-        public static final int WalletFragmentStyle_maskedWalletDetailsLogoTextColor = 9;
+        public static int WalletFragmentStyle_maskedWalletDetailsLogoTextColor = 9;
         /**
           <p>
           @attr description
@@ -7626,6 +7626,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.adefreitas.groupcontextandroidframework:maskedWalletDetailsTextAppearance
         */
-        public static final int WalletFragmentStyle_maskedWalletDetailsTextAppearance = 4;
+        public static int WalletFragmentStyle_maskedWalletDetailsTextAppearance = 4;
     };
 }

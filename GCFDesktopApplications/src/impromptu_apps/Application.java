@@ -109,11 +109,14 @@ public class Application implements EventReceiver
 	 */
 	private void initializeApps()
 	{
-		// Impromptu
+		//appProviders.add(new App_Survey("AUGUST_24_FEEDBACK", gcm, COMM_MODE, IP_ADDRESS, PORT, sqlToolkit));
+		appProviders.add(new App_CommTalk(gcm, COMM_MODE, IP_ADDRESS, PORT));
+		
+		// Impromptu "Core" Apps
 		//initializeImpromptuApps();
 		
 		// Snap-To-It
-		initializeSnapToItApps();
+		//initializeSnapToItApps();
 		
 		// Favor Banking
 		//initializeFavorBank();
@@ -134,59 +137,51 @@ public class Application implements EventReceiver
 		// Standard Apps (IMPROMPTU_CORE)
 		appProviders.add(new App_Disclaimer(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		appProviders.add(new App_Feedback(gcm, sqlToolkit, COMM_MODE, IP_ADDRESS, PORT));
+		//appProviders.add(new App_Troubleshooting(gcm, COMM_MODE, IP_ADDRESS, PORT));
+		
+		// Bluewave Apps
 		appProviders.add(new App_BluewavePermissions(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		appProviders.add(new App_BluewaveDebug(gcm, COMM_MODE, IP_ADDRESS, PORT));
-		appProviders.add(new App_Troubleshooting(gcm, COMM_MODE, IP_ADDRESS, PORT));
+		appProviders.add(new App_Map(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		
 		// Convenience Apps
 		appProviders.add(new App_Bus(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		appProviders.add(new App_Starbucks(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		appProviders.add(new App_CMU(gcm, COMM_MODE, IP_ADDRESS, PORT));
+		appProviders.add(new App_CMU_Bus(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		appProviders.add(new App_Target(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		appProviders.add(new App_BestBuy(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		appProviders.add(new App_Porch(gcm, COMM_MODE, IP_ADDRESS, PORT));
-		//appProviders.add(new App_Weather(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		
-//		// CMU Map Application
-//		App_LocationWebsite outletApp = new App_LocationWebsite(gcm, 
-//				"Grove City Outlet App", 
-//				"http://www.premiumoutlets.com/outlets/store_listing.asp?id=85", 
-//				"Store Listing for the Outlet Mall.", 
-//				"SHOPPING", 
-//				"https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/shopping_bag.png", 
-//				1.0, 
-//				COMM_MODE, IP_ADDRESS, PORT);
-//		outletApp.addLocation("Outlet Center", 41.140840, -80.157141);
-//		appProviders.add(outletApp);
 	}
 	
 	private void initializeSnapToItApps()
 	{		
-		appProviders.add(new Sti_ProjectSlideshow(gcm, COMM_MODE, IP_ADDRESS, PORT));
+		//appProviders.add(new Sti_ProjectSlideshow(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		//appProviders.add(new Sti_Map(gcm, COMM_MODE, IP_ADDRESS, PORT));
 		
 		// LIST CONDITION:  BE SURE TO ACTIVATE STI_DIGITALPROJECTOR
-//		appProviders.add(new Sti_Dummy("Digital Projector (MITSUBISHI)", "Lets you upload PowerPoint presentations and control them on this digital projector.", "Devices", "http://png-4.findicons.com/files/icons/2711/free_icons_for_windows8_metro/128/video_projector.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
-//		appProviders.add(new Sti_Dummy("Digital Projector (EIKI 2)", "Lets you upload PowerPoint presentations and control them on this digital projector.", "Devices", "http://png-4.findicons.com/files/icons/2711/free_icons_for_windows8_metro/128/video_projector.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
-//		appProviders.add(new Sti_Dummy("Printer Controls (Ricoh)", "Controls the Printer Ricoh.  Powered by Snap-To-It!", "Devices", "http://icons.iconarchive.com/icons/iconshock/real-vista-computer-gadgets/256/multifunction-printer-icon.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
-//		appProviders.add(new Sti_Dummy("Printer Controls (HP Digital Sender 9020n)", "Controls the Printer HP Digital Sender 9020n.  Powered by Snap-To-It!", "Devices", "http://icons.iconarchive.com/icons/iconshock/real-vista-computer-gadgets/256/multifunction-printer-icon.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
-//		appProviders.add(new Sti_Dummy("Printer Controls (LaserJet)", "Controls the Printer LaserJet.  Powered by Snap-To-It!", "Devices", "http://icons.iconarchive.com/icons/iconshock/real-vista-computer-gadgets/256/multifunction-printer-icon.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
-//		appProviders.add(new Sti_Dummy("Macbook", "Lets you control the application on this computer.", "Devices", "http://www.gedtestingservice.com/uploads/images/medium/0a54c4f41f9bb1a1b74fe0cdaedbc0a7.jpeg", gcm, COMM_MODE, IP_ADDRESS, PORT));
-//		appProviders.add(new Sti_Dummy("Dell Inspiron", "Lets you control the application on this computer.", "Devices", "http://www.gedtestingservice.com/uploads/images/medium/0a54c4f41f9bb1a1b74fe0cdaedbc0a7.jpeg", gcm, COMM_MODE, IP_ADDRESS, PORT));
+		appProviders.add(new Sti_Dummy("Digital Projector (MITSUBISHI)", "Lets you upload PowerPoint presentations and control them on this digital projector.", "Devices", "http://png-4.findicons.com/files/icons/2711/free_icons_for_windows8_metro/128/video_projector.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
+		appProviders.add(new Sti_Dummy("Digital Projector (EIKI 2)", "Lets you upload PowerPoint presentations and control them on this digital projector.", "Devices", "http://png-4.findicons.com/files/icons/2711/free_icons_for_windows8_metro/128/video_projector.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
+		appProviders.add(new Sti_Dummy("Printer Controls (Ricoh)", "Controls the Printer Ricoh.  Powered by Snap-To-It!", "Devices", "http://icons.iconarchive.com/icons/iconshock/real-vista-computer-gadgets/256/multifunction-printer-icon.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
+		appProviders.add(new Sti_Dummy("Printer Controls (HP Digital Sender 9020n)", "Controls the Printer HP Digital Sender 9020n.  Powered by Snap-To-It!", "Devices", "http://icons.iconarchive.com/icons/iconshock/real-vista-computer-gadgets/256/multifunction-printer-icon.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
+		appProviders.add(new Sti_Dummy("Printer Controls (LaserJet)", "Controls the Printer LaserJet.  Powered by Snap-To-It!", "Devices", "http://icons.iconarchive.com/icons/iconshock/real-vista-computer-gadgets/256/multifunction-printer-icon.png", gcm, COMM_MODE, IP_ADDRESS, PORT));
+		appProviders.add(new Sti_Dummy("Software: Paint Application", "Currently running on Macbook Air.", "Devices", "http://www.gedtestingservice.com/uploads/images/medium/0a54c4f41f9bb1a1b74fe0cdaedbc0a7.jpeg", gcm, COMM_MODE, IP_ADDRESS, PORT));
+		Sti_Game             stig = new Sti_Game(gcm, COMM_MODE, IP_ADDRESS, PORT);
+		stig.listMode = true;
+		appProviders.add(stig);
 //		Sti_DigitalProjector stip = new Sti_DigitalProjector(gcm, COMM_MODE, IP_ADDRESS, PORT);
-//		Sti_Game             stig = new Sti_Game(gcm, COMM_MODE, IP_ADDRESS, PORT);
 //		stip.listMode = true;
-//		stig.listMode = true;
 //		appProviders.add(stip);
-//		appProviders.add(stig);
 		
 		// STI CONDITION (CODE && QR)
-//		Sti_DigitalProjector stip = new Sti_DigitalProjector(gcm, COMM_MODE, IP_ADDRESS, PORT);
 //		Sti_Game             stig = new Sti_Game(gcm, COMM_MODE, IP_ADDRESS, PORT);
-//		stip.listMode = false;
-//		stig.listMode = false;
-//		appProviders.add(stip);
+//		stig.listMode = false;		
 //		appProviders.add(stig);
+		
+//		Sti_DigitalProjector stip = new Sti_DigitalProjector(gcm, COMM_MODE, IP_ADDRESS, PORT);
+//		stip.listMode = false;
+//		appProviders.add(stip);
 		
 //		appProviders.add(new Sti_Printer(gcm, "ZIRCON", "\\\\monolith.scs.ad.cs.cmu.edu\\zircon",
 //				new String[] {
@@ -275,6 +270,7 @@ public class Application implements EventReceiver
 	{
 		// Favors
 		appProviders.add(new App_FavorListener(gcm, COMM_MODE, IP_ADDRESS, PORT, sqlToolkit));
+		appProviders.add(new App_FavorOfferer(gcm, COMM_MODE, IP_ADDRESS, PORT, sqlToolkit));
 		appProviders.add(new App_FavorRequester(gcm, COMM_MODE, IP_ADDRESS, PORT, sqlToolkit));
 		appProviders.add(new App_FavorProfile(gcm, COMM_MODE, IP_ADDRESS, PORT, sqlToolkit));
 		f = new FavorDispatcher(sqlToolkit, gcm);
@@ -310,7 +306,7 @@ public class Application implements EventReceiver
 		scheduleApp.addEvent("Meet with CMU Faculty", 			   "NSH", new GregorianCalendar(2015,6,28,12,00,00).getTime(), new GregorianCalendar(2015,6,28,14,00,00).getTime(), "http://gcf.cmu-tbank.com/apps/google_iot/schedule.php?event=24");
 		appProviders.add(scheduleApp);
 		
-		appProviders.add(new App_Survey(gcm, COMM_MODE, IP_ADDRESS, PORT));
+		//appProviders.add(new App_Survey(gcm, COMM_MODE, IP_ADDRESS, PORT));
 	}
 	
 	/**

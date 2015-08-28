@@ -27,7 +27,8 @@ public class FavorDispatcher
 	private String 				connectionKey;
 	
 	// Record of all Active Tasks
-	private HashMap<String, App_Favor> favors = new HashMap<String, App_Favor>();
+	private HashMap<String, App_Favor> favors  = new HashMap<String, App_Favor>();
+	private ArrayList<App_FavorSurvey> surveys = new ArrayList<App_FavorSurvey>();
 	
 	/**
 	 * Constructor
@@ -56,6 +57,7 @@ public class FavorDispatcher
 			String deviceID	   = resultSet.getString("device_id");
 			String userName    = resultSet.getString("userName");
 			String desc 	   = resultSet.getString("desc");
+			String submission  = resultSet.getString("submission_type");
 			String desc_perf   = resultSet.getString("desc_performance_location");
 			String desc_turnin = resultSet.getString("desc_turnin_location");
 			double latitude    = resultSet.getDouble("latitude");
@@ -67,7 +69,7 @@ public class FavorDispatcher
 						
 			if (!favors.containsKey(id))
 			{		
-				App_Favor newFavor = new App_Favor(id, this, timestamp, deviceID, userName, desc, desc_perf, desc_turnin, latitude, longitude, tags, sensors, status, matches, gcm, COMM_MODE, IP_ADDRESS, PORT, toolkit);
+				App_Favor newFavor = new App_Favor(id, this, timestamp, deviceID, userName, submission, desc, desc_perf, desc_turnin, latitude, longitude, tags, sensors, status, matches, gcm, COMM_MODE, IP_ADDRESS, PORT, toolkit);
 				newFavor.setSQLEventLogger(toolkit);
 				
 				// Adds a Task (Assuming it has not already been created before)
@@ -80,8 +82,8 @@ public class FavorDispatcher
 					if (creatorInfo.next())
 					{
 						String sensor   = creatorInfo.getString("last_sensor") != null ? creatorInfo.getString("last_sensor") : "";
-						String contents = String.format("favorID=%s,timestamp=%d,submissionType=request,creatorDeviceID=%s,creatorLat=%f,creatorLon=%f,creatorSensor=%s", 
-								newFavor.getAppID(), timestamp, deviceID, creatorInfo.getDouble("latitude"), creatorInfo.getDouble("longitude"), sensor);
+						String contents = String.format("favorID=%s,creatorDeviceID=%s,timestamp=%d,submissionType=%s,creatorLat=%f,creatorLon=%f,creatorSensor=%s", 
+								newFavor.getAppID(), deviceID, System.currentTimeMillis(), submission, creatorInfo.getDouble("latitude"), creatorInfo.getDouble("longitude"), sensor);
 						newFavor.log("FAVOR_CREATED", contents);
 					}
 				}
@@ -111,6 +113,15 @@ public class FavorDispatcher
 		{
 			System.out.println("  Removing Task: " + id);
 			gcm.unregisterContextProvider(id);
+			
+			if (!favors.get(id).isCompleted())
+			{
+//				System.out.println("  Sending Survey: " + id);
+//				App_FavorSurvey newSurvey = new App_FavorSurvey(gcm, favors.get(id), COMM_MODE, IP_ADDRESS, PORT);
+//				surveys.add(newSurvey);
+//				gcm.registerContextProvider(newSurvey);
+			}
+			
 			favors.remove(id);
 		}
 	}
@@ -147,6 +158,7 @@ public class FavorDispatcher
 									"favors_submitted.sensors, " +
 									"favors_submitted.status, " +
 									"favors_submitted.matches, " +
+									"favors_submitted.submission_type, " +
 									"favors_profile.username, " +
 									"favors_profile.telephone " +
 							   "FROM favors_submitted INNER JOIN favors_profile on favors_submitted.device_id = favors_profile.device_id " +
@@ -173,6 +185,15 @@ public class FavorDispatcher
 				if (!favorsUpdated.contains(generatedTaskID))
 				{
 					removeTask(generatedTaskID);
+				}
+			}
+			
+			// Removes all Inactive Surveys
+			for (App_FavorSurvey survey : surveys)
+			{
+				if (survey.isComplete())
+				{
+					gcm.unregisterContextProvider(survey.getContextType());
 				}
 			}
 			

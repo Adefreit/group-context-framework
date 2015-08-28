@@ -254,7 +254,8 @@ public class MqttCommThread extends CommThread implements MqttCallback
 	{
 		String 	    s   = new String(message.getPayload(), "UTF-8");
 		CommMessage msg = CommMessage.jsonToMessage(s);
-				
+		Log.d(LOG_NAME, "Received: " + s.length());
+		
 		if (commHandler != null && msg != null)
 		{			
 			if (!(msg instanceof ComputeInstruction))

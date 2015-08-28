@@ -34,12 +34,15 @@ public class App_Target extends DesktopApplicationProvider
 				port);
 		
 		// Populates coordinates
-		// NOTE:  I am using X, Y for Longitude, Latitude (the reverse of what you normally think)
 		coordinates.put("Monroeville Target", new Point2D.Double(40.433955,-79.772115));
 		coordinates.put("Penn Ave. Target", new Point2D.Double(40.461107,-79.921803));
 		coordinates.put("Waterfront Target", new Point2D.Double(40.410604, -79.910367));
-//		coordinates.put("Home", new Point2D.Double(40.434090, -79.853565));
-//		coordinates.put("NSH", new Point2D.Double(40.443608, -79.945573));
+		coordinates.put("Airport", new Point2D.Double(40.446222, -80.183681));
+		coordinates.put("North Hills", new Point2D.Double(40.526077, -80.007947));
+		coordinates.put("Freeport", new Point2D.Double(40.538371, -79.836601));
+		coordinates.put("West Mifflin", new Point2D.Double(40.348166, -79.953947));
+		coordinates.put("Mt Lebanon", new Point2D.Double(40.343678, -80.057118));
+		coordinates.put("Monaca", new Point2D.Double(40.680884, -80.312491));
 	}
 	
 	private boolean nearLocation(JSONContextParser parser, double km)
@@ -100,6 +103,6 @@ public class App_Target extends DesktopApplicationProvider
 	public boolean sendAppData(String json)
 	{
 		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, json);
-		return nearLocation(parser, 0.25);
+		return nearLocation(parser, 0.10) && !this.inVehicle(parser);
 	}
 }

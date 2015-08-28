@@ -79,13 +79,13 @@ import com.google.gson.reflect.TypeToken;
 public class GCFApplication extends Application
 {	
 	// Debug Flag (Set to False Before Publishing!)
-	public static final boolean DEBUG		   = true;
+	public static final boolean DEBUG		   = false;
 	public static final String  APP_PROCESS_ID = "" + new Date().getTime();	
 	public static final String  LOG_NAME       = "IMPROMPTU";
 
 	// Application Constants 	 
-	public static final int    UPDATE_SECONDS    	  = 60;
-	public static final int    APP_EXPIRATION_TIME    = 60 & 5;
+	public static final int    UPDATE_SECONDS    	  = 60;		
+	public static final int    APP_EXPIRATION_TIME    = 60 * 24 * 7;	// in Minutes
 	public static final String PREFERENCES_NAME       = "com.adefreit.impromptu.preferences";
 	public static final String PREFERENCE_APP_CATALOG = "appCatalog";
 	public static final String PREFERENCE_APP_PREF    = "appPreferences";
@@ -333,36 +333,41 @@ public class GCFApplication extends Application
 	 */
 	public void createNotification(ArrayList<AppInfo> apps)
 	{
-		if (!isInForeground())
+		for (AppInfo app : apps)
 		{
-			String title    = "";
-			String subtitle = "";
-			Intent intent;
+			Intent intent = new Intent(this.getApplicationContext(), MainActivity.class);
+			intent.putExtra("APP_ID", app.getID());
 			
-			// Creates the Intent
-			if (apps.size() == 1)
-			{
-				AppInfo app = apps.get(0);
-				title       = app.getName();
-				subtitle    = app.getDescription();
-				
-				intent = new Intent(this.getApplicationContext(), MainActivity.class);
-				intent.putExtra("APP_ID", app.getID());
-			}
-			else
-			{
-				title    = "New Apps are Available";
-				subtitle = "Tap to View";
-				
-				// Removes the Last Comma
-				//subtitle = subtitle.substring(0, subtitle.length()-2);
-				
-				intent = new Intent(this.getApplicationContext(), MainActivity.class);
-			}
 			
-			// Generates the Notification
-			createNotification(0, title, subtitle, intent);
 		}
+		
+//		if (!isInForeground())
+//		{
+//			String title    = "";
+//			String subtitle = "";
+//			Intent intent;
+//			
+//			// Creates the Intent
+//			if (apps.size() == 1)
+//			{
+//				AppInfo app = apps.get(0);
+//				title       = app.getName();
+//				subtitle    = app.getDescription();
+//				
+//				intent = new Intent(this.getApplicationContext(), MainActivity.class);
+//				intent.putExtra("APP_ID", app.getID());
+//			}
+//			else
+//			{
+//				title    = "New Apps are Available";
+//				subtitle = "Tap to View";
+//								
+//				intent = new Intent(this.getApplicationContext(), MainActivity.class);
+//			}
+//			
+//			// Generates the Notification
+//			createNotification(0, title, subtitle, intent);
+//		}
 	}
 	
 	public void createNotification(int id, String title, String subtitle, Intent intent)
@@ -465,9 +470,12 @@ public class GCFApplication extends Application
 		
 		if (!locationWorking || !googleWorking || !bluewaveWorking)
 		{
-			Intent newIntent = new Intent(getApplicationContext(), Splashscreen.class);
-			createNotification(0, "Impromptu Needs More Context", "Tap to Troubleshoot", newIntent);			
-			return false;
+			if (!this.isInForeground())
+			{
+				Intent newIntent = new Intent(getApplicationContext(), Splashscreen.class);
+				createNotification(0, "Impromptu Needs More Info", "Tap to Troubleshoot", newIntent);			
+				return false;	
+			}
 		}
 		else
 		{
@@ -1249,9 +1257,7 @@ public class GCFApplication extends Application
 			{
 				String[] appsJson          = gson.fromJson(instruction.getPayload("APPS"), new TypeToken<String[]>() {}.getType());
 				ArrayList<AppInfo> newApps = new ArrayList<AppInfo>();
-							
-				boolean isSystemAlert = false;
-				
+											
 				for (String s : appsJson)
 				{
 					String[] appPayload = gson.fromJson(s, new TypeToken<String[]>() {}.getType());

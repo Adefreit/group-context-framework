@@ -152,7 +152,7 @@ public class DebugActivity extends Activity
 		// Updates Bluewave Contents
 		try
 		{
-			String bluewaveText = "Visible to Other Devices As:\n" + application.getBluewaveManager().getBluetoothName() + "\n\n";
+			String bluewaveText = application.getBluewaveManager().getBluetoothName() + "\n\n";
 			bluewaveText       += application.getBluewaveManager().getPersonalContextProvider().getContext().toString();
 			
 			txtBluewave.setText(bluewaveText);

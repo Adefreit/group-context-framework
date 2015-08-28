@@ -3,6 +3,7 @@
 
     <string name="app_name">Impromptu</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_permissions">Permissions</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_quit">Quit Application</string>
     <string name="title_activity_test">TestActivity</string>
@@ -27,7 +28,8 @@
     <string name="sti_camera">TAKE PHOTO</string>
     <string name="sti_qr">QR</string>
     <string name="sti_text">TEXT</string>
-
+	<string name="action_onboard">Onboard</string>
+    
     <!-- CreationFest (Remove Someday) -->
     <string-array name="departments">
         <item>Public Safety</item>
@@ -70,5 +72,6 @@
     </string-array>
 
     <string name="title_activity_qrcode">QRCodeActivity</string>
+    <string name="title_activity_permission">Permissions</string>
 
 </resources>

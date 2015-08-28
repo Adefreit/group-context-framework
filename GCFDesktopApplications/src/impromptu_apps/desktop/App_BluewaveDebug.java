@@ -82,7 +82,7 @@ public class App_BluewaveDebug extends DesktopApplicationProvider
 	public boolean sendAppData(String userContext)
 	{
 		JSONContextParser parser = new JSONContextParser(JSONContextParser.JSON_TEXT, userContext);
-		return this.hasEmailAddress(parser, new String[] { "adrian.defreitas@gmail.com", "akshaya.kar@gmail.com", "gcf.user.2@gmail.com", "gcf.user.3@gmail.com", "gcf.user.4@gmail.com" });
+		return this.hasEmailAddress(parser, new String[] { "adrian.defreitas@gmail.com", "akshaya.kar@gmail.com", "gcf.user.1@gmail.com", "gcf.user.2@gmail.com", "gcf.user.3@gmail.com", "gcf.user.4@gmail.com" });
 //		double distanceFromPittsburgh = this.getDistance(parser, 40.4397, -79.9764);
 //		
 //		System.out.print("Distance = " + distanceFromPittsburgh + "km ");

@@ -201,6 +201,16 @@ public class BluewaveManager
 	}
 	
 	/**
+	 * Returns the Last Reported Context for a Given Device ID
+	 * @param deviceID
+	 * @return
+	 */
+	public JSONContextParser getContext(String deviceID)
+	{
+		return this.contextListener.getContext(deviceID);
+	}
+	
+	/**
 	 * Returns TRUE if the device is discoverable
 	 * @return
 	 */
@@ -237,16 +247,6 @@ public class BluewaveManager
 	public short getRSSI(String deviceID)
 	{
 		return bluetoothScanner.getRSSI(deviceID);
-	}
-
-	/**
-	 * Returns the Context for a Specific Device
-	 * @param deviceID
-	 * @return
-	 */
-	public JSONContextParser getContext(String deviceID)
-	{
-		return contextListener.getContext(deviceID);
 	}
 	
 	/**

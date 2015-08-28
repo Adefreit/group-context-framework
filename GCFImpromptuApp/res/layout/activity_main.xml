@@ -88,14 +88,14 @@
 	    android:elevation="5dp"
         android:orientation="horizontal">
         
-        <ImageView
+<!--         <ImageView
 	        android:id="@+id/imgTextSmall"
 	        android:layout_width="50dp"
 	        android:layout_height="50dp"
 	        android:padding="10dp"
 	        android:layout_marginLeft="5dp"
 	        android:background="@drawable/text_focused"
-	        android:src="@drawable/ic_text"/>
+	        android:src="@drawable/ic_text"/> -->
         
         <ImageView
 	        android:id="@+id/imgQRSmall"

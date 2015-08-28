@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.adefreitas.gcfmagicapp"
-    android:versionCode="13"
-    android:versionName="0.86" >
+    android:versionCode="15"
+    android:versionName="0.88" >
 
     <!-- Framework Permissions -->
     <uses-permission android:name="com.aware.READ_CONTEXT_DATA" />
     <uses-permission android:name="com.aware.WRITE_CONTEXT_DATA" />
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    
+
     <!-- Application Specific Permissions -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CALENDAR" />
@@ -111,6 +111,11 @@
         <activity
             android:name="com.adefreitas.gcfimpromptu.QRCodeActivity"
             android:label="@string/title_activity_qrcode" >
+        </activity>
+        <activity
+            android:name="com.adefreitas.gcfimpromptu.PermissionActivity"
+            android:label="@string/title_activity_permission"
+            android:parentActivityName="com.adefreitas.gcfimpromptu.MainActivity" >
         </activity>
     </application>
 

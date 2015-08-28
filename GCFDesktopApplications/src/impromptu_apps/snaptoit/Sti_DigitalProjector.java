@@ -24,7 +24,7 @@ public class Sti_DigitalProjector extends SnapToItApplicationProvider
 	public		  String PRESENTATION_URL      = "";    // The cloud location where this file was received
 	public static String PRESENTATION_LOCATION = "";	// The Path to the File (ON THE COMPUTER)
 	
-	public boolean listMode = true;
+	public boolean listMode = false;
 	
 	public Sti_DigitalProjector(GroupContextManager groupContextManager, CommMode commMode, String ipAddress, int port)
 	{
@@ -61,7 +61,7 @@ public class Sti_DigitalProjector extends SnapToItApplicationProvider
 		
 		if (listMode)
 		{
-			return this.getDeviceID(parser).equals("Device 1");
+			return this.getDeviceID(parser).equals("Device 1") || this.getDeviceID(parser).equals("Nexus 5-A");
 		}
 		else
 		{
@@ -155,7 +155,7 @@ public class Sti_DigitalProjector extends SnapToItApplicationProvider
 			if (file.exists())
 			{
 				PRESENTATION_FILE     = filename;
-				PRESENTATION_LOCATION = destination;
+				PRESENTATION_LOCATION = file.getAbsolutePath();
 				
 				// Uploads the Presentation to Dropbox
 				//cloudToolkit.uploadFile(UPLOAD_FOLDER, new File(PRESENTATION_LOCATION));
@@ -175,14 +175,28 @@ public class Sti_DigitalProjector extends SnapToItApplicationProvider
 			robot.keyRelease(KeyEvent.VK_ESCAPE);
 			robot.delay(500);
 			
-			robot.keyPress(KeyEvent.VK_META);
-			robot.delay(40);
-			robot.keyPress(KeyEvent.VK_Q);
-			robot.delay(40);
-			robot.keyRelease(KeyEvent.VK_META);
-			robot.delay(40);
-			robot.keyRelease(KeyEvent.VK_Q);
-			robot.delay(500);
+			if (this.isHostDeviceMac())
+			{
+				robot.keyPress(KeyEvent.VK_META);
+				robot.delay(40);
+				robot.keyPress(KeyEvent.VK_Q);
+				robot.delay(40);
+				robot.keyRelease(KeyEvent.VK_META);
+				robot.delay(40);
+				robot.keyRelease(KeyEvent.VK_Q);
+				robot.delay(500);
+			}
+			else if (this.isHostDeviceWindows())
+			{
+				robot.keyPress(KeyEvent.VK_ALT);
+				robot.delay(40);
+				robot.keyPress(KeyEvent.VK_F4);
+				robot.delay(40);
+				robot.keyRelease(KeyEvent.VK_ALT);
+				robot.delay(40);
+				robot.keyRelease(KeyEvent.VK_F4);
+				robot.delay(500);
+			}
 			
 			this.sendContext();
 		}
@@ -248,6 +262,7 @@ public class Sti_DigitalProjector extends SnapToItApplicationProvider
 		
 		Robot robot = this.getRobot();
 		
+		// Quits the PowerPoint Application if it already exists
 		if (quitExisting)
 		{
 			robot.keyPress(KeyEvent.VK_ESCAPE);
@@ -268,23 +283,46 @@ public class Sti_DigitalProjector extends SnapToItApplicationProvider
 		try
 		{
 			// Runs Powerpoint
-			this.executeRuntimeCommand("open " + PRESENTATION_LOCATION);
-			
-			// Gives the Program Time to Do What it Needs to Do
-			Thread.sleep(1500);
-			
-			// Tries to Enter Presentation Mode
-			robot.keyPress(KeyEvent.VK_SHIFT);
-			robot.delay(40);
-			robot.keyPress(KeyEvent.VK_META);
-			robot.delay(40);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.delay(40);
-			robot.keyRelease(KeyEvent.VK_SHIFT);
-			robot.delay(40);
-			robot.keyRelease(KeyEvent.VK_META);
-			robot.delay(40);
-			robot.keyRelease(KeyEvent.VK_ENTER);
+			if (this.isHostDeviceMac())
+			{
+				this.executeRuntimeCommand("open " + PRESENTATION_LOCATION);
+				
+				// Gives the Program Time to Do What it Needs to Do
+				Thread.sleep(1500);
+				
+				// Tries to Enter Presentation Mode
+				robot.keyPress(KeyEvent.VK_SHIFT);
+				robot.delay(40);
+				robot.keyPress(KeyEvent.VK_META);
+				robot.delay(40);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.delay(40);
+				robot.keyRelease(KeyEvent.VK_SHIFT);
+				robot.delay(40);
+				robot.keyRelease(KeyEvent.VK_META);
+				robot.delay(40);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+			}
+			else if (this.isHostDeviceWindows())
+			{
+				//this.executeRuntimeCommand("E:\\PortableApps\\OpenOfficePortable\\OpenOfficeImpressPortable.exe -show " + "\"" + PRESENTATION_LOCATION + "\"");
+				String command = String.format("\"%s\" /O \"%s\"", 
+						"C:\\Program Files (x86)\\Microsoft Office\\Office14\\POWERPNT.EXE", PRESENTATION_LOCATION);
+				this.executeRuntimeCommand(command);
+				
+				// Gives the Program Time to Do What it Needs to Do
+				Thread.sleep(2500);
+				
+				// Tries to Enter Presentation Mode
+				robot.keyPress(KeyEvent.VK_F5);
+				robot.delay(40);
+				robot.keyRelease(KeyEvent.VK_F5);
+				robot.delay(40);
+			}
+			else
+			{
+				System.out.println("Unknown OS");
+			}
 		}
 		catch (Exception ex)
 		{

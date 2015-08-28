@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.adefreitas.beacon.apps.App_AndroidPrintProxy;
 import com.adefreitas.beacon.apps.App_AndroidProjectorProxy;
+import com.adefreitas.beacon.apps.App_HomeLights;
 import com.adefreitas.beacon.apps.App_NSHMap;
 import com.adefreitas.beacon.inoutboard.UserIdentityContextProvider;
 import com.adefreitas.beacon.iot.*;
@@ -116,7 +117,7 @@ public class GCFApplication extends Application
 		// Connects to the Server
 		connectionKey = groupContextManager.connect(COMM_MODE, IP_ADDRESS, PORT);
 		groupContextManager.subscribe(connectionKey, "IN_OUT_SIGN");
-		
+				
 		// Creates an Array of Context Receivers
 		this.contextReceivers = new ArrayList<ContextReceiver>();
 		
@@ -230,7 +231,7 @@ public class GCFApplication extends Application
 		apps = new ArrayList<ApplicationProvider>();
 		
 		// Creates Application Providers
-		//apps.add(new App_AndroidPrintProxy("PEWTER", this, groupContextManager, COMM_MODE, IP_ADDRESS, PORT, "STI_PRINTER_PEWTER"));
+		apps.add(new App_AndroidPrintProxy("PEWTER", this, groupContextManager, COMM_MODE, IP_ADDRESS, PORT, "STI_PRINTER_PEWTER"));
 		//apps.add(new App_AndroidPrintProxy("ZIRCON", this, groupContextManager, COMM_MODE, IP_ADDRESS, PORT, "STI_PRINTER_ZIRCON"));
 		//apps.add(new App_AndroidPrintProxy("NSH Color 3508", this, groupContextManager, COMM_MODE, IP_ADDRESS, PORT, "STI_PRINTER_NSH Color 3508"));
 		//apps.add(new App_AndroidPrintProxy("DEVLAB", this, groupContextManager, COMM_MODE, IP_ADDRESS, PORT, "STI_PRINTER_DEVLAB"));
@@ -262,6 +263,8 @@ public class GCFApplication extends Application
 	 */
 	public void onBluewaveContext(JSONContextParser parser)
 	{
+		
+		
 		// Gives Context to Beacon Apps
 		// This allows them to see if they should be "installed" on the user's device
 		analyzeBluewaveContext(parser);
@@ -477,6 +480,8 @@ public class GCFApplication extends Application
 
 		private void onOtherUserContextReceived(Context context, Intent intent)
 		{
+			groupContextManager.getBluewaveManager().getNearbyDevices(60);
+			
 			// This is the Raw JSON from the Device
 			String json = intent.getStringExtra(BluewaveManager.EXTRA_OTHER_USER_CONTEXT);
 			
@@ -501,11 +506,11 @@ public class GCFApplication extends Application
 				intent.getIntExtra(AndroidCommManager.EXTRA_PORT, -1), Toast.LENGTH_SHORT).show();
 			
 			// Creates the Scheduled Event Timer
-			if (timerHandler == null)
-			{
-				timerHandler = new AutoUpdateHandler(GCFApplication.this);				
-				timerHandler.start();	
-			}
+//			if (timerHandler == null)
+//			{
+//				timerHandler = new AutoUpdateHandler(GCFApplication.this);				
+//				timerHandler.start();	
+//			}
 			
 			//groupContextManager.sendRequest("POSTURE", ContextRequest.SINGLE_SOURCE, new String[] { }, 2000, new String[] { "CHANNEL=dev/" + groupContextManager.getDeviceID() });
 		}
@@ -535,7 +540,7 @@ public class GCFApplication extends Application
 				{
 					// By Default:  Next Update Occurs According to the Value Specified in GCFApplication.java
 					Date nextExecute = new Date(System.currentTimeMillis() + BLUEWAVE_UPDATE_SECONDS * 1000);
-					
+					 
 					// Sets the Context
 					AndroidGroupContextManager gcm = (AndroidGroupContextManager)app.getGroupContextManager();
 					try

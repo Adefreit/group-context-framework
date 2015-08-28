@@ -108,15 +108,6 @@ public class DesktopGroupContextManager extends GroupContextManager
 		super.cancelRequest(type);
 	}
 	
-	/**
-	 * Cancels a Request for Context from a Specific Device
-	 * Warning:  GCF Will Automatically 
-	 */
-	public void cancelRequest(String type, String deviceID)
-	{
-		super.cancelRequest(type, deviceID);
-	}
-	
 	// Debug -----------------------------------------------------------------------------------------------------
 	/**
 	 * Determines if GCM Should Print Debug Statements

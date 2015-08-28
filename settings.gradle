@@ -1,0 +1,5 @@
+include ':GroupContextFramework'
+include ':aware_framework_v2'
+include ':android-support-v7-appcompat'
+include ':GroupContextAndroidFramework'
+include ':google-play-services_lib'
